@@ -28,6 +28,20 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1a5c8a">
 
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -154,6 +168,7 @@
             <li><a href="/privacy-policy">Privacy Policy</a></li>
             <li><a href="/terms-of-service">Terms of Service</a></li>
             <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
           </ul>
         </div>
       </div>

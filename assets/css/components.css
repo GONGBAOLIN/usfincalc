@@ -360,3 +360,53 @@ select.input {
 }
 .breadcrumb a:hover { color: var(--color-primary); text-decoration: underline; }
 .breadcrumb span { color: var(--color-text); }
+
+/* ---- Consent banner ---- */
+.consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.08);
+  padding: var(--space-4) 0;
+}
+.consent__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+.consent__text {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+}
+.consent__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  width: 100%;
+}
+.consent__btn { min-height: 44px; }
+@media (min-width: 720px) {
+  .consent__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .consent__actions { width: auto; flex-shrink: 0; }
+}
+
+/* Link-styled button (e.g. footer "Cookie settings") */
+.site-footer .link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+.site-footer .link-btn:hover { color: var(--color-primary); }

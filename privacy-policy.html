@@ -27,6 +27,20 @@
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1a5c8a">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -73,7 +87,7 @@
       <p>For more information on how Google uses data when you use our partners' sites or apps, see <a href="https://policies.google.com/technologies/partner-sites" rel="nofollow noopener" target="_blank">Google's Privacy &amp; Terms</a>.</p>
 
       <h2>Consent for users in the EEA, UK, and Switzerland</h2>
-      <p>If you are located in the European Economic Area, the United Kingdom, or Switzerland, we (and our advertising partners) will ask for your consent before setting non-essential cookies, through a consent management platform. You may change or withdraw your consent at any time. Where required, advertising will be limited to non-personalized ads if you do not consent.</p>
+      <p>If you are located in the European Economic Area, the United Kingdom, or Switzerland, we (and our advertising partners) will ask for your consent before setting non-essential cookies, through a consent banner. By default, advertising and analytics cookies are denied until you choose to accept them. You may change or withdraw your consent at any time using the <strong>Cookie settings</strong> link in the footer of any page. Where required, advertising is limited to non-personalized ads if you do not consent.</p>
 
       <h2>Your privacy rights</h2>
       <p>Depending on where you live, you may have rights under laws such as the EU/UK General Data Protection Regulation (GDPR) or the California Consumer Privacy Act (CCPA), including the right to access, correct, or delete personal data, and to opt out of the "sale" or "sharing" of personal information. Because we do not collect or store personal information ourselves, most such requests should be directed to the advertising partners named above using their opt-out tools. If you have questions, contact us using the details on our <a href="/contact">Contact</a> page.</p>
@@ -119,6 +133,7 @@
             <li><a href="/privacy-policy">Privacy Policy</a></li>
             <li><a href="/terms-of-service">Terms of Service</a></li>
             <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
           </ul>
         </div>
       </div>
