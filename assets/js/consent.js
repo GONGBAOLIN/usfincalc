@@ -46,6 +46,9 @@
     saveChoice(choice);
     applyConsent(choice);
     removeBanner(banner);
+    try {
+      window.dispatchEvent(new CustomEvent('usfc:consent', { detail: { choice: choice } }));
+    } catch (e) { /* CustomEvent unsupported: ads.js falls back to its own check */ }
   }
 
   function buildBanner() {
