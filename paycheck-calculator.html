@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Take-Home Pay Calculator by State (2026) — USFinCalc</title>
+  <meta name="description" content="Free paycheck calculator: see your real take-home pay after federal tax, Social Security, Medicare, and state income tax. All 50 states, 2026 brackets.">
+  <link rel="canonical" href="https://usfincalc.com/paycheck-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Take-Home Pay Calculator by State (2026)">
+  <meta property="og:description" content="See your real take-home pay after federal, FICA, and state taxes — all 50 states.">
+  <meta property="og:url" content="https://usfincalc.com/paycheck-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Take-Home Pay Calculator",
+        "url": "https://usfincalc.com/paycheck-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Paycheck Calculator", "item": "https://usfincalc.com/paycheck-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How is take-home pay calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Take-home pay is your gross salary minus federal income tax, Social Security and Medicare (FICA), state income tax, and any pre-tax deductions like a 401(k). What remains is your net pay." } },
+          { "@type": "Question", "name": "Which states have no income tax?", "acceptedAnswer": { "@type": "Answer", "text": "Nine states have no state income tax on wages: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. In these states your take-home pay is higher because only federal tax and FICA are withheld." } },
+          { "@type": "Question", "name": "What is FICA?", "acceptedAnswer": { "@type": "Answer", "text": "FICA is the payroll tax that funds Social Security and Medicare. Social Security is 6.2% on wages up to an annual cap ($184,500 in 2026); Medicare is 1.45% on all wages, plus an extra 0.9% on high earnings." } },
+          { "@type": "Question", "name": "Does a 401(k) lower my taxes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Traditional 401(k) contributions are deducted from your pay before federal and state income tax, lowering your taxable income. They do not, however, reduce Social Security or Medicare tax." } },
+          { "@type": "Question", "name": "Why is my take-home pay lower than my salary?", "acceptedAnswer": { "@type": "Answer", "text": "Your gross salary is reduced by federal income tax, Social Security, Medicare, state income tax, and any pre-tax benefits. Combined, these can take 20% to 40% of gross pay depending on your income and state." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/">US<b>Fin</b>Calc</a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li><a href="/mortgage-calculator">Mortgage</a></li>
+        <li><a href="/paycheck-calculator" aria-current="page">Paycheck</a></li>
+        <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+        <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+        <li><a href="/retirement-calculator">Retirement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Take-Home Pay Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        See your <strong>real</strong> paycheck after federal tax, Social Security, Medicare, and state income tax — for all 50 states, using 2026 brackets.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="paycheckForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="salary">Annual gross salary</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="salary" type="text" inputmode="numeric" value="100000">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="payFreq">Pay frequency</label>
+              <select class="input" id="payFreq">
+                <option value="biweekly" selected>Every 2 weeks (biweekly)</option>
+                <option value="semimonthly">Twice a month (semimonthly)</option>
+                <option value="monthly">Monthly</option>
+                <option value="weekly">Weekly</option>
+                <option value="annual">Annual</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="filingStatus">Filing status</label>
+              <select class="input" id="filingStatus">
+                <option value="single" selected>Single</option>
+                <option value="married">Married filing jointly</option>
+                <option value="head">Head of household</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="state">State</label>
+              <select class="input" id="state" aria-label="State">
+                <option value="CA">Loading states…</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="k401">401(k) contribution</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="k401" type="text" inputmode="decimal" value="0">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Pre-tax percentage of salary. Lowers income tax, but not FICA.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Take-home pay per <span id="outFreqLabel">paycheck</span></span>
+              <div class="result__figure" id="outNetPeriod">$0.00</div>
+            </div>
+            <p class="center muted" style="font-size:var(--fs-sm)">
+              <span id="outNetAnnual">$0</span> per year &middot; effective tax rate <span id="outEffRate">0%</span>
+            </p>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Gross per period</dt><dd id="outGrossPeriod">$0.00</dd></div>
+              <div class="breakdown__row"><dt>Federal income tax (yr)</dt><dd id="outFederal">$0</dd></div>
+              <div class="breakdown__row"><dt>Social Security (yr)</dt><dd id="outSS">$0</dd></div>
+              <div class="breakdown__row"><dt>Medicare (yr)</dt><dd id="outMedicare">$0</dd></div>
+              <div class="breakdown__row"><dt>State income tax (yr)</dt><dd id="outState">$0</dd></div>
+              <div class="breakdown__row"><dt>401(k) pre-tax (yr)</dt><dd id="out401k">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — not tax advice. State figures are simplified; verify with your state revenue authority.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this paycheck calculator works</h2>
+      <p>Your gross salary is never what lands in your bank account. This calculator estimates your <strong>real take-home pay</strong> by subtracting the four things that come out of nearly every American paycheck: federal income tax, Social Security, Medicare, and — in most states — state income tax. If you contribute to a traditional 401(k), that comes out before income tax too, which lowers your taxable income.</p>
+      <p>Federal income tax is calculated on a progressive basis using the 2026 brackets, after subtracting the standard deduction and any pre-tax 401(k) contribution. Social Security is withheld at 6.2% up to the annual wage base, and Medicare at 1.45% on all wages, with an extra 0.9% on high earnings. State income tax is then applied using your state's rate structure.</p>
+
+      <h2>Key terms explained</h2>
+      <p><strong>Gross vs. net pay.</strong> Gross is your salary before any deductions. Net — your take-home pay — is what remains after taxes and pre-tax benefits.</p>
+      <p><strong>Federal income tax.</strong> Charged in brackets: only the income within each bracket is taxed at that bracket's rate, so a raise never costs you money overall. The 2026 standard deduction is $16,100 for single filers and $32,200 for married couples filing jointly.</p>
+      <p><strong>FICA (Social Security + Medicare).</strong> A flat payroll tax. Social Security applies only up to the wage base ($184,500 in 2026); earnings above that are not subject to the 6.2%. Medicare has no cap, and high earners pay an additional 0.9% above $200,000 (single) or $250,000 (married).</p>
+      <p><strong>State income tax.</strong> Varies widely. Nine states levy none at all; others use a flat rate or progressive brackets. Our state figures are simplified estimates and exclude local city taxes and state-specific credits.</p>
+
+      <h2>2026 take-home pay reference</h2>
+      <p>Where you live can change your take-home pay by thousands of dollars a year on the same salary. A six-figure earner in Texas or Florida keeps noticeably more than the same earner in California or New York, simply because of state income tax. If you are weighing a job offer in another state, run both states here to see the real difference.</p>
+      <p>Once you know your net pay, the common next question is how much house or car you can afford. Pair this with our <a href="/mortgage-calculator">mortgage calculator</a> to keep your housing cost in line with take-home pay, and our <a href="/retirement-calculator">retirement calculator</a> to see how much to set aside. Always confirm your exact withholding with your employer and a tax professional.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How is take-home pay calculated?</summary><div>Take-home pay is your gross salary minus federal income tax, Social Security and Medicare (FICA), state income tax, and any pre-tax deductions like a 401(k). What remains is your net pay.</div></details>
+        <details class="faq__item"><summary>Which states have no income tax?</summary><div>Nine states have no state income tax on wages: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. In these states your take-home pay is higher because only federal tax and FICA are withheld.</div></details>
+        <details class="faq__item"><summary>What is FICA?</summary><div>FICA is the payroll tax that funds Social Security and Medicare. Social Security is 6.2% on wages up to an annual cap ($184,500 in 2026); Medicare is 1.45% on all wages, plus an extra 0.9% on high earnings.</div></details>
+        <details class="faq__item"><summary>Does a 401(k) lower my taxes?</summary><div>Yes. Traditional 401(k) contributions are deducted from your pay before federal and state income tax, lowering your taxable income. They do not, however, reduce Social Security or Medicare tax.</div></details>
+        <details class="faq__item"><summary>Why is my take-home pay lower than my salary?</summary><div>Your gross salary is reduced by federal income tax, Social Security, Medicare, state income tax, and any pre-tax benefits. Combined, these can take 20% to 40% of gross pay depending on your income and state.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">See how much of your take-home pay you should save for retirement.</span>
+        </a>
+        <a class="card" href="/rsu-tax-calculator">
+          <span class="card__title">RSU Tax Calculator</span>
+          <span class="card__desc">Equity compensation? Estimate the after-tax value of vesting RSUs.</span>
+        </a>
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Check how much mortgage fits your real monthly take-home pay.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or tax advice. Federal figures use 2026 IRS brackets and SSA limits; state figures are simplified estimates that exclude local taxes, credits, and many deductions. Verify your withholding with your employer and a licensed tax professional before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/data/federal-tax.js" defer></script>
+  <script src="/assets/js/data/state-tax.js" defer></script>
+  <script src="/assets/js/paycheck.js" defer></script>
+</body>
+</html>
