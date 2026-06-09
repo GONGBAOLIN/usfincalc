@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect width="1200" height="8" fill="#1a5c8a"/>
+  <!-- logo mark -->
+  <g transform="translate(96,150)">
+    <rect width="120" height="120" rx="26" fill="#1a5c8a"/>
+    <rect x="26" y="22" width="68" height="22" rx="4" fill="#e8eef7"/>
+    <rect x="26" y="56" width="18" height="18" rx="3" fill="#2e7d4f"/>
+    <rect x="50" y="56" width="18" height="18" rx="3" fill="#e8eef7"/>
+    <rect x="74" y="56" width="18" height="18" rx="3" fill="#e8eef7"/>
+    <rect x="26" y="80" width="18" height="18" rx="3" fill="#e8eef7"/>
+    <rect x="50" y="80" width="18" height="18" rx="3" fill="#e8eef7"/>
+    <rect x="74" y="80" width="18" height="18" rx="3" fill="#2e7d4f"/>
+  </g>
+  <text x="248" y="232" font-family="Georgia, 'Times New Roman', serif" font-size="76" fill="#ffffff" font-weight="700">USFinCalc</text>
+  <text x="96" y="360" font-family="Helvetica, Arial, sans-serif" font-size="52" fill="#e8eef7" font-weight="700">Free US financial calculators</text>
+  <text x="96" y="426" font-family="Helvetica, Arial, sans-serif" font-size="52" fill="#4ba3d3" font-weight="700">that show the real number.</text>
+  <text x="96" y="520" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#a3b1c6">Mortgage PITI  ·  Take-home pay by state  ·  RSU tax  ·  Auto loan  ·  Retirement</text>
+</svg>
