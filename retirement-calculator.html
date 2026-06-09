@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retirement Calculator — 401(k) Growth With Employer Match (2026) — USFinCalc</title>
+  <meta name="description" content="Free retirement calculator: project your 401(k) or IRA balance to retirement with employer match, annual contributions, expected return, and inflation-adjusted value.">
+  <link rel="canonical" href="https://usfincalc.com/retirement-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Retirement Calculator — 401(k) Growth With Employer Match">
+  <meta property="og:description" content="Project your 401(k)/IRA to retirement — with employer match and inflation-adjusted value.">
+  <meta property="og:url" content="https://usfincalc.com/retirement-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Retirement Calculator",
+        "url": "https://usfincalc.com/retirement-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Retirement Calculator", "item": "https://usfincalc.com/retirement-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much will my 401(k) be worth at retirement?", "acceptedAnswer": { "@type": "Answer", "text": "Your ending balance depends on your current balance, annual contributions, employer match, expected return, and years until retirement. This calculator compounds each year's growth and adds contributions to project both a nominal balance and its value in today's dollars." } },
+          { "@type": "Question", "name": "How does an employer 401(k) match work?", "acceptedAnswer": { "@type": "Answer", "text": "Employers commonly match a percentage of what you contribute, up to a limit. A typical example is 50% of your contributions up to 6% of salary. The match is free money, so contributing at least enough to get the full match is usually the highest-return move available." } },
+          { "@type": "Question", "name": "What is an inflation-adjusted retirement balance?", "acceptedAnswer": { "@type": "Answer", "text": "A future balance looks large partly because money loses purchasing power over time. The inflation-adjusted (real) balance restates that future amount in today's dollars, so you can judge what it would actually buy when you retire." } },
+          { "@type": "Question", "name": "What return should I assume for retirement projections?", "acceptedAnswer": { "@type": "Answer", "text": "A diversified stock-heavy portfolio has historically returned around 7% to 10% annually before inflation over long periods. Many planners use 6% to 7% as a conservative long-run assumption. Actual returns vary year to year, so treat any projection as an estimate." } },
+          { "@type": "Question", "name": "How much should I contribute to my 401(k)?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum, contribute enough to capture the full employer match. Beyond that, a common target is 15% of income including the match. The 2026 IRS employee contribution limit is higher than prior years, so check the current cap if you contribute aggressively." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/">US<b>Fin</b>Calc</a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li><a href="/mortgage-calculator">Mortgage</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+        <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+        <li><a href="/retirement-calculator" aria-current="page">Retirement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Retirement Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        Project your <strong>401(k) or IRA</strong> balance to retirement — with employer match, annual contributions, expected return, and what it's really worth in today's dollars.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="retireForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="currentAge">Current age</label>
+              <div class="input-wrap">
+                <input class="input" id="currentAge" type="text" inputmode="numeric" value="30">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="retireAge">Retirement age</label>
+              <div class="input-wrap">
+                <input class="input" id="retireAge" type="text" inputmode="numeric" value="65">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="currentBalance">Current balance</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="currentBalance" type="text" inputmode="numeric" value="50000">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="annualSalary">Annual salary</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="annualSalary" type="text" inputmode="numeric" value="90000">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="contribPct">Your contribution</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="contribPct" type="text" inputmode="decimal" value="10">
+                <span class="input-wrap__affix input-wrap__affix--suffix">% of salary</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="matchPct">Employer match rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="matchPct" type="text" inputmode="decimal" value="50">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Cents matched per dollar you contribute — 50% means 50¢ per $1.</span>
+            </div>
+
+            <div class="field">
+              <label for="matchLimitPct">Match limit</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="matchLimitPct" type="text" inputmode="decimal" value="6">
+                <span class="input-wrap__affix input-wrap__affix--suffix">% of salary</span>
+              </div>
+              <span class="field__hint">Employer matches only up to this share of your salary.</span>
+            </div>
+
+            <div class="field">
+              <label for="expReturn">Expected annual return</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="expReturn" type="text" inputmode="decimal" value="7">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="inflation">Inflation rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="inflation" type="text" inputmode="decimal" value="2.5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Used to show the balance in today's purchasing power.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Projected balance at retirement</span>
+              <div class="result__figure" id="outNominal">$0</div>
+            </div>
+            <p class="center muted" style="font-size:var(--fs-sm)">
+              about <span id="outReal">$0</span> in today's dollars &middot; over <span id="outYears">0 years</span>
+            </p>
+
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Your contributions</dt><dd id="outContribTotal">$0</dd></div>
+              <div class="breakdown__row"><dt>Employer match</dt><dd id="outMatchTotal">$0</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Investment growth</dt><dd id="outGrowthTotal">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — not investment advice. Assumes level salary and a constant annual return; real markets vary.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this retirement calculator works</h2>
+      <p>This calculator projects your retirement savings one year at a time. Each year, your existing balance grows by your expected return, then that year's contributions are added — both your own (a percentage of salary) and your employer's match. It runs that loop from your current age to your retirement age, then shows two numbers that matter: the <strong>nominal balance</strong> you'll see on your statement, and the <strong>inflation-adjusted balance</strong> in today's dollars so you know what it will actually buy.</p>
+      <p>The biggest driver of the final number is usually time, not the amount you save. Because returns compound, a dollar invested at 30 has decades to grow, while a dollar invested at 55 does not. That is why starting early — even with small contributions — so often beats saving more later.</p>
+
+      <h2>Don't leave the employer match on the table</h2>
+      <p>An employer match is the closest thing to free money in personal finance. A common formula is <strong>50% of your contributions up to 6% of salary</strong>. On a $90,000 salary, contributing 6% ($5,400) earns a $2,700 employer match — an instant 50% return before the market does anything. If you contribute less than the cap, you forfeit part of that match every single year.</p>
+      <p>This calculator caps the match at the smaller of your contribution rate and the match limit, so you can see exactly how much employer money you're capturing. Try setting your contribution below the limit and watch the employer-match total fall — that gap is money you're walking away from.</p>
+
+      <h2>Why the inflation-adjusted number matters</h2>
+      <p>A projected balance of $1.5 million sounds life-changing, but if it's 35 years away, inflation will have eroded much of its purchasing power. At 2.5% inflation, prices roughly double every 28 years. The inflation-adjusted figure restates your future balance in today's dollars, giving you an honest sense of the lifestyle it could support. Use the nominal number to track your account; use the real number to plan your life.</p>
+      <p>Once you know your trajectory, tune the levers. See how raising your contribution affects your <a href="/paycheck-calculator">take-home pay</a> today, factor in any <a href="/rsu-tax-calculator">after-tax RSU income</a> you could invest, and make sure big purchases like a <a href="/mortgage-calculator">home</a> still leave room to save. Retirement projections are estimates — markets are volatile and tax rules change, so revisit your plan yearly and consult a fiduciary advisor for decisions.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How much will my 401(k) be worth at retirement?</summary><div>Your ending balance depends on your current balance, annual contributions, employer match, expected return, and years until retirement. This calculator compounds each year's growth and adds contributions to project both a nominal balance and its value in today's dollars.</div></details>
+        <details class="faq__item"><summary>How does an employer 401(k) match work?</summary><div>Employers commonly match a percentage of what you contribute, up to a limit. A typical example is 50% of your contributions up to 6% of salary. The match is free money, so contributing at least enough to get the full match is usually the highest-return move available.</div></details>
+        <details class="faq__item"><summary>What is an inflation-adjusted retirement balance?</summary><div>A future balance looks large partly because money loses purchasing power over time. The inflation-adjusted (real) balance restates that future amount in today's dollars, so you can judge what it would actually buy when you retire.</div></details>
+        <details class="faq__item"><summary>What return should I assume for retirement projections?</summary><div>A diversified stock-heavy portfolio has historically returned around 7% to 10% annually before inflation over long periods. Many planners use 6% to 7% as a conservative long-run assumption. Actual returns vary year to year, so treat any projection as an estimate.</div></details>
+        <details class="faq__item"><summary>How much should I contribute to my 401(k)?</summary><div>At minimum, contribute enough to capture the full employer match. Beyond that, a common target is 15% of income including the match. The 2026 IRS employee contribution limit is higher than prior years, so check the current cap if you contribute aggressively.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See how a higher contribution rate changes your take-home pay.</span>
+        </a>
+        <a class="card" href="/rsu-tax-calculator">
+          <span class="card__title">RSU Tax Calculator</span>
+          <span class="card__desc">Turn after-tax equity income into retirement contributions.</span>
+        </a>
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Balance saving for retirement against a monthly housing cost.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or investment advice. Retirement projections assume a constant annual return and level salary in today's dollars; real-world returns, contributions, and tax rules vary. Past performance does not guarantee future results. Consult a licensed financial advisor before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/retirement.js" defer></script>
+</body>
+</html>
