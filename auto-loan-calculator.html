@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Payment Calculator With Trade-In & Sales Tax (2026) — USFinCalc</title>
+  <meta name="description" content="Free auto loan calculator: see your true monthly car payment including sales tax, trade-in credit, and down payment. Total interest and total cost included.">
+  <link rel="canonical" href="https://usfincalc.com/auto-loan-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Car Payment Calculator With Trade-In & Sales Tax">
+  <meta property="og:description" content="Your true monthly car payment with sales tax, trade-in, and down payment.">
+  <meta property="og:url" content="https://usfincalc.com/auto-loan-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Auto Loan Calculator",
+        "url": "https://usfincalc.com/auto-loan-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Auto Loan Calculator", "item": "https://usfincalc.com/auto-loan-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does a trade-in reduce sales tax?", "acceptedAnswer": { "@type": "Answer", "text": "In most states, yes. Sales tax is charged on the vehicle price minus your trade-in value, so a trade-in lowers both the amount you finance and the tax you pay. A few states tax the full price regardless of trade-in." } },
+          { "@type": "Question", "name": "How is my car payment calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The amount financed is the vehicle price plus sales tax, minus your down payment and trade-in. That balance is amortized over your loan term at your APR to produce a fixed monthly payment." } },
+          { "@type": "Question", "name": "What is APR on a car loan?", "acceptedAnswer": { "@type": "Answer", "text": "APR is the annual percentage rate — the yearly cost of borrowing, including interest. A lower APR means a lower monthly payment and less total interest over the life of the loan." } },
+          { "@type": "Question", "name": "Is a longer loan term cheaper?", "acceptedAnswer": { "@type": "Answer", "text": "A longer term lowers your monthly payment but increases total interest paid. A 72-month loan costs less per month than a 48-month loan but more overall. Try different terms to see the trade-off." } },
+          { "@type": "Question", "name": "Should I make a down payment on a car?", "acceptedAnswer": { "@type": "Answer", "text": "A larger down payment reduces the amount financed, lowering your monthly payment and total interest. It also reduces the risk of owing more than the car is worth early in the loan." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/">US<b>Fin</b>Calc</a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li><a href="/mortgage-calculator">Mortgage</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/auto-loan-calculator" aria-current="page">Auto Loan</a></li>
+        <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+        <li><a href="/retirement-calculator">Retirement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Auto Loan Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        See your <strong>true</strong> monthly car payment — including sales tax, trade-in credit, and down payment, plus the total interest you'll pay.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="autoForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="price">Vehicle price</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="price" type="text" inputmode="numeric" value="35000">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="downAuto">Down payment</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="downAuto" type="text" inputmode="numeric" value="5000">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="tradeIn">Trade-in value</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="tradeIn" type="text" inputmode="numeric" value="3000">
+              </div>
+              <span class="field__hint">Reduces both the amount financed and, in most states, the taxable amount.</span>
+            </div>
+
+            <div class="field">
+              <label for="salesTax">Sales tax rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="salesTax" type="text" inputmode="decimal" value="7">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Your state/local vehicle sales tax rate.</span>
+            </div>
+
+            <div class="field">
+              <label for="termMonths">Loan term (months)</label>
+              <select class="input" id="termMonths">
+                <option value="36">36 months</option>
+                <option value="48">48 months</option>
+                <option value="60" selected>60 months</option>
+                <option value="72">72 months</option>
+                <option value="84">84 months</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="apr">APR (interest rate)</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="apr" type="text" inputmode="decimal" value="6">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Estimated monthly payment</span>
+              <div class="result__figure" id="outMonthlyAuto">$0.00</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Sales tax</dt><dd id="outSalesTax">$0</dd></div>
+              <div class="breakdown__row"><dt>Down + trade-in</dt><dd id="outUpfront">$0</dd></div>
+              <div class="breakdown__row"><dt>Amount financed</dt><dd id="outFinanced">$0</dd></div>
+              <div class="breakdown__row"><dt>Total interest</dt><dd id="outTotalInterestAuto">$0</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Total cost of vehicle</dt><dd id="outTotalCostAuto">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — not a loan offer. Sales tax rules vary by state.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this auto loan calculator works</h2>
+      <p>The sticker price is only part of what you actually finance. This calculator shows your <strong>true monthly car payment</strong> by accounting for the things dealerships often gloss over: sales tax, your trade-in credit, and your down payment. The result is a realistic payment and — just as important — the total interest you'll pay over the life of the loan.</p>
+      <p>Here's the math. In most states, sales tax is charged on the vehicle price <em>minus</em> your trade-in value, so trading in a car lowers your tax bill. The amount you finance is the vehicle price plus that sales tax, minus your down payment and trade-in. That balance is then amortized over your loan term at your APR to produce a fixed monthly payment.</p>
+
+      <h2>Key terms explained</h2>
+      <p><strong>Amount financed.</strong> The loan balance after your down payment and trade-in are applied and sales tax is added. This is what interest is charged on.</p>
+      <p><strong>APR.</strong> The annual percentage rate — the yearly cost of borrowing. Even a one-point difference in APR can mean hundreds or thousands of dollars over a multi-year loan.</p>
+      <p><strong>Trade-in credit.</strong> The value the dealer gives you for your current vehicle. Beyond lowering the loan, in most states it also reduces the taxable amount — a real and often-overlooked saving.</p>
+      <p><strong>Loan term.</strong> How long you take to repay, in months. Longer terms shrink the monthly payment but raise total interest, and they keep you "underwater" (owing more than the car is worth) longer.</p>
+
+      <h2>2026 car-buying reference</h2>
+      <p>Auto loan APRs vary widely by credit score and whether the car is new or used. Through 2026, well-qualified buyers have generally seen new-car APRs in the mid-single digits, with used-car rates running higher. Stretching to an 84-month loan to hit a lower monthly payment is increasingly common, but it sharply increases total interest — switch the term in the calculator to see the difference on your numbers.</p>
+      <p>Before you sign, make sure the payment fits your budget. Run your real <a href="/paycheck-calculator">take-home pay</a> first, and keep total transportation costs at a sustainable share of your income. Sales tax treatment of trade-ins varies by state, so confirm your local rules with the dealer or your state DMV.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>Does a trade-in reduce sales tax?</summary><div>In most states, yes. Sales tax is charged on the vehicle price minus your trade-in value, so a trade-in lowers both the amount you finance and the tax you pay. A few states tax the full price regardless of trade-in.</div></details>
+        <details class="faq__item"><summary>How is my car payment calculated?</summary><div>The amount financed is the vehicle price plus sales tax, minus your down payment and trade-in. That balance is amortized over your loan term at your APR to produce a fixed monthly payment.</div></details>
+        <details class="faq__item"><summary>What is APR on a car loan?</summary><div>APR is the annual percentage rate — the yearly cost of borrowing, including interest. A lower APR means a lower monthly payment and less total interest over the life of the loan.</div></details>
+        <details class="faq__item"><summary>Is a longer loan term cheaper?</summary><div>A longer term lowers your monthly payment but increases total interest paid. A 72-month loan costs less per month than a 48-month loan but more overall. Try different terms to see the trade-off.</div></details>
+        <details class="faq__item"><summary>Should I make a down payment on a car?</summary><div>A larger down payment reduces the amount financed, lowering your monthly payment and total interest. It also reduces the risk of owing more than the car is worth early in the loan.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">Check whether this car payment fits your real take-home pay.</span>
+        </a>
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Balance a car payment against your full monthly housing cost.</span>
+        </a>
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">See what saving the difference could grow to over time.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial advice. Auto loan results are estimates, not loan offers; actual APR, fees, and sales tax depend on your credit, lender, and state. Trade-in tax treatment varies by state. Verify all figures with your dealer and lender before signing.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/auto-loan.js" defer></script>
+</body>
+</html>
