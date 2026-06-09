@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mortgage Calculator With Taxes, Insurance & PMI (2026) — USFinCalc</title>
+  <meta name="description" content="Free mortgage calculator that shows your true monthly payment — full PITI with property taxes, home insurance, PMI, and HOA. Not just principal and interest.">
+  <link rel="canonical" href="https://usfincalc.com/mortgage-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Mortgage Calculator With Taxes, Insurance & PMI">
+  <meta property="og:description" content="See your true monthly payment — full PITI, not just principal and interest.">
+  <meta property="og:url" content="https://usfincalc.com/mortgage-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Mortgage Calculator",
+        "url": "https://usfincalc.com/mortgage-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Mortgage Calculator", "item": "https://usfincalc.com/mortgage-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is PITI?", "acceptedAnswer": { "@type": "Answer", "text": "PITI stands for Principal, Interest, Taxes, and Insurance — the four parts of a typical monthly mortgage payment. Many calculators only show principal and interest, which understates your true cost." } },
+          { "@type": "Question", "name": "When do I have to pay PMI?", "acceptedAnswer": { "@type": "Answer", "text": "Private mortgage insurance is usually required on conventional loans when your down payment is less than 20% of the home price. It typically falls off once you reach 20% equity." } },
+          { "@type": "Question", "name": "How is my monthly mortgage payment calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Principal and interest are calculated from the loan amount, interest rate, and term using a standard amortization formula. Property tax, home insurance, PMI, and HOA dues are then added to reach your full monthly payment." } },
+          { "@type": "Question", "name": "Does a larger down payment lower my payment?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A larger down payment reduces the loan amount, lowers monthly principal and interest, and — once you reach 20% down — removes PMI entirely." } },
+          { "@type": "Question", "name": "Are property taxes included in this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can enter property tax as an annual dollar amount or as a percentage of the home price, and it is included in your monthly PITI estimate." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/">US<b>Fin</b>Calc</a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li><a href="/mortgage-calculator" aria-current="page">Mortgage</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+        <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+        <li><a href="/retirement-calculator">Retirement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Mortgage Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        See your <strong>true</strong> monthly payment — full PITI with property taxes, home insurance, PMI, and HOA dues. Not just principal and interest.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="mortgageForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="homePrice">Home price</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="homePrice" type="text" inputmode="numeric" value="450000">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="downAmount">Down payment</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="downAmount" type="text" inputmode="numeric" value="90000">
+              </div>
+              <span class="field__hint">
+                <select class="input" id="downType" aria-label="Down payment unit" style="margin-top:var(--space-2)">
+                  <option value="$" selected>Dollar amount ($)</option>
+                  <option value="%">Percent of price (%)</option>
+                </select>
+              </span>
+            </div>
+
+            <div class="field">
+              <label for="loanTerm">Loan term (years)</label>
+              <select class="input" id="loanTerm">
+                <option value="30" selected>30 years</option>
+                <option value="20">20 years</option>
+                <option value="15">15 years</option>
+                <option value="10">10 years</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="rate">Interest rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="rate" type="text" inputmode="decimal" value="6.5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="taxAnnual">Property tax (annual)</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="taxAnnual" type="text" inputmode="numeric" value="5400">
+              </div>
+              <span class="field__hint">
+                <select class="input" id="taxType" aria-label="Property tax unit" style="margin-top:var(--space-2)">
+                  <option value="$" selected>Dollars per year ($)</option>
+                  <option value="%">Percent of price (%)</option>
+                </select>
+              </span>
+            </div>
+
+            <div class="field">
+              <label for="insurance">Home insurance (annual)</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="insurance" type="text" inputmode="numeric" value="1800">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="hoa">HOA dues (monthly)</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="hoa" type="text" inputmode="numeric" value="0">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="pmiRate">PMI rate (annual, if &lt; 20% down)</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="pmiRate" type="text" inputmode="decimal" value="0.5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Typical range 0.3%–1.5% of the loan per year. Applied only when your down payment is under 20%.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Estimated monthly payment</span>
+              <div class="result__figure" id="outMonthly">$0.00</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Principal &amp; interest</dt><dd id="outPI">$0.00</dd></div>
+              <div class="breakdown__row"><dt>Property tax</dt><dd id="outTax">$0.00</dd></div>
+              <div class="breakdown__row"><dt>Home insurance</dt><dd id="outIns">$0.00</dd></div>
+              <div class="breakdown__row" id="pmiRow" hidden><dt>PMI</dt><dd id="outPmi">$0.00</dd></div>
+              <div class="breakdown__row"><dt>HOA dues</dt><dd id="outHoa">$0.00</dd></div>
+            </dl>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Loan amount</dt><dd id="outLoanAmount">$0</dd></div>
+              <div class="breakdown__row"><dt>Down payment</dt><dd id="outDownPct">0%</dd></div>
+              <div class="breakdown__row"><dt>Total interest (full term)</dt><dd id="outTotalInterest">$0</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Total of payments (P&amp;I)</dt><dd id="outTotalPaid">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — not a loan offer or financial advice.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this mortgage calculator works</h2>
+      <p>Most mortgage calculators stop at principal and interest — the part of your payment that goes to the lender. That number alone can understate your real monthly cost by hundreds of dollars. This calculator shows full <strong>PITI</strong>: Principal, Interest, Taxes, and Insurance, plus PMI and HOA dues where they apply, so the figure you see is closer to what actually leaves your bank account each month.</p>
+      <p>Principal and interest are calculated from your loan amount, interest rate, and term using the standard amortization formula. The loan amount is your home price minus your down payment. We then add your monthly share of property taxes and home insurance, monthly HOA dues, and — if your down payment is below 20% — private mortgage insurance. The result is your estimated total monthly payment.</p>
+
+      <h2>Key terms explained</h2>
+      <p><strong>Principal &amp; interest (P&amp;I).</strong> The core loan payment. Early in the loan, most of it is interest; over time, more goes toward principal.</p>
+      <p><strong>Property tax.</strong> Set by your county or municipality, usually as a percentage of assessed value. National effective rates commonly fall between 0.3% and 2.2% of home value per year, so a local estimate matters. You can enter a dollar figure or a percentage of the price.</p>
+      <p><strong>Home insurance.</strong> Homeowners insurance protects the structure and your belongings. Lenders require it, and the annual premium is spread across your monthly payment.</p>
+      <p><strong>PMI (private mortgage insurance).</strong> Required on most conventional loans when you put down less than 20%. It protects the lender, not you, and typically costs 0.3%–1.5% of the loan per year. Once you reach 20% equity, you can usually request its removal.</p>
+      <p><strong>HOA dues.</strong> If your home is in a homeowners association, monthly dues are a real recurring cost that lenders may factor into affordability — so we include them here.</p>
+
+      <h2>2026 mortgage reference</h2>
+      <p>Mortgage rates move daily and vary by credit score, loan type, and lender. Through 2026, conventional 30-year fixed rates have generally hovered in the 6%–7% range, with 15-year fixed loans running below that. A 15-year term carries a higher monthly payment but dramatically less total interest — try switching the term in the calculator to see the difference on your numbers.</p>
+      <p>A practical rule many buyers use is to keep total PITI at or below about 28% of gross monthly income. To check that against your real take-home pay, pair this with our <a href="/paycheck-calculator">paycheck calculator</a>. Always confirm current rates and your specific property-tax rate with your lender and county before making decisions.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is PITI?</summary><div>PITI stands for Principal, Interest, Taxes, and Insurance — the four parts of a typical monthly mortgage payment. Many calculators only show principal and interest, which understates your true cost.</div></details>
+        <details class="faq__item"><summary>When do I have to pay PMI?</summary><div>Private mortgage insurance is usually required on conventional loans when your down payment is less than 20% of the home price. It typically falls off once you reach 20% equity.</div></details>
+        <details class="faq__item"><summary>How is my monthly mortgage payment calculated?</summary><div>Principal and interest are calculated from the loan amount, interest rate, and term using a standard amortization formula. Property tax, home insurance, PMI, and HOA dues are then added to reach your full monthly payment.</div></details>
+        <details class="faq__item"><summary>Does a larger down payment lower my payment?</summary><div>Yes. A larger down payment reduces the loan amount, lowers monthly principal and interest, and — once you reach 20% down — removes PMI entirely.</div></details>
+        <details class="faq__item"><summary>Are property taxes included in this calculator?</summary><div>Yes. You can enter property tax as an annual dollar amount or as a percentage of the home price, and it is included in your monthly PITI estimate.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See how much mortgage you can afford after taxes — real take-home pay by state.</span>
+        </a>
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">Balance a mortgage with long-term saving and 401k growth.</span>
+        </a>
+        <a class="card" href="/auto-loan-calculator">
+          <span class="card__title">Auto Loan Calculator</span>
+          <span class="card__desc">True monthly car cost with sales tax and trade-in.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. Mortgage results are estimates, not loan offers; actual rates, taxes, and insurance vary. Verify figures with your lender and county before making decisions, and consult a licensed professional for guidance specific to your situation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/mortgage.js" defer></script>
+</body>
+</html>
