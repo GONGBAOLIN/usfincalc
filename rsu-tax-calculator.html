@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RSU Tax Calculator — After-Tax Value & Withholding Gap (2026) — USFinCalc</title>
+  <meta name="description" content="Free RSU tax calculator: see the real after-tax value of vesting restricted stock units, and whether the 22% withholding leaves you owing more at filing.">
+  <link rel="canonical" href="https://usfincalc.com/rsu-tax-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="RSU Tax Calculator — After-Tax Value & Withholding Gap">
+  <meta property="og:description" content="See the real after-tax value of your RSUs — and the 22% under-withholding trap.">
+  <meta property="og:url" content="https://usfincalc.com/rsu-tax-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "RSU Tax Calculator",
+        "url": "https://usfincalc.com/rsu-tax-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "RSU Tax Calculator", "item": "https://usfincalc.com/rsu-tax-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How are RSUs taxed?", "acceptedAnswer": { "@type": "Answer", "text": "When RSUs vest, their full market value is treated as ordinary income — just like salary. It is subject to federal income tax, Social Security and Medicare, and state income tax in the year of vesting." } },
+          { "@type": "Question", "name": "Why might I owe more tax on my RSUs at filing?", "acceptedAnswer": { "@type": "Answer", "text": "Employers withhold federal tax on RSU income at the 22% supplemental flat rate. If your marginal tax bracket is higher than 22% — common for engineers and high earners — too little is withheld, and you owe the difference when you file." } },
+          { "@type": "Question", "name": "What is the 22% RSU withholding rate?", "acceptedAnswer": { "@type": "Answer", "text": "The IRS supplemental wage withholding rate is 22% on amounts up to $1 million, and 37% above that. Many employers use it for RSUs by default, which can under-withhold for people in the 32% or 35% brackets." } },
+          { "@type": "Question", "name": "Do RSUs get hit with Social Security and Medicare tax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RSU income is wages, so Social Security applies up to the annual wage base and Medicare applies to all of it. High earners also pay the 0.9% additional Medicare tax above the threshold." } },
+          { "@type": "Question", "name": "How can I avoid an RSU tax surprise?", "acceptedAnswer": { "@type": "Answer", "text": "Estimate your true marginal rate, compare it to the 22% withheld, and set aside the difference — or increase your withholding or make estimated tax payments. This calculator shows that gap for your situation." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/">US<b>Fin</b>Calc</a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li><a href="/mortgage-calculator">Mortgage</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+        <li><a href="/rsu-tax-calculator" aria-current="page">RSU Tax</a></li>
+        <li><a href="/retirement-calculator">Retirement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>RSU Tax Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        See the <strong>real</strong> after-tax value of your vesting RSUs — and whether the standard 22% withholding leaves you owing more at tax time.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="rsuForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="shares">Shares vesting</label>
+              <div class="input-wrap">
+                <input class="input" id="shares" type="text" inputmode="numeric" value="500">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="vestPrice">Share price at vesting</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="vestPrice" type="text" inputmode="decimal" value="200">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="baseSalary">Annual base salary</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="baseSalary" type="text" inputmode="numeric" value="300000">
+              </div>
+              <span class="field__hint">RSU income stacks on top of your salary, so your base determines the marginal rate.</span>
+            </div>
+
+            <div class="field">
+              <label for="rsuFilingStatus">Filing status</label>
+              <select class="input" id="rsuFilingStatus">
+                <option value="single" selected>Single</option>
+                <option value="married">Married filing jointly</option>
+                <option value="head">Head of household</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="rsuState">State</label>
+              <select class="input" id="rsuState" aria-label="State">
+                <option value="CA">Loading states…</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">After-tax RSU value</span>
+              <div class="result__figure" id="outRsuNet">$0</div>
+            </div>
+            <p class="center muted" style="font-size:var(--fs-sm)">
+              on <span id="outRsuGross">$0</span> gross &middot; effective rate <span id="outRsuEffRate">0%</span>
+            </p>
+
+            <div class="result" style="margin-top:var(--space-4)">
+              <span class="result__label" id="outGapLabel">Withholding gap</span>
+              <div class="result__figure result__figure--cost" id="outGap">$0</div>
+            </div>
+            <p class="estimate-note" id="gapNote" hidden>
+              Your employer withholds 22%, but your marginal rate is higher — set this amount aside or increase withholding to avoid a surprise at filing.
+            </p>
+
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Federal withheld (22%)</dt><dd id="outWithheld">$0</dd></div>
+              <div class="breakdown__row"><dt>Actual federal tax</dt><dd id="outActualFed">$0</dd></div>
+              <div class="breakdown__row"><dt>Social Security</dt><dd id="outRsuSS">$0</dd></div>
+              <div class="breakdown__row"><dt>Medicare</dt><dd id="outRsuMedicare">$0</dd></div>
+              <div class="breakdown__row"><dt>State income tax</dt><dd id="outRsuState">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — not tax advice. Assumes RSUs taxed as ordinary income at vesting.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How RSU taxes really work</h2>
+      <p>When your restricted stock units vest, the IRS treats their full market value as ordinary income — exactly like a cash bonus. That income is taxed at your federal marginal rate, hit with Social Security and Medicare, and taxed again by most states. This calculator stacks your RSU income on top of your base salary to find the <strong>real marginal rate</strong>, then compares it to what your employer actually withholds.</p>
+      <p>Here is the part that catches people off guard. Employers withhold federal tax on RSU income at the <strong>22% supplemental flat rate</strong> (37% on amounts over $1 million). If your salary already puts you in the 32% or 35% bracket — common for software engineers at large tech companies — then 22% is far too little. The shortfall doesn't disappear; it shows up as a balance due when you file.</p>
+
+      <h2>The 22% under-withholding trap</h2>
+      <p>Say you earn a $300,000 base salary and $100,000 of RSUs vest. Your employer withholds $22,000 in federal tax (22%). But because that $100,000 stacks on top of your salary, it is taxed at 35% — about $35,000. The $13,000 difference is what you'll owe at filing. Multiply that across several vesting events and the surprise can be severe.</p>
+      <p>The fix is simple once you see the number: set aside the gap this calculator shows, increase your W-4 withholding, or make quarterly estimated payments. Knowing the figure in advance is the whole point.</p>
+
+      <h2>RSUs, FICA, and state tax</h2>
+      <p>RSU income is wages, so payroll taxes apply. Social Security (6.2%) only applies up to the annual wage base — if your salary already exceeds it, your RSUs owe no additional Social Security. Medicare (1.45%) applies to every dollar, and high earners pay an extra 0.9% above $200,000 (single) or $250,000 (married). State income tax depends on where you live; in no-income-tax states like Washington and Texas, your RSUs escape state tax entirely, which is a meaningful advantage for tech workers there.</p>
+      <p>Once you know your after-tax RSU value, the smart move is to put it to work. See how it fits your paycheck with our <a href="/paycheck-calculator">take-home pay calculator</a>, or turn it into long-term growth with our <a href="/retirement-calculator">retirement calculator</a>. Equity compensation is complex — confirm your specific situation with a CPA.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How are RSUs taxed?</summary><div>When RSUs vest, their full market value is treated as ordinary income — just like salary. It is subject to federal income tax, Social Security and Medicare, and state income tax in the year of vesting.</div></details>
+        <details class="faq__item"><summary>Why might I owe more tax on my RSUs at filing?</summary><div>Employers withhold federal tax on RSU income at the 22% supplemental flat rate. If your marginal tax bracket is higher than 22% — common for engineers and high earners — too little is withheld, and you owe the difference when you file.</div></details>
+        <details class="faq__item"><summary>What is the 22% RSU withholding rate?</summary><div>The IRS supplemental wage withholding rate is 22% on amounts up to $1 million, and 37% above that. Many employers use it for RSUs by default, which can under-withhold for people in the 32% or 35% brackets.</div></details>
+        <details class="faq__item"><summary>Do RSUs get hit with Social Security and Medicare tax?</summary><div>Yes. RSU income is wages, so Social Security applies up to the annual wage base and Medicare applies to all of it. High earners also pay the 0.9% additional Medicare tax above the threshold.</div></details>
+        <details class="faq__item"><summary>How can I avoid an RSU tax surprise?</summary><div>Estimate your true marginal rate, compare it to the 22% withheld, and set aside the difference — or increase your withholding or make estimated tax payments. This calculator shows that gap for your situation.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">Turn your after-tax RSU income into a long-term retirement plan.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See your base-salary take-home pay by state.</span>
+        </a>
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Planning to buy with equity income? Check your true monthly cost.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or tax advice. RSU tax results assume units are taxed as ordinary income at vesting and use 2026 federal figures with simplified state rates. Equity compensation, withholding, and state rules vary; consult a licensed CPA before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/data/federal-tax.js" defer></script>
+  <script src="/assets/js/data/state-tax.js" defer></script>
+  <script src="/assets/js/rsu-tax.js" defer></script>
+</body>
+</html>
