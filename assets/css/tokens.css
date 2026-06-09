@@ -1,0 +1,113 @@
+/* ==========================================================================
+   USFinCalc — Design Tokens
+   Single source of truth for color, type, spacing, radius, shadow, z-index.
+   Dark mode via prefers-color-scheme. All text pairs meet WCAG AA.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand color ---- */
+  --color-primary:        #1a5c8a;   /* trust blue */
+  --color-primary-hover:  #14496e;
+  --color-primary-contrast:#ffffff;
+  --color-accent:         #2e7d4f;   /* growth green — positive results */
+  --color-accent-hover:   #246340;
+  --color-warning:        #b45309;   /* amber — cost/debt */
+
+  /* ---- Surfaces & text (light) ---- */
+  --color-bg:        #f8fafc;        /* page background */
+  --color-surface:   #ffffff;        /* cards */
+  --color-surface-2: #f1f5f9;        /* subtle fills, ad placeholder */
+  --color-border:    #e2e8f0;
+  --color-text:      #0f172a;        /* near-black, authority */
+  --color-muted:     #475569;        /* AA on white (7.0:1) */
+  --color-text-on-primary: #ffffff;
+
+  /* ---- Focus ring (a11y, non-negotiable) ---- */
+  --color-focus: #1a73e8;
+
+  /* ---- Typography ---- */
+  --font-ui:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                 Roboto, Helvetica, Arial, sans-serif;
+  --font-figure: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+
+  /* Fluid type scale — mobile-first, clamps up on larger viewports */
+  --fs-xs:   0.8125rem;                          /* 13px */
+  --fs-sm:   0.875rem;                           /* 14px */
+  --fs-base: 1rem;                               /* 16px — never smaller for body */
+  --fs-md:   1.125rem;                           /* 18px */
+  --fs-lg:   clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-xl:   clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --fs-2xl:  clamp(1.875rem, 1.4rem + 2vw, 2.75rem);   /* H1 */
+  --fs-figure: clamp(2rem, 1.4rem + 3vw, 3.25rem);     /* result numbers */
+
+  --lh-tight: 1.15;
+  --lh-snug:  1.35;
+  --lh-base:  1.6;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* ---- Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Shadow ---- */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
+
+  /* ---- Layout ---- */
+  --nav-height: 60px;
+  --container-max: 1100px;
+  --content-max: 720px;       /* readable measure for prose */
+
+  /* ---- Ad slot reserved heights (CLS guard — see master context) ---- */
+  --ad-slot-banner: 100px;    /* slots 1 & 3 */
+  --ad-slot-rect:   280px;    /* slot 2 */
+
+  /* ---- z-index scale ---- */
+  --z-nav: 100;
+  --z-overlay: 200;
+}
+
+/* ==========================================================================
+   Dark mode — parallel token set, AA verified
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary:        #4ba3d3;
+    --color-primary-hover:  #6bb6de;
+    --color-primary-contrast:#0b1220;
+    --color-accent:         #4caf7a;
+    --color-accent-hover:   #63c08f;
+    --color-warning:        #f0a35e;
+
+    --color-bg:        #0b1220;
+    --color-surface:   #131c2e;
+    --color-surface-2: #1c2740;
+    --color-border:    #2a3650;
+    --color-text:      #e8eef7;
+    --color-muted:     #a3b1c6;        /* AA on dark surface */
+    --color-text-on-primary: #0b1220;
+
+    --color-focus: #7cb8f5;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+}

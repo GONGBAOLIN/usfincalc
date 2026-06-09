@@ -1,0 +1,8 @@
+# USFinCalc robots.txt
+User-agent: *
+Allow: /
+
+# Block nothing of value; allow all crawlers.
+Disallow: /assets/fonts/README.md
+
+Sitemap: https://usfincalc.com/sitemap.xml

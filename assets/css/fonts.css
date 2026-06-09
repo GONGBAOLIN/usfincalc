@@ -1,0 +1,58 @@
+/* ==========================================================================
+   USFinCalc — Self-hosted fonts
+   NO Google Fonts CDN (master context: zero external calls).
+   font-display:swap + size-adjust to minimize CLS from font swap.
+
+   REQUIRED BINARIES (download separately, place in /assets/fonts/):
+     inter-regular.woff2   (400)
+     inter-medium.woff2    (500)
+     inter-semibold.woff2  (600)
+     inter-bold.woff2      (700)
+     dmserifdisplay-regular.woff2 (400)
+
+   Source (download once, commit the .woff2 files):
+     Inter            — https://github.com/rsms/inter (OFL)
+     DM Serif Display — https://fonts.google.com/specimen/DM+Serif+Display (OFL)
+   Subset to Latin to keep total ~40-60KB. Until binaries are added, the
+   system fallback stack in --font-ui / --font-figure renders cleanly.
+   ========================================================================== */
+
+/* ---- Inter (UI) ---- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/inter-regular.woff2') format('woff2');
+  size-adjust: 100%;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/inter-medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/inter-semibold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/inter-bold.woff2') format('woff2');
+}
+
+/* ---- DM Serif Display (result figures + H1) ---- */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/dmserifdisplay-regular.woff2') format('woff2');
+}
