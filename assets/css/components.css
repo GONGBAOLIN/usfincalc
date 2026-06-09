@@ -348,3 +348,15 @@ select.input {
 .faq__item summary::after { content: "+"; color: var(--color-primary); font-size: var(--fs-lg); }
 .faq__item[open] summary::after { content: "\2212"; }
 .faq__item > div { padding-bottom: var(--space-4); color: var(--color-muted); }
+
+/* ---- Breadcrumb ---- */
+.breadcrumb {
+  color: var(--color-muted);
+  margin-bottom: var(--space-2);
+}
+.breadcrumb a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: var(--color-primary); text-decoration: underline; }
+.breadcrumb span { color: var(--color-text); }

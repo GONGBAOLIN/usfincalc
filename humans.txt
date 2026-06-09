@@ -1,0 +1,12 @@
+/* TEAM */
+  Site: USFinCalc
+  Contact: hello [at] usfincalc.com
+  Location: United States
+
+/* SITE */
+  Purpose: Free US personal-finance calculators that show the real number —
+           mortgage PITI, take-home pay by state, RSU tax, auto loan, retirement.
+  Standards: HTML5, CSS3, vanilla ES6+ JavaScript
+  Components: No frameworks, no build step, no client-side storage
+  Software: Static site hosted on Cloudflare Pages
+  Last update: 2026-06-10
