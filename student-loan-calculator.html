@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Loan Payoff Calculator with Extra Payments — USFinCalc</title>
+  <meta name="description" content="Free student loan calculator: your standard monthly payment, total interest, and how much interest and time you save by paying extra each month.">
+  <link rel="canonical" href="https://usfincalc.com/student-loan-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Student Loan Payoff Calculator With Extra Payments">
+  <meta property="og:description" content="Your standard payment, total interest, and the interest and time saved by paying extra.">
+  <meta property="og:url" content="https://usfincalc.com/student-loan-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Student Loan Calculator",
+        "url": "https://usfincalc.com/student-loan-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Student Loan Calculator", "item": "https://usfincalc.com/student-loan-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How is the standard student loan payment calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The federal Standard Repayment Plan amortizes your balance into fixed monthly payments over a set term — 10 years (120 months) by default. The payment is the amount that fully pays off the balance plus interest by the end of the term at your interest rate." } },
+          { "@type": "Question", "name": "How does paying extra each month help?", "acceptedAnswer": { "@type": "Answer", "text": "Every extra dollar goes straight to principal, so less interest accrues in the months that follow. This both shortens your payoff time and reduces the total interest you pay. There is no federal prepayment penalty on student loans." } },
+          { "@type": "Question", "name": "Is there a penalty for paying off student loans early?", "acceptedAnswer": { "@type": "Answer", "text": "No. Federal student loans (and nearly all private ones) have no prepayment penalty. You can pay extra or pay the balance in full at any time, and you only ever owe the remaining principal plus interest accrued to that date." } },
+          { "@type": "Question", "name": "Does this calculator cover income-driven repayment?", "acceptedAnswer": { "@type": "Answer", "text": "No. This tool models the fixed standard repayment schedule. Income-driven plans (IBR, PAYE, SAVE) set payments as a share of your discretionary income and can lead to forgiveness; their math is different and depends on income and family size." } },
+          { "@type": "Question", "name": "Should I pay extra on student loans or invest?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your loan's interest rate versus your expected investment return, and your tolerance for risk. Paying off a high-rate loan is a guaranteed return equal to the rate; investing may return more but is not guaranteed. Many people do some of both." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li><a href="/mortgage-calculator">Mortgage</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+        <li><a href="/student-loan-calculator" aria-current="page">Student Loan</a></li>
+        <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+        <li><a href="/retirement-calculator">Retirement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Student Loan Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        See your standard monthly payment and total interest — then find out how much you save by paying a little <strong>extra</strong> each month.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="loanForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="balance">Loan balance</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="balance" type="text" inputmode="numeric" value="30000">
+              </div>
+              <span class="field__hint">Total amount you currently owe.</span>
+            </div>
+
+            <div class="field">
+              <label for="intRate">Interest rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="intRate" type="text" inputmode="decimal" value="6">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Annual rate. Federal loans use a fixed rate set at disbursement.</span>
+            </div>
+
+            <div class="field">
+              <label for="termYears">Repayment term (years)</label>
+              <select class="input" id="termYears">
+                <option value="10" selected>10 years (standard)</option>
+                <option value="15">15 years</option>
+                <option value="20">20 years</option>
+                <option value="25">25 years</option>
+              </select>
+              <span class="field__hint">The federal Standard Plan is 10 years.</span>
+            </div>
+
+            <div class="field">
+              <label for="extra">Extra monthly payment</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="extra" type="text" inputmode="numeric" value="100">
+              </div>
+              <span class="field__hint">Optional. Paid on top of the standard payment, straight to principal.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Standard monthly payment</span>
+              <div class="result__figure" id="outMonthly">$0.00</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Payoff time with extra</dt><dd id="outPayoffWith">0m</dd></div>
+              <div class="breakdown__row"><dt>Total interest (standard)</dt><dd id="outInterestBase">$0</dd></div>
+              <div class="breakdown__row"><dt>Total interest (with extra)</dt><dd id="outInterestWith">$0</dd></div>
+              <div class="breakdown__row"><dt>Time saved</dt><dd id="outTimeSaved">0m</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Interest saved</dt><dd id="outInterestSaved">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — assumes a fixed rate and on-time payments. Not a loan offer.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this student loan calculator works</h2>
+      <p>This calculator does two things. First, it shows your <strong>standard monthly payment</strong> — the fixed amount that pays off your balance plus interest over your chosen term, the same way the federal Standard Repayment Plan works on a 10-year (120-month) schedule. Second, and more usefully, it shows what happens when you pay a little <strong>extra</strong> each month.</p>
+      <p>The math behind extra payments is simple but powerful. Your loan accrues interest on the outstanding balance every month. When you pay more than the scheduled amount, the extra goes straight to principal, so the balance drops faster and less interest accrues in every month that follows. The result is a shorter payoff and a smaller total interest bill — often by thousands of dollars.</p>
+
+      <h2>Standard vs. paying extra</h2>
+      <p>On a $30,000 balance at 6% over the standard 10 years, the payment is about $333 a month and you'd pay roughly $9,970 in interest. Add just $100 a month and you pay the loan off almost three years early and save over $3,000 in interest. Because there is <strong>no prepayment penalty</strong> on federal student loans, every extra dollar works in your favor with no downside on the loan itself.</p>
+
+      <h2>Key terms explained</h2>
+      <p><strong>Standard Repayment Plan.</strong> The default federal plan: fixed payments over 10 years. It costs more per month than longer or income-driven plans but pays the least total interest.</p>
+      <p><strong>Principal vs. interest.</strong> Principal is the amount you borrowed; interest is the cost of borrowing it. Early in repayment, a large share of each payment goes to interest — which is exactly why extra principal payments early on save the most.</p>
+      <p><strong>Extra payment.</strong> Any amount above your required payment. Tell your servicer to apply it to principal (not to "pay ahead" on the next bill) to get the full interest-saving effect.</p>
+
+      <h2>What this calculator does not model</h2>
+      <p>To stay clear and broadly accurate, this tool models a single fixed-rate loan on the standard schedule. It does <em>not</em> model income-driven repayment plans (IBR, PAYE, SAVE), loan forgiveness, interest capitalization after a grace period or deferment, or the differences between federal and private loans. Those depend heavily on your income, family size, and loan type. For decisions involving those programs, check the official details at <a href="https://studentaid.gov/" rel="nofollow noopener" target="_blank">studentaid.gov</a> or speak with your loan servicer.</p>
+      <p>Deciding whether to throw extra money at loans or elsewhere? Run your real <a href="/paycheck-calculator">take-home pay</a> to see what's affordable, and weigh high-rate debt against long-term <a href="/retirement-calculator">retirement growth</a> before committing.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How is the standard student loan payment calculated?</summary><div>The federal Standard Repayment Plan amortizes your balance into fixed monthly payments over a set term — 10 years (120 months) by default. The payment is the amount that fully pays off the balance plus interest by the end of the term at your interest rate.</div></details>
+        <details class="faq__item"><summary>How does paying extra each month help?</summary><div>Every extra dollar goes straight to principal, so less interest accrues in the months that follow. This both shortens your payoff time and reduces the total interest you pay. There is no federal prepayment penalty on student loans.</div></details>
+        <details class="faq__item"><summary>Is there a penalty for paying off student loans early?</summary><div>No. Federal student loans (and nearly all private ones) have no prepayment penalty. You can pay extra or pay the balance in full at any time, and you only ever owe the remaining principal plus interest accrued to that date.</div></details>
+        <details class="faq__item"><summary>Does this calculator cover income-driven repayment?</summary><div>No. This tool models the fixed standard repayment schedule. Income-driven plans (IBR, PAYE, SAVE) set payments as a share of your discretionary income and can lead to forgiveness; their math is different and depends on income and family size.</div></details>
+        <details class="faq__item"><summary>Should I pay extra on student loans or invest?</summary><div>It depends on your loan's interest rate versus your expected investment return, and your tolerance for risk. Paying off a high-rate loan is a guaranteed return equal to the rate; investing may return more but is not guaranteed. Many people do some of both.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See the real take-home pay you'd put toward extra payments.</span>
+        </a>
+        <a class="card" href="/auto-loan-calculator">
+          <span class="card__title">Auto Loan Calculator</span>
+          <span class="card__desc">Compare payoff strategy on another common installment loan.</span>
+        </a>
+        <a class="card" href="/guides/student-loan-payoff-strategies">
+          <span class="card__title">Guide: Student Loan Payoff Strategies</span>
+          <span class="card__desc">Avalanche vs. snowball, and when extra payments win.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial advice. Student loan results assume a fixed interest rate and on-time payments, and exclude income-driven plans, forgiveness, fees, and interest capitalization. Verify your terms with your loan servicer and studentaid.gov before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/student-loan.js" defer></script>
+</body>
+</html>
