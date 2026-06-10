@@ -84,17 +84,33 @@
 
 ## 5. AdSense 申请前检查清单
 
-- [ ] 内容原创、有实质价值（✅ 19 页，单页 ≥740 字）
-- [ ] 必备法务页：隐私政策 / 服务条款 / 免责声明（✅）
-- [ ] 清晰导航 + 页脚（✅ nav + footer 全站一致）
-- [ ] 隐私政策含第三方广告 cookie 说明 + 退出链接（✅）
-- [ ] Consent Mode v2 默认 denied（✅）
-- [ ] 无版权侵权 / 无禁止内容（✅ 全原创）
-- [ ] 域名可正常访问、HTTPS、无大面积死链（部署后复核）
-- [ ] About/Contact 真实可联系（⚠️ 待 P0-1 补真人署名）
-- [ ] sitemap 提交 Search Console（DNS TXT 验证 → 提交 sitemap.xml）
+> 2026-06-10 全站核查结论：技术与内容面**零红项，可申请**。
 
-> 注：AdSense 不强制要求最低流量，但有真实访问更稳妥。可在 Search Console 收录后再提交，或并行提交。
+- [x] 内容原创、有实质价值（19 页，单页 ≥740 字）
+- [x] 必备法务页：隐私政策 / 服务条款 / 免责声明（含运营方 WisePath Technology LLC）
+- [x] 清晰导航 + 页脚（nav + footer 全站一致，无孤儿页）
+- [x] 隐私政策含第三方广告 cookie 说明 + 退出链接
+- [x] Consent Mode v2 默认 denied
+- [x] 无版权侵权 / 无禁止内容（全原创）
+- [x] 无死链（29 个站内链接全部有对应文件）
+- [x] sitemap 与页面一一对应（18:18），每页唯一 canonical + title + description
+- [x] About/Contact 真实可联系（具名作者 Gong Baolin + LinkedIn + WisePath LLC）
+- [ ] 本次部署生效后复核 usfincalc.com（About 署名显示、favicon 更新、HTTPS 正常）
+- [ ] DNS TXT 验证 → Search Console 提交 sitemap.xml（建议申请前或并行）
+
+> 注：AdSense 不强制要求最低流量，但有真实访问更稳妥。最优时机：本次部署生效 + sitemap 提交后即可提交申请。审核 1–14 天，期间可并行开发新计算器。
+
+---
+
+## 5b. AdSense 通过后激活步骤（⚠️ 通过后立刻执行，否则广告不投放）
+
+获得真实 publisher ID（`ca-pub-XXXXXXXXXXXXXXXX`）后，三处同步修改：
+
+1. **`/ads.txt`** — 把占位行的 `pub-XXXXXXXXXXXXXXXX` 替换为真实 ID（保留 `google.com, pub-..., DIRECT, f08c47fec0942fa0` 格式）。缺这行广告不投放，且 Search Console 会报 ads.txt 警告。
+2. **`/assets/js/ads.js`** — 设 `PUBLISHER_ID = 'ca-pub-...'`（真实 ID）+ `ENABLED = true`。
+3. **各页 `.ad-slot`** — 把 `data-ad-slot="0000000000"` 替换为 AdSense 后台的真实 slot ID（每个广告单元一个），或改用 Auto Ads。
+
+> ads.js 文件头注释也记录了这套激活步骤，与此处保持一致。激活后用浏览器实测：同意横幅 → Accept → 广告脚本注入 → 广告位渲染。
 
 ---
 
