@@ -71,6 +71,11 @@
 2. Roth vs Traditional IRA Calculator
 3. Home Affordability Calculator（购房承受力）
 4. Budget Calculator（50/30/20）
+5. HSA Contribution / Tax-Savings Calculator（健康储蓄账户，L4 高 CPC）
+6. RSU vs ISO / 股权激励对比（避开红海，搜索意图明确）
+7. Estate / Inheritance Tax Calculator（遗产税，长尾高 CPC）
+8. "How much house can I afford by state"（州维度长尾，避开 mortgage 红海词）
+- **避开红海词**：mortgage/paycheck calculator 已被 NerdWallet/Bankrate 锁死；优先做长尾 + 跨州/对比型工具，搜索意图明确且竞争低、CPC 高。
 - 每个配 1–2 篇长尾 guide，维持"工具+内容"闭环范式。
 - **验收**：每个新计算器达到现有计算器同等标准（字数、schema、内链、数学验证）。
 
