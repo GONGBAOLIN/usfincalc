@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>529 College Savings Calculator — Will You Have Enough? — USFinCalc</title>
+  <meta name="description" content="Free 529 college savings calculator. Project your plan's balance at matriculation against the inflated cost of a degree, and see the monthly amount to fully fund it.">
+  <link rel="canonical" href="https://usfincalc.com/529-college-savings-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="529 College Savings Calculator — Will You Have Enough?">
+  <meta property="og:description" content="Project a 529 plan's growth against the rising cost of college, and find the monthly contribution to close the gap.">
+  <meta property="og:url" content="https://usfincalc.com/529-college-savings-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "529 College Savings Calculator",
+        "url": "https://usfincalc.com/529-college-savings-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "529 College Savings Calculator", "item": "https://usfincalc.com/529-college-savings-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a 529 plan?", "acceptedAnswer": { "@type": "Answer", "text": "A 529 is a tax-advantaged investment account for education. Contributions grow tax-deferred, and withdrawals are federal-income-tax-free when used for qualified education expenses like tuition, fees, books, and room and board. Many states also offer a deduction or credit for contributions." } },
+          { "@type": "Question", "name": "How much should I save in a 529 each month?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your child's age, how much you've already saved, your expected investment return, and the type of school. This calculator projects your current plan against the inflated cost of college and shows the monthly contribution needed to fully fund your goal." } },
+          { "@type": "Question", "name": "What return should I assume for a 529?", "acceptedAnswer": { "@type": "Answer", "text": "529 plans typically hold diversified stock and bond funds, often in age-based portfolios that grow more conservative as college nears. A long-run assumption of 5–7% before inflation is common, but younger children can take more equity risk while accounts near matriculation are usually de-risked, lowering the expected return." } },
+          { "@type": "Question", "name": "Why does college cost grow faster than regular inflation?", "acceptedAnswer": { "@type": "Answer", "text": "College costs have historically risen faster than the general inflation rate — often around 5% per year. That is why projecting today's tuition forward matters: a degree that costs $30,000 a year now can cost far more by the time a young child enrolls. This calculator inflates each future college year separately." } },
+          { "@type": "Question", "name": "What happens to leftover 529 money?", "acceptedAnswer": { "@type": "Answer", "text": "Unused funds can be kept for graduate school, transferred to another eligible family member, or — under current federal rules and within annual and lifetime limits — rolled into a Roth IRA for the beneficiary. Non-qualified withdrawals of earnings are taxed and generally face a 10% penalty." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>529 College Savings Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        Will your 529 plan cover college? This projects your plan's balance at <strong>matriculation</strong> against the <strong>inflated cost</strong> of a degree — and shows the monthly contribution to close any gap.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="csForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field field--inline">
+              <div>
+                <label for="childAge">Child's age now</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="childAge" type="text" inputmode="numeric" value="3">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">yr</span>
+                </div>
+              </div>
+              <div>
+                <label for="collegeAge">Age at college start</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="collegeAge" type="text" inputmode="numeric" value="18">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">yr</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="collegeYears">Years of college to fund</label>
+              <select class="input" id="collegeYears">
+                <option value="4" selected>4 years</option>
+                <option value="2">2 years</option>
+                <option value="5">5 years</option>
+                <option value="6">6 years (incl. grad)</option>
+              </select>
+              <span class="field__hint">Most bachelor's degrees take four years.</span>
+            </div>
+
+            <div class="field">
+              <label for="currentSavings">Current 529 balance</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="currentSavings" type="text" inputmode="numeric" value="10000">
+              </div>
+              <span class="field__hint">What you've saved so far.</span>
+            </div>
+
+            <div class="field">
+              <label for="monthlyContribution">Monthly contribution</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="monthlyContribution" type="text" inputmode="numeric" value="300">
+              </div>
+              <span class="field__hint">What you add each month from now on.</span>
+            </div>
+
+            <div class="field">
+              <label for="expectedReturn">Expected annual return</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="expectedReturn" type="text" inputmode="decimal" value="6">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Long-run investment growth, before inflation.</span>
+            </div>
+
+            <div class="field">
+              <label for="annualCostNow">Cost of one year today</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="annualCostNow" type="text" inputmode="numeric" value="30000">
+              </div>
+              <span class="field__hint">Tuition, fees, room &amp; board in today's dollars.</span>
+            </div>
+
+            <div class="field">
+              <label for="costInflation">College cost inflation</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="costInflation" type="text" inputmode="decimal" value="5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Education costs have risen ≈ 5%/yr historically.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Projected balance at college</span>
+              <div class="result__figure" id="outProjSavings">$0</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Projected total cost</dt><dd id="outProjCost">$0</dd></div>
+              <div class="breakdown__row"><dt>Savings goal (at start)</dt><dd id="outGoalNow">$0</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Surplus / shortfall</dt><dd id="outGap">$0</dd></div>
+              <div class="breakdown__row"><dt>Coverage</dt><dd id="outCoverage">0%</dd></div>
+              <div class="breakdown__row"><dt>Monthly to fully fund</dt><dd id="outRequiredMonthly">$0</dd></div>
+            </dl>
+            <p class="estimate-note" id="csNote">Enter your details to project your 529 plan.</p>
+            <p class="estimate-note">Estimate only — actual returns and college costs vary. Not investment advice.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this 529 calculator works</h2>
+      <p>Saving for college means winning a race between two compounding curves: your <strong>investment growth</strong> and the <strong>rising cost of tuition</strong>. This calculator models both. It grows your current 529 balance and your monthly contributions to the year your child starts school, then compares that projected balance to what a degree will actually cost by then.</p>
+      <p>Your current savings compound at your expected annual return, and each monthly contribution is treated as an ordinary annuity that grows until matriculation. On the cost side, today's annual price is inflated separately for each future college year — so a four-year degree starting fifteen years from now reflects fifteen-plus years of education inflation, not one.</p>
+
+      <h2>The savings goal, explained</h2>
+      <p>You don't need the entire four-year cost saved on day one of college. The balance keeps earning during the college years while it's drawn down. So the calculator computes a <strong>goal at matriculation</strong>: the lump sum that, left invested at your expected return, exactly covers each year's bill as it comes due. The first year is paid immediately; later years are discounted back because that money keeps growing a little longer. This is why the goal is lower than the raw projected total cost.</p>
+
+      <h2>Surplus, shortfall, and coverage</h2>
+      <p>Comparing your projected balance to the goal gives three useful numbers. <strong>Coverage</strong> is the percentage of the goal your current plan is on track to meet. The <strong>surplus or shortfall</strong> is the dollar gap. And the <strong>monthly to fully fund</strong> figure solves the problem in reverse: holding your current balance fixed, what monthly contribution would land you exactly on the goal? If you're behind, that number is your target; if you're ahead, you have room to ease off or aim higher.</p>
+
+      <h2>Why college cost inflation matters so much</h2>
+      <p>General prices have grown around 2–3% a year, but published college costs have historically climbed closer to 5%. Over the long horizon of a young child's college fund, that gap dominates the result. A small change to the inflation assumption moves the goal substantially, which is why it's a separate input here rather than a hidden constant. If your child will attend an in-state public school, lower both the cost and possibly the inflation rate; for private colleges, raise them.</p>
+
+      <h2>Putting it in context</h2>
+      <p>A 529 is one piece of a household financial plan. Make sure college savings aren't crowding out retirement — you can borrow for college but not for retirement, so check your <a href="/retirement-calculator">retirement calculator</a> first. If grandparents or relatives plan to help, factor in gift-tax basics with the <a href="/capital-gains-calculator">capital gains and investment guide</a>. And if you'll still need loans to fill a gap, our <a href="/student-loan-calculator">student loan calculator</a> shows what those payments would look like after graduation.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is a 529 plan?</summary><div>A 529 is a tax-advantaged investment account for education. Contributions grow tax-deferred, and withdrawals are federal-income-tax-free when used for qualified education expenses like tuition, fees, books, and room and board. Many states also offer a deduction or credit for contributions.</div></details>
+        <details class="faq__item"><summary>How much should I save in a 529 each month?</summary><div>It depends on your child's age, how much you've already saved, your expected investment return, and the type of school. This calculator projects your current plan against the inflated cost of college and shows the monthly contribution needed to fully fund your goal.</div></details>
+        <details class="faq__item"><summary>What return should I assume for a 529?</summary><div>529 plans typically hold diversified stock and bond funds, often in age-based portfolios that grow more conservative as college nears. A long-run assumption of 5–7% before inflation is common, but younger children can take more equity risk while accounts near matriculation are usually de-risked, lowering the expected return.</div></details>
+        <details class="faq__item"><summary>Why does college cost grow faster than regular inflation?</summary><div>College costs have historically risen faster than the general inflation rate — often around 5% per year. That is why projecting today's tuition forward matters: a degree that costs $30,000 a year now can cost far more by the time a young child enrolls. This calculator inflates each future college year separately.</div></details>
+        <details class="faq__item"><summary>What happens to leftover 529 money?</summary><div>Unused funds can be kept for graduate school, transferred to another eligible family member, or — under current federal rules and within annual and lifetime limits — rolled into a Roth IRA for the beneficiary. Non-qualified withdrawals of earnings are taxed and generally face a 10% penalty.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">Fund retirement first — then college. See your trajectory.</span>
+        </a>
+        <a class="card" href="/student-loan-calculator">
+          <span class="card__title">Student Loan Calculator</span>
+          <span class="card__desc">What loan payments look like if savings fall short.</span>
+        </a>
+        <a class="card" href="/capital-gains-calculator">
+          <span class="card__title">Capital Gains Tax Calculator</span>
+          <span class="card__desc">Tax on taxable investments outside a 529.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or investment advice. Projected 529 balances depend on investment returns and college-cost inflation, both of which vary and are not guaranteed. Consult a licensed financial professional and your plan documents before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/college-savings.js" defer></script>
+</body>
+</html>
