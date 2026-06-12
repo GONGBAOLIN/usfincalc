@@ -72,5 +72,13 @@ window.USFC_FEDERAL_2026 = {
   niit: {
     rate: 0.038,
     threshold: { single: 200000, married: 250000, head: 200000 }
+  },
+
+  // 2026 HSA contribution limits. Catch-up is for age 55+.
+  // Source: IRS Rev. Proc. 2025-19.
+  hsa: {
+    selfOnly: 4400,
+    family: 8750,
+    catchUp: 1000
   }
 };

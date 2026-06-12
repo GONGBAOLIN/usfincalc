@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSA Tax Savings Calculator — Triple Tax Advantage — USFinCalc</title>
+  <meta name="description" content="Free HSA tax savings calculator. See your first-year federal, FICA, and state tax savings from funding a Health Savings Account, plus tax-free growth over time. 2026 limits.">
+  <link rel="canonical" href="https://usfincalc.com/hsa-tax-savings-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="HSA Tax Savings Calculator — Triple Tax Advantage">
+  <meta property="og:description" content="Federal, FICA, and state tax savings from an HSA — plus decades of tax-free growth. 2026 contribution limits.">
+  <meta property="og:url" content="https://usfincalc.com/hsa-tax-savings-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "HSA Tax Savings Calculator",
+        "url": "https://usfincalc.com/hsa-tax-savings-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "HSA Tax Savings Calculator", "item": "https://usfincalc.com/hsa-tax-savings-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the HSA triple tax advantage?", "acceptedAnswer": { "@type": "Answer", "text": "An HSA is taxed favorably three times: contributions are pre-tax (lowering your taxable income, and avoiding FICA when made through payroll), the balance grows tax-free, and withdrawals for qualified medical expenses are tax-free. No other account combines all three." } },
+          { "@type": "Question", "name": "What are the 2026 HSA contribution limits?", "acceptedAnswer": { "@type": "Answer", "text": "For 2026, the IRS limit is $4,400 for self-only coverage and $8,750 for family coverage. If you are age 55 or older, you can add a $1,000 catch-up contribution. You must be covered by a qualifying high-deductible health plan (HDHP) to contribute." } },
+          { "@type": "Question", "name": "Do HSA contributions avoid Social Security and Medicare tax?", "acceptedAnswer": { "@type": "Answer", "text": "Only when contributed through payroll deduction under your employer's cafeteria plan. Those contributions skip the 7.65% employee FICA tax in addition to income tax. Contributions you make directly and deduct on your tax return save income tax but not FICA." } },
+          { "@type": "Question", "name": "Does my state tax HSA contributions?", "acceptedAnswer": { "@type": "Answer", "text": "Most states follow the federal rule and exclude HSA contributions from state income tax. A few — notably California and New Jersey — do not, so contributions are still subject to state tax there. Enter your state's marginal rate (or 0% if your state has no income tax or fully conforms) to estimate the state savings." } },
+          { "@type": "Question", "name": "Can I invest my HSA?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many HSA providers let you invest the balance above a small cash threshold in mutual funds or ETFs. Because growth and qualified withdrawals are tax-free, a long-invested HSA can become a powerful retirement-health account. This calculator projects that tax-free growth over the years you choose." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>HSA Tax Savings Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        How much does a Health Savings Account save you? This shows your first-year <strong>federal, FICA, and state</strong> tax savings — plus the account's signature <strong>tax-free growth</strong> over time. 2026 limits.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="hsaForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="hsaIncome">Gross annual income</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="hsaIncome" type="text" inputmode="numeric" value="80000">
+              </div>
+              <span class="field__hint">Your taxable wages before the HSA contribution.</span>
+            </div>
+
+            <div class="field field--inline">
+              <div>
+                <label for="hsaFilingStatus">Filing status</label>
+                <select class="input" id="hsaFilingStatus">
+                  <option value="single" selected>Single</option>
+                  <option value="married">Married filing jointly</option>
+                  <option value="head">Head of household</option>
+                </select>
+              </div>
+              <div>
+                <label for="hsaCoverage">HDHP coverage</label>
+                <select class="input" id="hsaCoverage">
+                  <option value="self" selected>Self-only</option>
+                  <option value="family">Family</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field field--inline">
+              <div>
+                <label for="hsaAge">Your age</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="hsaAge" type="text" inputmode="numeric" value="40">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">yr</span>
+                </div>
+              </div>
+              <div>
+                <label for="hsaContribution">Annual contribution</label>
+                <div class="input-wrap input-wrap--prefix">
+                  <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                  <input class="input" id="hsaContribution" type="text" inputmode="numeric" value="4400">
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="hsaPayroll">Contributing through payroll?</label>
+              <select class="input" id="hsaPayroll">
+                <option value="yes" selected>Yes — pre-tax payroll deduction</option>
+                <option value="no">No — direct contribution, deducted on taxes</option>
+              </select>
+              <span class="field__hint">Payroll deductions also skip FICA (7.65%).</span>
+            </div>
+
+            <div class="field">
+              <label for="hsaStateRate">State marginal tax rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="hsaStateRate" type="text" inputmode="decimal" value="0">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">0% if your state has no income tax or follows the federal exclusion. CA/NJ tax HSA contributions.</span>
+            </div>
+
+            <div class="field field--inline">
+              <div>
+                <label for="hsaYears">Years invested</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="hsaYears" type="text" inputmode="numeric" value="20">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">yr</span>
+                </div>
+              </div>
+              <div>
+                <label for="hsaReturn">Expected return</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="hsaReturn" type="text" inputmode="decimal" value="6">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">First-year tax savings</span>
+              <div class="result__figure" id="outHsaTotalSavings">$0</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>2026 contribution limit</dt><dd id="outHsaLimit">$0</dd></div>
+              <div class="breakdown__row"><dt>Federal income tax saved</dt><dd id="outHsaFedSavings">$0</dd></div>
+              <div class="breakdown__row" id="hsaFicaRow"><dt>FICA tax saved</dt><dd id="outHsaFicaSavings">$0</dd></div>
+              <div class="breakdown__row"><dt>State tax saved</dt><dd id="outHsaStateSavings">$0</dd></div>
+              <div class="breakdown__row"><dt>Effective discount per $1</dt><dd id="outHsaEffRate">0%</dd></div>
+              <div class="breakdown__row breakdown__row--total" id="hsaGrowthRow"><dt>Tax-free value over time</dt><dd id="outHsaGrowth">$0</dd></div>
+            </dl>
+            <p class="estimate-note" id="hsaNote">Enter your details to see your HSA tax savings.</p>
+            <p class="estimate-note">Estimate only — not tax, financial, or medical advice. Verify limits and state rules with a professional.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How HSA tax savings work</h2>
+      <p>A Health Savings Account is the most tax-favored account in the US code, and this calculator quantifies why. When you contribute, three things happen. Your contribution lowers your taxable income, so you owe less federal income tax. If you contribute through payroll, the money also escapes the 7.65% FICA tax. And once inside, the balance grows tax-free and comes out tax-free for qualified medical expenses. The calculator adds up the first two effects for the current year and projects the third over time.</p>
+
+      <h2>2026 contribution limits</h2>
+      <p>To contribute, you must be covered by a qualifying <strong>high-deductible health plan (HDHP)</strong> and have no disqualifying coverage. For 2026 the IRS limits are <strong>$4,400</strong> for self-only coverage and <strong>$8,750</strong> for family coverage. If you're <strong>55 or older</strong>, you can add a <strong>$1,000</strong> catch-up contribution. This tool caps your entry at the limit that matches your coverage and age and tells you when you've hit it.</p>
+
+      <h2>Why payroll contributions save more</h2>
+      <p>The single biggest difference in HSA savings is <em>how</em> you contribute. Money routed through your employer's payroll under a cafeteria plan is excluded from wages for both income tax and FICA — Social Security (6.2% up to the wage base) and Medicare (1.45%). A direct contribution you deduct on your return still saves income tax, but you've already paid FICA on those wages. For a worker in the 22% federal bracket, the payroll route can mean an effective discount near 30% on every dollar, versus about 22% for a direct contribution.</p>
+
+      <h2>The tax-free growth most people miss</h2>
+      <p>Many people treat an HSA as a spending account, paying this year's medical bills straight out of it. But if you can cover medical costs from other cash and leave the HSA invested, it becomes a stealth retirement account: contributions go in pre-tax, grow tax-free for decades, and come out tax-free for the medical expenses nearly everyone faces later in life. The "tax-free value over time" figure shows what contributing the same amount each year could grow to at your chosen return — none of it taxed along the way.</p>
+
+      <h2>Fitting the HSA into your plan</h2>
+      <p>Because HSA dollars are so efficient, many advisers suggest funding it right after capturing any 401(k) employer match. Check that match first with our <a href="/retirement-calculator">retirement calculator</a>, then see how the contribution changes your take-home pay in the <a href="/paycheck-calculator">paycheck calculator</a>. If you're also weighing taxable investments, the <a href="/capital-gains-calculator">capital gains calculator</a> shows the tax an HSA lets you avoid entirely.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is the HSA triple tax advantage?</summary><div>An HSA is taxed favorably three times: contributions are pre-tax (lowering your taxable income, and avoiding FICA when made through payroll), the balance grows tax-free, and withdrawals for qualified medical expenses are tax-free. No other account combines all three.</div></details>
+        <details class="faq__item"><summary>What are the 2026 HSA contribution limits?</summary><div>For 2026, the IRS limit is $4,400 for self-only coverage and $8,750 for family coverage. If you are age 55 or older, you can add a $1,000 catch-up contribution. You must be covered by a qualifying high-deductible health plan (HDHP) to contribute.</div></details>
+        <details class="faq__item"><summary>Do HSA contributions avoid Social Security and Medicare tax?</summary><div>Only when contributed through payroll deduction under your employer's cafeteria plan. Those contributions skip the 7.65% employee FICA tax in addition to income tax. Contributions you make directly and deduct on your tax return save income tax but not FICA.</div></details>
+        <details class="faq__item"><summary>Does my state tax HSA contributions?</summary><div>Most states follow the federal rule and exclude HSA contributions from state income tax. A few — notably California and New Jersey — do not, so contributions are still subject to state tax there. Enter your state's marginal rate (or 0% if your state has no income tax or fully conforms) to estimate the state savings.</div></details>
+        <details class="faq__item"><summary>Can I invest my HSA?</summary><div>Yes. Many HSA providers let you invest the balance above a small cash threshold in mutual funds or ETFs. Because growth and qualified withdrawals are tax-free, a long-invested HSA can become a powerful retirement-health account. This calculator projects that tax-free growth over the years you choose.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">Capture your 401(k) match, then maximize your HSA.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See how a pre-tax contribution changes take-home pay.</span>
+        </a>
+        <a class="card" href="/capital-gains-calculator">
+          <span class="card__title">Capital Gains Tax Calculator</span>
+          <span class="card__desc">The investment tax an HSA lets you skip entirely.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not tax, financial, or medical advice. HSA eligibility, limits, and state treatment vary; payroll FICA savings depend on your employer's plan. Verify with the IRS, your plan administrator, and a licensed professional before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/data/federal-tax.js" defer></script>
+  <script src="/assets/js/hsa.js" defer></script>
+</body>
+</html>
