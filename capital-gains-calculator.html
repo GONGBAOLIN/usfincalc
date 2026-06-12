@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capital Gains Tax Calculator (2026) — Long & Short-Term — USFinCalc</title>
+  <meta name="description" content="Free capital gains tax calculator: estimate federal tax on a stock or asset sale, with 2026 long-term rates (0/15/20%), short-term ordinary rates, and the 3.8% NIIT.">
+  <link rel="canonical" href="https://usfincalc.com/capital-gains-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Capital Gains Tax Calculator (2026)">
+  <meta property="og:description" content="Estimate federal tax on a sale — long-term 0/15/20%, short-term ordinary rates, plus the 3.8% NIIT.">
+  <meta property="og:url" content="https://usfincalc.com/capital-gains-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Capital Gains Tax Calculator",
+        "url": "https://usfincalc.com/capital-gains-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Capital Gains Tax Calculator", "item": "https://usfincalc.com/capital-gains-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the difference between long-term and short-term capital gains?", "acceptedAnswer": { "@type": "Answer", "text": "It is about how long you held the asset. Hold it more than one year and the profit is a long-term gain, taxed at the preferential 0%, 15%, or 20% rate. Hold it one year or less and it is a short-term gain, taxed as ordinary income at your regular marginal rate, which is usually higher." } },
+          { "@type": "Question", "name": "How are 2026 long-term capital gains rates determined?", "acceptedAnswer": { "@type": "Answer", "text": "The rate depends on your total taxable income. For 2026 a single filer pays 0% on long-term gains while taxable income stays under $49,450, 15% up to $545,500, and 20% above that. The gain stacks on top of your other taxable income, so part of it can fall in more than one band." } },
+          { "@type": "Question", "name": "What is the 3.8% Net Investment Income Tax (NIIT)?", "acceptedAnswer": { "@type": "Answer", "text": "The NIIT is an extra 3.8% tax on investment income, including capital gains, for higher earners. It applies to the lesser of your net investment income or the amount your modified adjusted gross income exceeds $200,000 (single) or $250,000 (married filing jointly). It is on top of the regular capital gains tax." } },
+          { "@type": "Question", "name": "Does this calculator include state capital gains tax?", "acceptedAnswer": { "@type": "Answer", "text": "No. This tool estimates federal capital gains tax only. Most states also tax capital gains, usually as ordinary income at the state rate, and a few have no income tax at all. Check your state's rules for the full picture." } },
+          { "@type": "Question", "name": "How can I reduce capital gains tax?", "acceptedAnswer": { "@type": "Answer", "text": "Common strategies include holding assets longer than a year to get long-term rates, harvesting losses to offset gains, using tax-advantaged accounts like IRAs and 401(k)s, and timing sales for a year when your income is lower. This tool is informational; consult a tax professional for your situation." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Capital Gains Tax Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        Estimate the federal tax on selling a stock, fund, or other asset — with 2026 <strong>long-term</strong> rates (0/15/20%), <strong>short-term</strong> ordinary rates, and the 3.8% <strong>NIIT</strong> for higher earners.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="cgForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="salePrice">Sale price (proceeds)</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="salePrice" type="text" inputmode="numeric" value="100000">
+              </div>
+              <span class="field__hint">What you sold the asset for.</span>
+            </div>
+
+            <div class="field">
+              <label for="costBasis">Cost basis</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="costBasis" type="text" inputmode="numeric" value="60000">
+              </div>
+              <span class="field__hint">What you originally paid, including commissions.</span>
+            </div>
+
+            <div class="field">
+              <label for="otherIncome">Other taxable income</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="otherIncome" type="text" inputmode="numeric" value="80000">
+              </div>
+              <span class="field__hint">Your wages and other income, before this sale. Sets which rate band the gain falls into.</span>
+            </div>
+
+            <div class="field">
+              <label for="cgFilingStatus">Filing status</label>
+              <select class="input" id="cgFilingStatus">
+                <option value="single" selected>Single</option>
+                <option value="married">Married filing jointly</option>
+                <option value="head">Head of household</option>
+              </select>
+              <span class="field__hint">2026 brackets.</span>
+            </div>
+
+            <div class="field">
+              <label for="holding">Holding period</label>
+              <select class="input" id="holding">
+                <option value="long" selected>Long-term (held more than 1 year)</option>
+                <option value="short">Short-term (held 1 year or less)</option>
+              </select>
+              <span class="field__hint">Long-term gets the preferential 0/15/20% rates.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Total tax on the sale</span>
+              <div class="result__figure" id="outCgTotalTax">$0</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Capital gain</dt><dd id="outCgGain">$0</dd></div>
+              <div class="breakdown__row"><dt>Rate applied</dt><dd id="outCgRate">—</dd></div>
+              <div class="breakdown__row"><dt>Federal capital gains tax</dt><dd id="outCgFederal">$0</dd></div>
+              <div class="breakdown__row"><dt>Net Investment Income Tax (3.8%)</dt><dd id="outCgNiit">$0</dd></div>
+              <div class="breakdown__row"><dt>Effective rate on gain</dt><dd id="outCgEffRate">0%</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>After-tax proceeds from gain</dt><dd id="outCgNet">$0</dd></div>
+            </dl>
+            <p class="estimate-note" id="cgRateNote">Enter a sale price above your cost basis to see the tax.</p>
+            <p class="estimate-note">Federal estimate only — excludes state tax. Not tax advice.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this capital gains tax calculator works</h2>
+      <p>When you sell an asset — stock, a fund, crypto, or property — for more than you paid, the profit is a <strong>capital gain</strong>, and the IRS taxes it. How much you owe depends on two things: <strong>how long you held the asset</strong> and <strong>how much other income you have</strong>. This calculator estimates your federal tax by combining both, and adds the 3.8% Net Investment Income Tax when it applies.</p>
+      <p>Your gain is simply the sale price minus your <strong>cost basis</strong> (what you originally paid, including commissions). The calculator then applies the right rate depending on whether the gain is long-term or short-term, and shows your after-tax proceeds.</p>
+
+      <h2>Long-term vs. short-term: the one-year line</h2>
+      <p>The single biggest factor in your capital gains tax is the holding period. Hold an asset for <strong>more than one year</strong> and the profit is a <strong>long-term</strong> gain, taxed at preferential rates of 0%, 15%, or 20%. Hold it for <strong>one year or less</strong> and it is a <strong>short-term</strong> gain, taxed as ordinary income at your regular marginal rate — which for many people is 22%, 24%, or higher. Selling even a day past the one-year mark can dramatically cut the tax, which is why the holding period matters so much.</p>
+
+      <h2>2026 long-term capital gains rates</h2>
+      <p>Long-term rates are not flat — the rate you pay depends on your total taxable income, and the gain stacks on top of your other income. For the 2026 tax year, a single filer pays:</p>
+      <ul>
+        <li><strong>0%</strong> on long-term gains while total taxable income stays under <strong>$49,450</strong>;</li>
+        <li><strong>15%</strong> on income from there up to <strong>$545,500</strong>;</li>
+        <li><strong>20%</strong> on anything above that.</li>
+      </ul>
+      <p>Married-filing-jointly thresholds are higher ($98,900 and $613,700). Because the gain fills these bands on top of your other taxable income, a single sale can be partly taxed at 0% and partly at 15% — this calculator handles that band-by-band split for you.</p>
+
+      <h2>The 3.8% Net Investment Income Tax (NIIT)</h2>
+      <p>Higher earners owe an extra <strong>3.8% NIIT</strong> on investment income, including capital gains. It kicks in when modified adjusted gross income exceeds <strong>$200,000</strong> (single) or <strong>$250,000</strong> (married filing jointly), and applies to the lesser of your net investment income or the amount over that threshold. The result is that some investors face an effective long-term rate of 18.8% or 23.8% rather than 15% or 20%. The calculator adds this automatically when your income crosses the line.</p>
+
+      <h2>What this calculator does not include</h2>
+      <p>To stay clear and broadly accurate, this tool estimates <strong>federal</strong> capital gains tax on a single sale. It does <em>not</em> model state capital gains tax (most states tax gains as ordinary income), the special 28% rate on collectibles, Section 1250 depreciation recapture on real estate, the home-sale exclusion, wash-sale rules, or the offsetting of gains with capital losses. For a sale with any of these features, or before making a decision, consult a tax professional and verify current rules at <a href="https://www.irs.gov/taxtopics/tc409" rel="nofollow noopener" target="_blank">IRS Topic No. 409</a>.</p>
+      <p>Planning a sale of vesting equity instead? Our <a href="/rsu-tax-calculator">RSU tax calculator</a> handles the supplemental-withholding side, and the <a href="/retirement-calculator">retirement calculator</a> shows how tax-advantaged accounts let gains compound without an annual tax drag.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is the difference between long-term and short-term capital gains?</summary><div>It is about how long you held the asset. Hold it more than one year and the profit is a long-term gain, taxed at the preferential 0%, 15%, or 20% rate. Hold it one year or less and it is a short-term gain, taxed as ordinary income at your regular marginal rate, which is usually higher.</div></details>
+        <details class="faq__item"><summary>How are 2026 long-term capital gains rates determined?</summary><div>The rate depends on your total taxable income. For 2026 a single filer pays 0% on long-term gains while taxable income stays under $49,450, 15% up to $545,500, and 20% above that. The gain stacks on top of your other taxable income, so part of it can fall in more than one band.</div></details>
+        <details class="faq__item"><summary>What is the 3.8% Net Investment Income Tax (NIIT)?</summary><div>The NIIT is an extra 3.8% tax on investment income, including capital gains, for higher earners. It applies to the lesser of your net investment income or the amount your modified adjusted gross income exceeds $200,000 (single) or $250,000 (married filing jointly). It is on top of the regular capital gains tax.</div></details>
+        <details class="faq__item"><summary>Does this calculator include state capital gains tax?</summary><div>No. This tool estimates federal capital gains tax only. Most states also tax capital gains, usually as ordinary income at the state rate, and a few have no income tax at all. Check your state's rules for the full picture.</div></details>
+        <details class="faq__item"><summary>How can I reduce capital gains tax?</summary><div>Common strategies include holding assets longer than a year to get long-term rates, harvesting losses to offset gains, using tax-advantaged accounts like IRAs and 401(k)s, and timing sales for a year when your income is lower. This tool is informational; consult a tax professional for your situation.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/rsu-tax-calculator">
+          <span class="card__title">RSU Tax Calculator</span>
+          <span class="card__desc">After-tax value of vesting equity and the withholding gap.</span>
+        </a>
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">How tax-advantaged accounts let gains compound tax-free.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See the other income that sets your capital gains rate band.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. Capital gains results are federal estimates that exclude state tax, capital losses, depreciation recapture, and other special rules. Verify figures with IRS.gov and consult a tax professional before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/data/federal-tax.js" defer></script>
+  <script src="/assets/js/capital-gains.js" defer></script>
+</body>
+</html>

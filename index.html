@@ -74,12 +74,23 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
       <ul class="site-nav__links" id="nav-links">
-        <li><a href="/mortgage-calculator">Mortgage</a></li>
-        <li><a href="/paycheck-calculator">Paycheck</a></li>
-        <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
             <li><a href="/student-loan-calculator">Student Loan</a></li>
-        <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
-        <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </div>
   </nav>
@@ -115,6 +126,10 @@
           <span class="card__title">RSU Tax Calculator</span>
           <span class="card__desc">After-tax value of vesting RSUs with bracket & FICA analysis.</span>
         </a>
+        <a class="card" href="/capital-gains-calculator">
+          <span class="card__title">Capital Gains Tax Calculator</span>
+          <span class="card__desc">Federal tax on a sale: long-term 0/15/20%, short-term, and NIIT.</span>
+        </a>
         <a class="card" href="/retirement-calculator">
           <span class="card__title">Retirement Calculator</span>
           <span class="card__desc">401k/IRA growth with employer match and inflation.</span>
@@ -140,6 +155,7 @@
             <li><a href="/auto-loan-calculator">Auto Loan</a></li>
             <li><a href="/student-loan-calculator">Student Loan</a></li>
             <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
             <li><a href="/retirement-calculator">Retirement</a></li>
           </ul>
         </div>

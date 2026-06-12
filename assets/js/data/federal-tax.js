@@ -56,5 +56,21 @@ window.USFC_FEDERAL_2026 = {
       married: 250000,
       head: 200000
     }
+  },
+
+  // 2026 long-term capital gains breakpoints (taxable income thresholds).
+  // Below ltcg0Max -> 0%; up to ltcg15Max -> 15%; above -> 20%.
+  // Source: IRS Rev. Proc. 2025-32 (2026 inflation adjustments).
+  longTermCapitalGains: {
+    single:  { ltcg0Max: 49450,  ltcg15Max: 545500 },
+    married: { ltcg0Max: 98900,  ltcg15Max: 613700 },
+    head:    { ltcg0Max: 66200,  ltcg15Max: 579600 }
+  },
+
+  // Net Investment Income Tax: 3.8% on investment income above MAGI threshold.
+  // Not indexed for inflation. Source: IRS Topic No. 559.
+  niit: {
+    rate: 0.038,
+    threshold: { single: 200000, married: 250000, head: 200000 }
   }
 };

@@ -143,10 +143,63 @@
     });
   }
 
+  /* ---- Dropdown menus in the nav (.nav-dropdown > button + .nav-dropdown__menu) ---- */
+  function initDropdowns() {
+    const dropdowns = Array.prototype.slice.call(document.querySelectorAll('.nav-dropdown'));
+    if (!dropdowns.length) return;
+
+    function closeAll(except) {
+      dropdowns.forEach(function (d) {
+        if (d === except) return;
+        const btn = d.querySelector('.nav-dropdown__toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    dropdowns.forEach(function (d) {
+      const btn = d.querySelector('.nav-dropdown__toggle');
+      if (!btn) return;
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        closeAll(d);
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+
+    // Close on outside click and on Escape.
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-dropdown')) closeAll(null);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll(null);
+    });
+  }
+
+  /* ---- Highlight the current page's nav link by pathname ---- */
+  function initActiveLink() {
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const anchors = document.querySelectorAll('.site-nav__links a[href]');
+    anchors.forEach(function (a) {
+      const href = a.getAttribute('href').replace(/\/$/, '') || '/';
+      if (href === path) {
+        a.setAttribute('aria-current', 'page');
+        // Mark the parent dropdown toggle as active too.
+        const dd = a.closest('.nav-dropdown');
+        if (dd) {
+          const t = dd.querySelector('.nav-dropdown__toggle');
+          if (t) t.setAttribute('data-active', 'true');
+        }
+      }
+    });
+  }
+
+  function bootNav() { initNav(); initDropdowns(); initActiveLink(); }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNav);
+    document.addEventListener('DOMContentLoaded', bootNav);
   } else {
-    initNav();
+    bootNav();
   }
 
   /* ---- Public API ---- */
