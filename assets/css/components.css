@@ -294,6 +294,8 @@
 
 /* ---- Form fields ---- */
 .field { margin-bottom: var(--space-4); }
+.field--inline { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.field--inline label { display: block; font-size: var(--fs-sm); margin-bottom: var(--space-1); }
 .field > label {
   display: block;
   font-weight: var(--fw-medium);

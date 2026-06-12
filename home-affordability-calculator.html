@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Affordability Calculator — How Much House Can I Afford? — USFinCalc</title>
+  <meta name="description" content="Free home affordability calculator using the 28/36 rule. See the maximum home price you can afford from your income, debts, down payment, and rate — full PITI.">
+  <link rel="canonical" href="https://usfincalc.com/home-affordability-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Home Affordability Calculator — How Much House Can I Afford?">
+  <meta property="og:description" content="The 28/36 rule, applied to your income, debts, and down payment — to a real max home price.">
+  <meta property="og:url" content="https://usfincalc.com/home-affordability-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Home Affordability Calculator",
+        "url": "https://usfincalc.com/home-affordability-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Home Affordability Calculator", "item": "https://usfincalc.com/home-affordability-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the 28/36 rule?", "acceptedAnswer": { "@type": "Answer", "text": "The 28/36 rule is a common guideline lenders use. It says your housing payment (PITI) should not exceed 28% of your gross monthly income (the front-end ratio), and your total debt payments — housing plus car loans, student loans, and minimum credit card payments — should not exceed 36% (the back-end ratio). This calculator applies the lower of the two limits." } },
+          { "@type": "Question", "name": "How much house can I afford on my salary?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on far more than salary: your existing debts, down payment, interest rate, property tax rate, and insurance all change the answer. Enter them here and the calculator solves for the maximum home price that keeps you within the 28/36 limits, including full PITI." } },
+          { "@type": "Question", "name": "Does this include property tax, insurance, and PMI?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It uses full PITI: principal and interest, property tax, homeowners insurance, and PMI when your down payment is under 20%. This matters because taxes and insurance can add hundreds of dollars a month, which lowers the price you can afford compared with a principal-and-interest-only estimate." } },
+          { "@type": "Question", "name": "What counts as monthly debts in the back-end ratio?", "acceptedAnswer": { "@type": "Answer", "text": "Recurring minimum debt payments: car loans, student loans, personal loans, and the minimum payments on credit cards. It does not include things like utilities, groceries, or insurance that isn't part of the mortgage. Higher monthly debts directly reduce how much home you can afford." } },
+          { "@type": "Question", "name": "Should I borrow the maximum I qualify for?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not. Qualifying for a payment is not the same as it being comfortable. The 28/36 rule is an upper bound; many people are happier targeting a lower payment that leaves room for savings, emergencies, and the non-mortgage costs of owning a home. Treat the result as a ceiling, not a goal." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Home Affordability Calculator</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        How much house can you afford? This uses the lender's <strong>28/36 rule</strong> and full <strong>PITI</strong> — taxes, insurance, and PMI included — to find your real maximum home price.
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="affForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="annualIncome">Gross annual income</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="annualIncome" type="text" inputmode="numeric" value="120000">
+              </div>
+              <span class="field__hint">Household pre-tax income.</span>
+            </div>
+
+            <div class="field">
+              <label for="monthlyDebts">Other monthly debt payments</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="monthlyDebts" type="text" inputmode="numeric" value="400">
+              </div>
+              <span class="field__hint">Car, student, and personal loans + credit-card minimums.</span>
+            </div>
+
+            <div class="field">
+              <label for="downPayment">Down payment</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="downPayment" type="text" inputmode="numeric" value="60000">
+              </div>
+              <span class="field__hint">Cash you'll put down. Under 20% of price adds PMI.</span>
+            </div>
+
+            <div class="field">
+              <label for="affRate">Mortgage interest rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="affRate" type="text" inputmode="decimal" value="6.5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Annual rate for a fixed-rate loan.</span>
+            </div>
+
+            <div class="field">
+              <label for="affTerm">Loan term (years)</label>
+              <select class="input" id="affTerm">
+                <option value="30" selected>30 years</option>
+                <option value="20">20 years</option>
+                <option value="15">15 years</option>
+              </select>
+              <span class="field__hint">Most buyers use a 30-year fixed.</span>
+            </div>
+
+            <div class="field">
+              <label for="affTaxRate">Property tax rate</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="affTaxRate" type="text" inputmode="decimal" value="1.1">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Annual, as % of home value. US average ≈ 1.1%.</span>
+            </div>
+
+            <div class="field">
+              <label for="affInsurance">Homeowners insurance (annual)</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="affInsurance" type="text" inputmode="numeric" value="1800">
+              </div>
+              <span class="field__hint">Yearly premium estimate.</span>
+            </div>
+
+            <div class="field">
+              <label for="affHoa">Monthly HOA dues</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="affHoa" type="text" inputmode="numeric" value="0">
+              </div>
+              <span class="field__hint">If any. Counts toward your housing payment.</span>
+            </div>
+
+            <div class="field">
+              <label for="affPmiRate">PMI rate (if under 20% down)</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="affPmiRate" type="text" inputmode="decimal" value="0.5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Annual, as % of loan. Typical 0.3–1.5%.</span>
+            </div>
+
+            <div class="field field--inline">
+              <div>
+                <label for="affDtiFront">Front-end limit</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="affDtiFront" type="text" inputmode="decimal" value="28">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+                </div>
+              </div>
+              <div>
+                <label for="affDtiBack">Back-end limit</label>
+                <div class="input-wrap input-wrap--suffix">
+                  <input class="input" id="affDtiBack" type="text" inputmode="decimal" value="36">
+                  <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Maximum home price</span>
+              <div class="result__figure" id="outMaxPrice">$0</div>
+            </div>
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Max loan amount</dt><dd id="outMaxLoan">$0</dd></div>
+              <div class="breakdown__row"><dt>Down payment used</dt><dd id="outDownUsed">$0</dd></div>
+              <div class="breakdown__row"><dt>Max monthly payment (PITI)</dt><dd id="outMaxPiti">$0</dd></div>
+              <div class="breakdown__row"><dt>Principal &amp; interest</dt><dd id="outAffPI">$0</dd></div>
+              <div class="breakdown__row"><dt>Property tax</dt><dd id="outAffTax">$0</dd></div>
+              <div class="breakdown__row"><dt>Insurance</dt><dd id="outAffIns">$0</dd></div>
+              <div class="breakdown__row" id="affPmiRow" hidden><dt>PMI</dt><dd id="outAffPmi">$0</dd></div>
+              <div class="breakdown__row"><dt>HOA</dt><dd id="outAffHoa">$0</dd></div>
+            </dl>
+            <p class="estimate-note" id="affNote">Enter your details to see your maximum home price.</p>
+            <p class="estimate-note">Estimate only — a lender's actual approval depends on credit, reserves, and full underwriting.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this home affordability calculator works</h2>
+      <p>"How much house can I afford?" is really two questions: how large a monthly payment fits your budget, and what home price that payment buys once taxes and insurance are included. This calculator answers both using the <strong>28/36 rule</strong> that lenders rely on, and the same full <strong>PITI</strong> model as our mortgage calculator — so the numbers line up.</p>
+      <p>It starts from your income and debts to find the largest monthly payment you'd qualify for, then works backward through the interest rate, property tax, insurance, and PMI to solve for the <strong>maximum home price</strong>. Your down payment is added on top of the loan you can support.</p>
+
+      <h2>The 28/36 rule explained</h2>
+      <p>The rule sets two ceilings on your debt-to-income (DTI) ratio:</p>
+      <ul>
+        <li><strong>28% front-end:</strong> your housing payment (PITI) should stay under 28% of gross monthly income.</li>
+        <li><strong>36% back-end:</strong> your housing payment <em>plus</em> all other monthly debts — car loans, student loans, credit-card minimums — should stay under 36%.</li>
+      </ul>
+      <p>Whichever limit is lower decides your maximum payment. If you carry little debt, the 28% front-end rule usually binds. If you have significant monthly debt, the 36% back-end rule takes over — which is why paying down a car loan can sometimes raise your home budget more than earning a raise. The calculator tells you which limit is binding for your situation.</p>
+
+      <h2>Why PITI matters for affordability</h2>
+      <p>Many "how much can I afford" tools only consider principal and interest, which badly overstates your budget. Property taxes and insurance are part of the payment your lender qualifies you on, and they can add several hundred dollars a month. A home with a high property-tax rate supports a lower purchase price at the same monthly limit. Because this calculator uses full PITI — and adds PMI automatically when your down payment is under 20% — the maximum price it shows is one a lender would actually recognize.</p>
+
+      <h2>Qualifying vs. comfortable</h2>
+      <p>The 28/36 rule is an <strong>upper bound</strong>, not a target. Just because you qualify for a payment doesn't mean it leaves room for retirement savings, emergencies, maintenance, and the rest of life. Owning also brings costs the rule ignores: repairs, higher utilities, and furnishing. Many buyers are happier targeting a payment below the maximum. Treat the result here as a ceiling, then decide how far below it you want to live.</p>
+
+      <h2>Put your number to work</h2>
+      <p>Once you know your max price, run the details through our <a href="/mortgage-calculator">mortgage calculator</a> to see the full monthly breakdown and how PMI falls off as you build equity. Check that the payment fits your real <a href="/paycheck-calculator">take-home pay</a> — the 28/36 rule uses gross income, but you live on net. And the guide <a href="/guides/how-pmi-works">how PMI works</a> explains how a larger down payment can either lower your payment or raise the price you can afford.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is the 28/36 rule?</summary><div>The 28/36 rule is a common guideline lenders use. It says your housing payment (PITI) should not exceed 28% of your gross monthly income (the front-end ratio), and your total debt payments — housing plus car loans, student loans, and minimum credit card payments — should not exceed 36% (the back-end ratio). This calculator applies the lower of the two limits.</div></details>
+        <details class="faq__item"><summary>How much house can I afford on my salary?</summary><div>It depends on far more than salary: your existing debts, down payment, interest rate, property tax rate, and insurance all change the answer. Enter them here and the calculator solves for the maximum home price that keeps you within the 28/36 limits, including full PITI.</div></details>
+        <details class="faq__item"><summary>Does this include property tax, insurance, and PMI?</summary><div>Yes. It uses full PITI: principal and interest, property tax, homeowners insurance, and PMI when your down payment is under 20%. This matters because taxes and insurance can add hundreds of dollars a month, which lowers the price you can afford compared with a principal-and-interest-only estimate.</div></details>
+        <details class="faq__item"><summary>What counts as monthly debts in the back-end ratio?</summary><div>Recurring minimum debt payments: car loans, student loans, personal loans, and the minimum payments on credit cards. It does not include things like utilities, groceries, or insurance that isn't part of the mortgage. Higher monthly debts directly reduce how much home you can afford.</div></details>
+        <details class="faq__item"><summary>Should I borrow the maximum I qualify for?</summary><div>Usually not. Qualifying for a payment is not the same as it being comfortable. The 28/36 rule is an upper bound; many people are happier targeting a lower payment that leaves room for savings, emergencies, and the non-mortgage costs of owning a home. Treat the result as a ceiling, not a goal.</div></details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Full PITI breakdown once you've picked a price.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">Check the take-home pay behind your housing budget.</span>
+        </a>
+        <a class="card" href="/guides/how-pmi-works">
+          <span class="card__title">Guide: How PMI Works</span>
+          <span class="card__desc">Why under 20% down adds PMI — and how to drop it.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial advice. Affordability results use the 28/36 guideline and full PITI; a lender's actual approval depends on credit, reserves, and complete underwriting. Verify with a licensed mortgage professional before making decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/home-affordability.js" defer></script>
+</body>
+</html>
