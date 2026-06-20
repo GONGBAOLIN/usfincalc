@@ -1,4 +1,1 @@
-# USFinCalc ads.txt
-# REPLACE pub-XXXXXXXXXXXXXXXX with the real AdSense publisher ID once issued.
-# Without a valid line here, AdSense will NOT serve ads on this domain.
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-9852924497430550, DIRECT, f08c47fec0942fa0
