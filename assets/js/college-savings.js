@@ -5,11 +5,14 @@
 
    Model:
      yearsToCollege Y = max(0, collegeStartAge - childAge)
-     n = Y * 12 months; monthly return m = annualReturn/12
+     n = Y * 12 months; net return r = max(0, annualReturn - expenseRatio);
+     monthly return m = r/12
 
-     Projected balance AT matriculation:
+     Projected balance AT matriculation (net of plan fees):
        FV = currentSavings*(1+r)^Y  +  monthly*[((1+m)^n - 1)/m]
-       (lump grows at the annual rate; contributions as an ordinary annuity)
+       (lump grows at the net rate; contributions as an ordinary annuity)
+
+     Fee drag = same projection at the gross return minus the net projection.
 
      Inflated cost of college year k (k=0..collegeYears-1), paid at time Y+k:
        cost_k = annualCostNow * (1 + infl)^(Y + k)
@@ -28,9 +31,10 @@
 
    Element IDs in 529-college-savings-calculator.html:
      inputs : childAge, collegeAge, collegeYears, currentSavings,
-              monthlyContribution, expectedReturn, annualCostNow, costInflation
+              monthlyContribution, expectedReturn, expenseRatio, annualCostNow,
+              costInflation
      outputs: outProjSavings, outProjCost, outGoalNow, outGap, outCoverage,
-              outRequiredMonthly, csNote
+              outFeeCost, outRequiredMonthly, csNote
    ========================================================================== */
 (function () {
   'use strict';
@@ -38,7 +42,7 @@
   var U = window.USFC;
 
   var ids = ['childAge','collegeAge','collegeYears','currentSavings',
-             'monthlyContribution','expectedReturn','annualCostNow','costInflation'];
+             'monthlyContribution','expectedReturn','expenseRatio','annualCostNow','costInflation'];
   var el = {};
 
   /** Future value of an ordinary annuity of `pmt` over `n` periods at rate `m`. */
@@ -61,7 +65,10 @@
     var collegeYears = Math.max(1, Math.round(i.collegeYears || 4));
     var current = Math.max(0, i.currentSavings || 0);
     var monthly = Math.max(0, i.monthlyContribution || 0);
-    var r = (i.expectedReturn || 0) / 100;
+    var grossR = (i.expectedReturn || 0) / 100;
+    var fee = Math.max(0, (i.expenseRatio || 0) / 100);
+    // Net-of-fee return drives the actual projection; never below zero.
+    var r = Math.max(0, grossR - fee);
     var infl = (i.costInflation || 0) / 100;
     var annualCostNow = Math.max(0, i.annualCostNow || 0);
 
@@ -69,10 +76,15 @@
     var m = r / 12;
     var n = Math.round(Y * 12);
 
-    // Projected balance at matriculation.
+    // Projected balance at matriculation (net of fees).
     var lumpFV = current * Math.pow(1 + r, Y);
     var contribFV = annuityFV(monthly, m, n);
     var projSavings = lumpFV + contribFV;
+
+    // Same projection at the gross (pre-fee) return, to isolate the fee drag.
+    var mGross = grossR / 12;
+    var projGross = current * Math.pow(1 + grossR, Y) + annuityFV(monthly, mGross, n);
+    var feeCost = Math.max(0, projGross - projSavings);
 
     // Inflated cost per college year and discounted goal at matriculation.
     var totalCost = 0;
@@ -98,7 +110,7 @@
 
     return {
       yearsToCollege: Y, projSavings: projSavings, totalCost: totalCost,
-      goalNow: goal, gap: gap, coverage: coverage,
+      goalNow: goal, gap: gap, coverage: coverage, feeCost: feeCost,
       requiredMonthly: requiredMonthly, fullyFunded: gap >= 0
     };
   }
@@ -111,6 +123,7 @@
       currentSavings:      U.readField(el.currentSavings, { min: 0, fallback: 0 }).value,
       monthlyContribution: U.readField(el.monthlyContribution, { min: 0, fallback: 0 }).value,
       expectedReturn:      U.readField(el.expectedReturn, { min: 0, max: 20, fallback: 6 }).value,
+      expenseRatio:        U.readField(el.expenseRatio, { min: 0, max: 5, fallback: 0 }).value,
       annualCostNow:       U.readField(el.annualCostNow, { min: 0, fallback: 0 }).value,
       costInflation:       U.readField(el.costInflation, { min: 0, max: 15, fallback: 5 }).value
     };
@@ -122,6 +135,7 @@
     U.setText('outGoalNow', U.formatUSD(r.goalNow, false));
     U.setText('outGap', (r.gap >= 0 ? '+' : '−') + U.formatUSD(Math.abs(r.gap), false).replace(/^[-−]/, ''));
     U.setText('outCoverage', U.formatPercent(r.coverage));
+    U.setText('outFeeCost', U.formatUSD(r.feeCost, false));
     U.setText('outRequiredMonthly', U.formatUSD(r.requiredMonthly, true));
 
     var gapEl = document.getElementById('outGap');

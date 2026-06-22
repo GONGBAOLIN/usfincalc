@@ -53,7 +53,24 @@
         "url": "https://usfincalc.com/student-loan-calculator",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "datePublished": "2026-06-10",
+        "dateModified": "2026-06-22",
+        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
+        "creator": { "@id": "https://usfincalc.com/#gongbaolin" },
+        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://usfincalc.com/#gongbaolin",
+        "name": "Gong Baolin",
+        "jobTitle": "Founder, USFinCalc",
+        "url": "https://usfincalc.com/about",
+        "sameAs": [
+          "https://wisepath.ltd",
+          "https://www.linkedin.com/in/baolin-gong-b7839129/"
+        ],
+        "knowsAbout": ["Personal finance", "Student loans", "US income tax", "Debt repayment"]
       },
       {
         "@type": "BreadcrumbList",
@@ -115,6 +132,9 @@
       <h1>Student Loan Calculator</h1>
       <p class="muted prose" style="margin-top:var(--space-2)">
         See your standard monthly payment and total interest — then find out how much you save by paying a little <strong>extra</strong> each month.
+      </p>
+      <p class="muted" style="margin-top:var(--space-2);font-size:var(--fs-sm)">
+        By <a href="/about" rel="author">Gong Baolin</a>, AFP · Founder, USFinCalc · Last updated June 2026
       </p>
     </div>
 
@@ -186,6 +206,9 @@
     <section class="container prose" style="margin-top:var(--space-7)">
       <h2>How this student loan calculator works</h2>
       <p>This calculator does two things. First, it shows your <strong>standard monthly payment</strong> — the fixed amount that pays off your balance plus interest over your chosen term, the same way the federal Standard Repayment Plan works on a 10-year (120-month) schedule. Second, and more usefully, it shows what happens when you pay a little <strong>extra</strong> each month.</p>
+      <p>The standard payment uses the standard loan <strong>amortization formula</strong>. With a balance <em>P</em>, a monthly interest rate <em>r</em> (your annual rate ÷ 12), and a term of <em>n</em> months:</p>
+      <p class="formula" style="text-align:center;font-style:italic;margin:var(--space-4) 0;font-size:var(--fs-lg)">M = P · r(1 + r)<sup>n</sup> / ((1 + r)<sup>n</sup> − 1)</p>
+      <p>For the extra-payment scenario, the calculator runs a month-by-month amortization: each month it adds interest (balance × <em>r</em>), subtracts your payment plus any extra, and repeats until the balance reaches zero — then totals the interest paid and counts the months saved.</p>
       <p>The math behind extra payments is simple but powerful. Your loan accrues interest on the outstanding balance every month. When you pay more than the scheduled amount, the extra goes straight to principal, so the balance drops faster and less interest accrues in every month that follows. The result is a shorter payoff and a smaller total interest bill — often by thousands of dollars.</p>
 
       <h2>Standard vs. paying extra</h2>
@@ -199,6 +222,15 @@
       <h2>What this calculator does not model</h2>
       <p>To stay clear and broadly accurate, this tool models a single fixed-rate loan on the standard schedule. It does <em>not</em> model income-driven repayment plans (IBR, PAYE, SAVE), loan forgiveness, interest capitalization after a grace period or deferment, or the differences between federal and private loans. Those depend heavily on your income, family size, and loan type. For decisions involving those programs, check the official details at <a href="https://studentaid.gov/" rel="nofollow noopener" target="_blank">studentaid.gov</a> or speak with your loan servicer.</p>
       <p>Deciding whether to throw extra money at loans or elsewhere? Run your real <a href="/paycheck-calculator">take-home pay</a> to see what's affordable, and weigh high-rate debt against long-term <a href="/retirement-calculator">retirement growth</a> before committing.</p>
+
+      <h2>Sources &amp; methodology</h2>
+      <p>Repayment plans, terms, and federal loan rules referenced here are based on official U.S. Department of Education guidance:</p>
+      <ul>
+        <li>U.S. Department of Education — Federal Student Aid: <a href="https://studentaid.gov/manage-loans/repayment/plans" rel="nofollow noopener" target="_blank">Student loan repayment plans</a></li>
+        <li>Federal Student Aid: <a href="https://studentaid.gov/manage-loans/repayment/plans/standard" rel="nofollow noopener" target="_blank">Standard Repayment Plan</a> (10-year fixed schedule)</li>
+        <li>Payment math follows the standard loan amortization formula shown above.</li>
+      </ul>
+      <p class="muted" style="font-size:var(--fs-sm)"><strong>Changelog.</strong> June 2026 — added explicit amortization formula, author attribution, and source citations. June 2026 — initial publication.</p>
     </section>
 
     <section class="container prose" style="margin-top:var(--space-6)">
@@ -215,17 +247,17 @@
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Related calculators &amp; guides</h2>
       <div class="cards" style="margin-top:var(--space-5)">
-        <a class="card" href="/paycheck-calculator">
-          <span class="card__title">Paycheck Calculator</span>
-          <span class="card__desc">See the real take-home pay you'd put toward extra payments.</span>
-        </a>
-        <a class="card" href="/auto-loan-calculator">
-          <span class="card__title">Auto Loan Calculator</span>
-          <span class="card__desc">Compare payoff strategy on another common installment loan.</span>
+        <a class="card" href="/guides/student-loan-payment-estimate">
+          <span class="card__title">Guide: What Will My Payment Be?</span>
+          <span class="card__desc">The repayment formula, 2026 federal rates, and what moves your bill.</span>
         </a>
         <a class="card" href="/guides/student-loan-payoff-strategies">
           <span class="card__title">Guide: Student Loan Payoff Strategies</span>
           <span class="card__desc">Avalanche vs. snowball, and when extra payments win.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">See the real take-home pay you'd put toward extra payments.</span>
         </a>
       </div>
     </section>

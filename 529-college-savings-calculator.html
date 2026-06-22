@@ -53,7 +53,24 @@
         "url": "https://usfincalc.com/529-college-savings-calculator",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "datePublished": "2026-06-10",
+        "dateModified": "2026-06-22",
+        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
+        "creator": { "@id": "https://usfincalc.com/#gongbaolin" },
+        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://usfincalc.com/#gongbaolin",
+        "name": "Gong Baolin",
+        "jobTitle": "Founder, USFinCalc",
+        "url": "https://usfincalc.com/about",
+        "sameAs": [
+          "https://wisepath.ltd",
+          "https://www.linkedin.com/in/baolin-gong-b7839129/"
+        ],
+        "knowsAbout": ["Personal finance", "529 college savings plans", "Education funding", "Investment planning"]
       },
       {
         "@type": "BreadcrumbList",
@@ -116,6 +133,9 @@
       <p class="muted prose" style="margin-top:var(--space-2)">
         Will your 529 plan cover college? This projects your plan's balance at <strong>matriculation</strong> against the <strong>inflated cost</strong> of a degree — and shows the monthly contribution to close any gap.
       </p>
+      <p class="muted" style="margin-top:var(--space-2);font-size:var(--fs-sm)">
+        By <a href="/about" rel="author">Gong Baolin</a>, AFP · Founder, USFinCalc · Last updated June 2026
+      </p>
     </div>
 
     <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
@@ -176,7 +196,16 @@
                 <input class="input" id="expectedReturn" type="text" inputmode="decimal" value="6">
                 <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
               </div>
-              <span class="field__hint">Long-run investment growth, before inflation.</span>
+              <span class="field__hint">Long-run investment growth, before fees and inflation.</span>
+            </div>
+
+            <div class="field">
+              <label for="expenseRatio">Plan fees (expense ratio)</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="expenseRatio" type="text" inputmode="decimal" value="0.5">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Annual fee charged by the plan's funds. Lowers your net return.</span>
             </div>
 
             <div class="field">
@@ -208,6 +237,7 @@
               <div class="breakdown__row"><dt>Savings goal (at start)</dt><dd id="outGoalNow">$0</dd></div>
               <div class="breakdown__row breakdown__row--total"><dt>Surplus / shortfall</dt><dd id="outGap">$0</dd></div>
               <div class="breakdown__row"><dt>Coverage</dt><dd id="outCoverage">0%</dd></div>
+              <div class="breakdown__row"><dt>Lost to fees</dt><dd id="outFeeCost">$0</dd></div>
               <div class="breakdown__row"><dt>Monthly to fully fund</dt><dd id="outRequiredMonthly">$0</dd></div>
             </dl>
             <p class="estimate-note" id="csNote">Enter your details to project your 529 plan.</p>
@@ -223,6 +253,9 @@
       <h2>How this 529 calculator works</h2>
       <p>Saving for college means winning a race between two compounding curves: your <strong>investment growth</strong> and the <strong>rising cost of tuition</strong>. This calculator models both. It grows your current 529 balance and your monthly contributions to the year your child starts school, then compares that projected balance to what a degree will actually cost by then.</p>
       <p>Your current savings compound at your expected annual return, and each monthly contribution is treated as an ordinary annuity that grows until matriculation. On the cost side, today's annual price is inflated separately for each future college year — so a four-year degree starting fifteen years from now reflects fifteen-plus years of education inflation, not one.</p>
+      <p>The projected balance uses the <strong>future-value formulas</strong> for a lump sum plus a stream of monthly contributions. With a current balance <em>P</em>, a monthly contribution <em>C</em>, a monthly return <em>i</em> (annual return ÷ 12), and <em>n</em> months until college:</p>
+      <p class="formula" style="text-align:center;font-style:italic;margin:var(--space-4) 0;font-size:var(--fs-lg)">FV = P(1 + i)<sup>n</sup> + C · ((1 + i)<sup>n</sup> − 1) / i</p>
+      <p>Each future year of tuition is inflated from today's cost at your college-cost inflation rate <em>g</em>: a bill <em>y</em> years out equals today's cost × (1 + <em>g</em>)<sup>y</sup>. The savings goal then discounts those future bills back to the start of college at your expected return, since the balance keeps earning while it's drawn down.</p>
 
       <h2>The savings goal, explained</h2>
       <p>You don't need the entire four-year cost saved on day one of college. The balance keeps earning during the college years while it's drawn down. So the calculator computes a <strong>goal at matriculation</strong>: the lump sum that, left invested at your expected return, exactly covers each year's bill as it comes due. The first year is paid immediately; later years are discounted back because that money keeps growing a little longer. This is why the goal is lower than the raw projected total cost.</p>
@@ -233,8 +266,24 @@
       <h2>Why college cost inflation matters so much</h2>
       <p>General prices have grown around 2–3% a year, but published college costs have historically climbed closer to 5%. Over the long horizon of a young child's college fund, that gap dominates the result. A small change to the inflation assumption moves the goal substantially, which is why it's a separate input here rather than a hidden constant. If your child will attend an in-state public school, lower both the cost and possibly the inflation rate; for private colleges, raise them.</p>
 
+      <h2>How plan fees eat into your balance</h2>
+      <p>Every 529 charges an annual <strong>expense ratio</strong> — a percentage of your balance that covers the underlying funds and plan administration. It looks tiny, often between 0.1% and 1%, but it compounds against you for the entire time your money is invested. This calculator subtracts the expense ratio from your expected return to project the balance you'll <em>actually</em> have, and the <strong>"Lost to fees"</strong> line shows how many dollars the fee quietly removes over the full horizon. On a typical long-term plan, the gap between a 0.1% and a 0.9% expense ratio can run into the thousands. Direct-sold state plans and low-cost index options usually carry the lowest fees; advisor-sold plans tend to cost more.</p>
+
+      <h2>A note on state tax benefits</h2>
+      <p>Beyond federal tax-free growth, <strong>most states offer their own tax deduction or credit</strong> for 529 contributions — but the rules vary enormously. Some states give a generous deduction only if you use <em>their</em> plan; a handful (the "tax-parity" states) let you deduct contributions to any state's plan; and several states with no income tax offer no deduction at all. Because these rules change and differ by state, this calculator deliberately does not model a specific state's benefit — doing so accurately for all 50 states would be misleading to maintain. Check your own state's official 529 program and revenue department for the current deduction or credit before you choose a plan. The federal treatment in this tool applies everywhere; the state break is a bonus layered on top.</p>
+
       <h2>Putting it in context</h2>
       <p>A 529 is one piece of a household financial plan. Make sure college savings aren't crowding out retirement — you can borrow for college but not for retirement, so check your <a href="/retirement-calculator">retirement calculator</a> first. If grandparents or relatives plan to help, factor in gift-tax basics with the <a href="/capital-gains-calculator">capital gains and investment guide</a>. And if you'll still need loans to fill a gap, our <a href="/student-loan-calculator">student loan calculator</a> shows what those payments would look like after graduation.</p>
+
+      <h2>Sources &amp; methodology</h2>
+      <p>The tax treatment of 529 plans referenced here is based on federal guidance. State tax deductions and credits vary widely by state and plan — confirm yours with your state's official 529 program:</p>
+      <ul>
+        <li>IRS — <a href="https://www.irs.gov/publications/p970" rel="nofollow noopener" target="_blank">Publication 970, Tax Benefits for Education</a> (qualified expenses, tax-free growth, Qualified Tuition Programs)</li>
+        <li>IRS — <a href="https://www.irs.gov/newsroom/529-plans-questions-and-answers" rel="nofollow noopener" target="_blank">529 plans: questions and answers</a></li>
+        <li>State 529 tax benefits vary — verify with your own state's official 529 plan and revenue authority.</li>
+        <li>Projection math uses the future-value formulas shown above; returns and college-cost inflation are user-set assumptions, not guarantees.</li>
+      </ul>
+      <p class="muted" style="font-size:var(--fs-sm)"><strong>Changelog.</strong> June 2026 — added explicit growth/future-value formula, author attribution, and IRS source citations. June 2026 — initial publication.</p>
     </section>
 
     <section class="container prose" style="margin-top:var(--space-6)">
@@ -251,6 +300,10 @@
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Related calculators &amp; guides</h2>
       <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/guides/529-growth-projections">
+          <span class="card__title">Guide: 529 Growth Projections</span>
+          <span class="card__desc">How time, return, and fees turn a monthly amount into a college fund.</span>
+        </a>
         <a class="card" href="/retirement-calculator">
           <span class="card__title">Retirement Calculator</span>
           <span class="card__desc">Fund retirement first — then college. See your trajectory.</span>
@@ -258,10 +311,6 @@
         <a class="card" href="/student-loan-calculator">
           <span class="card__title">Student Loan Calculator</span>
           <span class="card__desc">What loan payments look like if savings fall short.</span>
-        </a>
-        <a class="card" href="/capital-gains-calculator">
-          <span class="card__title">Capital Gains Tax Calculator</span>
-          <span class="card__desc">Tax on taxable investments outside a 529.</span>
         </a>
       </div>
     </section>

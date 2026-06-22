@@ -37,12 +37,12 @@
   </url>
   <url>
     <loc>https://usfincalc.com/529-college-savings-calculator</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://usfincalc.com/student-loan-calculator</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>https://usfincalc.com/guides/</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -93,6 +93,16 @@
   <url>
     <loc>https://usfincalc.com/guides/student-loan-payoff-strategies</loc>
     <lastmod>2026-06-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://usfincalc.com/guides/student-loan-payment-estimate</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://usfincalc.com/guides/529-growth-projections</loc>
+    <lastmod>2026-06-22</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
