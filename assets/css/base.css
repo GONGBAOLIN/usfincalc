@@ -135,3 +135,23 @@ main > .ad-slot + * { margin-top: var(--space-6); }
 .text-warning  { color: var(--color-warning); }
 .muted         { color: var(--color-muted); }
 .center        { text-align: center; }
+
+/* Data tables (worked examples, comparisons) */
+.prose table, main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: var(--space-4);
+  font-size: 0.925em;
+}
+.prose th, .prose td, main th, main td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+.prose thead th, main thead th {
+  border-bottom: 2px solid var(--color-border);
+  font-weight: 600;
+}
+.prose tbody tr:nth-child(even), main tbody tr:nth-child(even) {
+  background: var(--color-surface-2);
+}
