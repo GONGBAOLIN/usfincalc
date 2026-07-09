@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Loan Interest: How Daily Accrual and Capitalization Work — USFinCalc</title>
+  <meta name="description" content="How student loan interest accrues daily, what capitalization means, when unpaid interest gets added to your principal, and the habits that keep a balance from growing on you.">
+  <link rel="canonical" href="https://usfincalc.com/guides/student-loan-interest-capitalization">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Student Loan Interest: How Daily Accrual and Capitalization Work">
+  <meta property="og:description" content="Why a student loan balance can grow while you're paying, what capitalization means, and how to stop interest from compounding on you.">
+  <meta property="og:url" content="https://usfincalc.com/guides/student-loan-interest-capitalization">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Student Loan Interest: How Daily Accrual and Capitalization Work",
+        "description": "How student loan interest accrues daily, what capitalization means, when unpaid interest joins your principal, and how to keep a balance from growing.",
+        "image": "https://usfincalc.com/assets/img/og-default.png",
+        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
+        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
+        "datePublished": "2026-07-08T00:00:00-04:00",
+        "dateModified": "2026-07-08T00:00:00-04:00",
+        "mainEntityOfPage": "https://usfincalc.com/guides/student-loan-interest-capitalization"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://usfincalc.com/#gongbaolin",
+        "name": "Gong Baolin",
+        "jobTitle": "Founder, USFinCalc",
+        "url": "https://usfincalc.com/about",
+        "sameAs": [
+          "https://wisepath.ltd",
+          "https://www.linkedin.com/in/baolin-gong-b7839129/"
+        ],
+        "knowsAbout": ["Personal finance", "Student loans", "Debt repayment"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
+          { "@type": "ListItem", "position": 3, "name": "Student Loan Interest: Accrual and Capitalization", "item": "https://usfincalc.com/guides/student-loan-interest-capitalization" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="font-size:var(--fs-sm)">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <span>Student Loan Interest: Accrual &amp; Capitalization</span>
+      </nav>
+      <h1>Student Loan Interest: How Accrual and Capitalization Work</h1>
+      <p class="muted prose" style="margin-top:var(--space-2)">Why a student loan balance can grow even while you're paying — and the moments when unpaid interest quietly becomes principal.</p>
+      <p class="muted" style="margin-top:var(--space-2);font-size:var(--fs-sm)">
+        By <a href="/about" rel="author">Gong Baolin</a>, AFP · Founder, USFinCalc · Last updated July 2026
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <article class="container prose" style="margin-top:var(--space-5)">
+      <p>The most demoralizing student loan experience is making payments for a year and watching the balance barely move — or worse, grow. It isn't a billing error. It's the combined effect of two mechanics most borrowers were never taught: <strong>daily simple interest accrual</strong>, and <strong>capitalization</strong>, the event where accumulated unpaid interest gets folded into your principal and starts earning interest itself. Understand these two and every strange number on your servicer's statement starts making sense.</p>
+
+      <h2>Mechanic one: interest accrues every single day</h2>
+      <p>Federal student loans use a <strong>simple daily interest</strong> formula. Each day, the loan accrues interest equal to your principal balance × (annual rate ÷ 365). Suppose you owe $30,000 at an illustrative 6% rate: that's about $4.93 in new interest every day, roughly $148 a month, weekends and holidays included. The clock never pauses just because a payment isn't due.</p>
+      <p>When your monthly payment arrives, it goes to accrued interest first, then to principal. On that $30,000 example, a $350 payment covers the ~$148 of accrued interest and only the remaining ~$202 reduces principal. This payment-allocation rule is why early-loan progress feels so slow — and why the same loan's later payments, when the balance and its daily accrual have shrunk, move principal so much faster. (Our <a href="/guides/student-loan-payment-estimate">payment estimate guide</a> shows the full amortization arc.)</p>
+
+      <figure style="margin:var(--space-5) 0">
+        <svg viewBox="0 0 640 250" role="img" aria-labelledby="amort-title" style="width:100%;height:auto">
+          <title id="amort-title">Illustration: share of each payment going to interest versus principal over the life of a loan</title>
+          <defs>
+            <linearGradient id="gPrincipal" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="var(--color-accent, #1a5c8a)" stop-opacity="0.25"/>
+              <stop offset="1" stop-color="var(--color-accent, #1a5c8a)" stop-opacity="0.85"/>
+            </linearGradient>
+          </defs>
+          <!-- axes -->
+          <line x1="50" y1="20" x2="50" y2="200" stroke="var(--color-muted, #64748b)"/>
+          <line x1="50" y1="200" x2="610" y2="200" stroke="var(--color-muted, #64748b)"/>
+          <!-- interest area: starts high, decays -->
+          <path d="M50 96 C 200 108, 380 160, 610 196 L 610 200 L 50 200 Z" fill="var(--color-warning, #b45309)" opacity="0.55"/>
+          <!-- principal area: complement above interest curve up to payment line -->
+          <path d="M50 40 L 610 40 L 610 196 C 380 160, 200 108, 50 96 Z" fill="url(#gPrincipal)"/>
+          <line x1="50" y1="40" x2="610" y2="40" stroke="var(--color-text, #1e293b)" stroke-dasharray="5 4" opacity="0.6"/>
+          <text x="56" y="34" style="font: 12px Inter, sans-serif" fill="var(--color-muted, #64748b)">Fixed monthly payment</text>
+          <text x="140" y="150" style="font: 600 13px Inter, sans-serif" fill="#fff">Interest share</text>
+          <text x="360" y="90" style="font: 600 13px Inter, sans-serif" fill="#fff">Principal share</text>
+          <text x="50" y="220" style="font: 12px Inter, sans-serif" fill="var(--color-muted, #64748b)">First payment</text>
+          <text x="610" y="220" text-anchor="end" style="font: 12px Inter, sans-serif" fill="var(--color-muted, #64748b)">Final payment</text>
+        </svg>
+        <figcaption class="muted" style="font-size:var(--fs-sm);margin-top:var(--space-2)">Every payment is the same size, but its composition shifts: interest is paid first, so principal progress accelerates over time.</figcaption>
+      </figure>
+
+      <h2>Mechanic two: capitalization — when interest becomes principal</h2>
+      <p>Accrued interest normally sits in its own bucket, separate from principal, and doesn't itself earn interest — federal loans are not credit cards. <strong>Capitalization</strong> is the event that breaks this: the unpaid interest bucket is emptied into principal, and from that day forward the daily accrual formula runs on the larger number. Interest starts earning interest.</p>
+      <p>Continuing the example: suppose $3,000 of unpaid interest built up while payments were paused, and it capitalizes. Your principal becomes $33,000, and daily accrual rises from about $4.93 to about $5.42. Every future payment must cover that higher accrual before touching principal, and if you're on a standard plan your required payment gets recomputed on the bigger balance. The one-time event permanently raises the cost of every month that follows.</p>
+      <p>The classic capitalization triggers on federal loans have included: the end of the grace period on unsubsidized loans (the interest that accrued during school and the six months after joins the principal when repayment begins), leaving a deferment on unsubsidized loans, exiting forbearance, and leaving certain repayment plans. The exact list has changed over the years as regulations shifted — some triggers have been eliminated — so check studentaid.gov for the rules that apply to your loan type and plan today. Private loans set their own capitalization terms in the promissory note, and many capitalize more aggressively.</p>
+
+      <h2>Subsidized vs. unsubsidized: who pays in-school interest</h2>
+      <p>This is where the two federal loan flavors truly differ. On a <strong>subsidized</strong> loan, the government pays the interest while you're in school at least half-time, during grace, and during approved deferments — your balance at repayment is what you borrowed. On an <strong>unsubsidized</strong> loan, interest accrues from the day of disbursement, through school, through grace — and capitalizes when repayment starts. Borrow the same amount in each flavor and the unsubsidized one begins repayment with a meaningfully larger principal, which then drives a larger monthly payment for the full term.</p>
+
+      <h2>The habits that beat the mechanics</h2>
+      <ul>
+        <li><strong>Pay interest during school and grace if you possibly can.</strong> On an unsubsidized loan, even small in-school payments that cover accruing interest prevent the balance from ever growing — and prevent the capitalization event at repayment. This is the cheapest moment in the entire life of the loan to spend a dollar.</li>
+        <li><strong>Before any forbearance, ask what happens to the interest.</strong> Paused payments feel free but usually aren't: interest keeps accruing and may capitalize when the pause ends. If hardship forces a pause, paying just the interest during it — if you can — keeps the hole from deepening.</li>
+        <li><strong>Send extra payments explicitly to principal.</strong> Servicers may apply extra money to <em>future</em> installments ("paid ahead" status) rather than to principal unless you instruct otherwise. A one-line standing instruction — "apply excess to principal on the highest-rate loan" — is worth real money over a repayment.</li>
+        <li><strong>Attack right after capitalization, not before a pause ends.</strong> If you have a lump sum available and capitalization is imminent, paying down the accrued interest <em>before</em> it capitalizes stops it from ever compounding.</li>
+      </ul>
+
+      <h2>Seeing it in your own numbers</h2>
+      <p>Abstract mechanics become decisions when you attach dollars. Our <a href="/student-loan-calculator">student loan calculator</a> shows your standard monthly payment and, crucially, what an extra monthly amount does to total interest and payoff date — which is the accrual mechanic running in your favor: every extra principal dollar stops generating daily interest immediately. For choosing <em>which</em> loan to attack first when you hold several, see <a href="/guides/student-loan-payoff-strategies">payoff strategies</a>.</p>
+
+      <h2>A small consolation: the interest deduction</h2>
+      <p>One piece of good news hides in all this: the interest you pay on student loans — federal or private — can be deductible on your federal return, up to an annual cap, and you don't need to itemize to claim it. The deduction phases out above certain income levels, and both the cap and the phase-out thresholds are set by the IRS (current figures are on IRS.gov). Your servicer reports the year's interest on a Form 1098-E, so claiming it is usually just copying one box at tax time. It doesn't change the repayment math above — a deduction returns only a fraction of each interest dollar, so paying less interest always beats deducting more of it — but if you're paying interest anyway, leaving the deduction unclaimed is simply donating money. Note one interaction from our <a href="/guides/529-qualified-expenses">529 guide</a>: loan payments made with 529 funds can't double-claim this deduction on the same interest.</p>
+
+      <h2>The bottom line</h2>
+      <p>Student loan interest is simple daily interest — predictable, linear, and beatable — until capitalization makes it compound. Know your loan's triggers, cover accruing interest during pauses when you can, make sure extra payments hit principal, claim the deduction on whatever interest you do pay, and the balance-that-never-shrinks experience becomes a balance that falls on schedule.</p>
+
+      <p class="estimate-note">Educational information, not financial advice. Federal capitalization rules have changed over time and vary by loan type and plan — verify current rules at studentaid.gov, and check your promissory note for private loans.</p>
+    </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Keep exploring</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/student-loan-calculator">
+          <span class="card__title">Student Loan Calculator</span>
+          <span class="card__desc">Your standard payment, and what extra principal payments save.</span>
+        </a>
+        <a class="card" href="/guides/student-loan-payment-estimate">
+          <span class="card__title">Guide: Estimate Your Payment</span>
+          <span class="card__desc">The amortization formula and what moves your monthly bill.</span>
+        </a>
+        <a class="card" href="/guides/student-loan-payoff-strategies">
+          <span class="card__title">Guide: Payoff Strategies</span>
+          <span class="card__desc">Avalanche vs. snowball — which loan to attack first.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 2 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. Verify figures with official sources before making decisions. Consult a licensed professional for guidance specific to your situation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+</body>
+</html>
