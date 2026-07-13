@@ -5,4 +5,7 @@ Allow: /
 # Block nothing of value; allow all crawlers.
 Disallow: /assets/fonts/README.md
 
+# Cloudflare Email Obfuscation link — not a real page, causes false 404s in GSC.
+Disallow: /cdn-cgi/
+
 Sitemap: https://usfincalc.com/sitemap.xml
