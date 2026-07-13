@@ -29,6 +29,7 @@
     var pay = basePayment + Math.max(0, extra);
     var totalInterest = 0;
     var months = 0;
+    var path = [balance]; // remaining balance at month 0,1,2,...
     // Cap iterations so a too-small payment can't loop forever.
     var MAX = 1200; // 100 years
     while (bal > 0.005 && months < MAX) {
@@ -39,8 +40,9 @@
       bal -= principal;
       totalInterest += interest;
       months++;
+      path.push(Math.max(0, bal));
     }
-    return { months: months, totalInterest: totalInterest, capped: months >= MAX };
+    return { months: months, totalInterest: totalInterest, capped: months >= MAX, path: path };
   }
 
   /** Pure calculation — exported for testing. */
@@ -73,7 +75,9 @@
       interestWith: withExtra.totalInterest,
       interestSaved: interestSaved,
       monthsSaved: monthsSaved,
-      hasExtra: extra > 0
+      hasExtra: extra > 0,
+      basePath: base.path,
+      withPath: withExtra.path
     };
   }
 
@@ -108,6 +112,57 @@
         ? 'With extra payments you save ' + U.formatUSD(r.interestSaved, false) +
           ' in interest and pay off ' + fmtMonths(r.monthsSaved) + ' sooner.'
         : 'Add an extra monthly payment to see interest and time saved.'));
+
+    drawChart(r);
+  }
+
+  /* Downsample a path to at most `max` points, always keeping the last. */
+  function sample(path, max) {
+    var n = path.length;
+    if (n <= max) return path.slice();
+    var out = [];
+    var step = (n - 1) / (max - 1);
+    for (var k = 0; k < max; k++) out.push(path[Math.round(k * step)]);
+    out[out.length - 1] = path[n - 1];
+    return out;
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('balanceChart');
+    if (!container || !U.renderLineChart) return;
+
+    var base = r.basePath || [];
+    var span = base.length;                 // baseline is the longer (or equal) path
+    if (span < 2) { container.innerHTML = ''; return; }
+
+    // Pad the with-extra path out to the baseline length with zeros (already paid off).
+    var withPad = (r.withPath || []).slice();
+    while (withPad.length < span) withPad.push(0);
+
+    var TARGET = 60;
+    var baseS = sample(base, TARGET);
+    var withS = sample(withPad, TARGET);
+
+    var totalMonths = span - 1;
+    var xTicks = [
+      { i: 0, label: '0' },
+      { i: Math.round((TARGET - 1) / 2), label: fmtMonths(Math.round(totalMonths / 2)) },
+      { i: TARGET - 1, label: fmtMonths(totalMonths) }
+    ];
+
+    var series = [{ points: baseS, color: 'var(--color-muted)', label: 'Standard payment' }];
+    if (r.hasExtra) {
+      series.unshift({ points: withS, color: 'var(--color-primary)', label: 'With extra payment' });
+    }
+
+    U.renderLineChart(container, {
+      series: series,
+      xLabel: 'Time',
+      xTicks: xTicks,
+      yFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'Remaining student loan balance over time' +
+             (r.hasExtra ? ', standard payment versus paying extra each month' : '')
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

@@ -108,10 +108,23 @@
       requiredMonthly = 0;
     }
 
+    // Year-by-year net-of-fee balance path, from now (year 0) to matriculation.
+    // Balance at end of year y = lump grown y years + FV of y years of monthly contributions.
+    var wholeYears = Math.floor(Y);
+    var growthPath = [];
+    for (var yr = 0; yr <= wholeYears; yr++) {
+      var lump = current * Math.pow(1 + r, yr);
+      var contrib = annuityFV(monthly, m, yr * 12);
+      growthPath.push(lump + contrib);
+    }
+    // If there's a partial final year, append the exact matriculation projection.
+    if (Y > wholeYears) growthPath.push(projSavings);
+
     return {
       yearsToCollege: Y, projSavings: projSavings, totalCost: totalCost,
       goalNow: goal, gap: gap, coverage: coverage, feeCost: feeCost,
-      requiredMonthly: requiredMonthly, fullyFunded: gap >= 0
+      requiredMonthly: requiredMonthly, fullyFunded: gap >= 0,
+      growthPath: growthPath
     };
   }
 
@@ -155,6 +168,31 @@
 
     U.announce('Projected 529 balance ' + U.formatUSD(r.projSavings, false) +
                ' against a goal of ' + U.formatUSD(r.goalNow, false) + '.');
+
+    drawChart(r);
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('growthChart');
+    if (!container || !U.renderLineChart) return;
+
+    var path = r.growthPath || [];
+    if (path.length < 2) { container.innerHTML = ''; return; }
+
+    var lastYear = path.length - 1;
+    var xTicks = [
+      { i: 0, label: 'Now' },
+      { i: Math.round(lastYear / 2), label: 'Yr ' + Math.round(lastYear / 2) },
+      { i: lastYear, label: 'College' }
+    ];
+
+    U.renderLineChart(container, {
+      series: [{ points: path, color: 'var(--color-primary)', label: 'Projected balance' }],
+      xLabel: 'Years until college',
+      xTicks: xTicks,
+      yFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'Projected 529 plan balance growing each year until college'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

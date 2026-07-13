@@ -224,6 +224,86 @@
     });
   }
 
+  /* ---- Minimal dependency-free SVG line chart ----
+     Renders one or two series into a container element as a responsive SVG.
+     opts: {
+       series: [{ points:[y0,y1,...], color, label }, ...],  // 1-2 series, equal length, x = index
+       width, height,           // viewBox units (default 640x260)
+       xLabel, yFormat,         // yFormat(value)->string for the max label
+       xTicks: [{i, label}],    // optional x-axis tick labels
+       title                    // accessible title
+     }
+     Y axis is auto-scaled from 0 to the max across all series. */
+  function renderLineChart(container, opts) {
+    if (!container) return;
+    opts = opts || {};
+    var series = (opts.series || []).filter(function (s) { return s && s.points && s.points.length; });
+    if (!series.length) { container.innerHTML = ''; return; }
+
+    var W = opts.width || 640, H = opts.height || 260;
+    var padL = 64, padR = 16, padT = 16, padB = 40;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+
+    var n = series[0].points.length;
+    var maxY = 0;
+    series.forEach(function (s) { s.points.forEach(function (v) { if (v > maxY) maxY = v; }); });
+    if (maxY <= 0) maxY = 1;
+
+    var xAt = function (i) { return padL + (n <= 1 ? 0 : (i / (n - 1)) * plotW); };
+    var yAt = function (v) { return padT + plotH - (v / maxY) * plotH; };
+
+    var yFormat = opts.yFormat || function (v) { return String(Math.round(v)); };
+    var svgns = 'http://www.w3.org/2000/svg';
+
+    function line(x1, y1, x2, y2, cls) {
+      return '<line x1="' + x1.toFixed(1) + '" y1="' + y1.toFixed(1) +
+             '" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '" class="' + cls + '"/>';
+    }
+
+    var parts = [];
+    // horizontal gridlines + y labels at 0, 50%, 100%
+    [0, 0.5, 1].forEach(function (f) {
+      var v = maxY * f, y = yAt(v);
+      parts.push(line(padL, y, W - padR, y, 'chart__grid'));
+      parts.push('<text x="' + (padL - 8) + '" y="' + (y + 4).toFixed(1) +
+                 '" class="chart__ylabel" text-anchor="end">' + yFormat(v) + '</text>');
+    });
+    // x axis baseline
+    parts.push(line(padL, padT + plotH, W - padR, padT + plotH, 'chart__axis'));
+    // x ticks
+    (opts.xTicks || []).forEach(function (t) {
+      var x = xAt(t.i);
+      parts.push('<text x="' + x.toFixed(1) + '" y="' + (H - padB + 22) +
+                 '" class="chart__xlabel" text-anchor="middle">' + t.label + '</text>');
+    });
+    if (opts.xLabel) {
+      parts.push('<text x="' + (padL + plotW / 2).toFixed(1) + '" y="' + (H - 4) +
+                 '" class="chart__axis-title" text-anchor="middle">' + opts.xLabel + '</text>');
+    }
+    // series polylines
+    series.forEach(function (s) {
+      var d = s.points.map(function (v, i) { return xAt(i).toFixed(1) + ',' + yAt(v).toFixed(1); }).join(' ');
+      parts.push('<polyline points="' + d + '" fill="none" stroke="' + (s.color || 'currentColor') +
+                 '" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>');
+    });
+
+    var titleId = 'chart-title-' + (container.id || 'x');
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="chart__svg" role="img" ' +
+              'aria-labelledby="' + titleId + '" preserveAspectRatio="xMidYMid meet" xmlns="' + svgns + '">' +
+              '<title id="' + titleId + '">' + (opts.title || 'Chart') + '</title>' +
+              parts.join('') + '</svg>';
+
+    // legend (only if labels present and >1 series)
+    var legend = '';
+    if (series.length > 1 || series.some(function (s) { return s.label; })) {
+      legend = '<div class="chart__legend">' + series.map(function (s) {
+        return '<span class="chart__legend-item"><span class="chart__swatch" style="background:' +
+               (s.color || 'currentColor') + '"></span>' + (s.label || '') + '</span>';
+      }).join('') + '</div>';
+    }
+    container.innerHTML = svg + legend;
+  }
+
   function bootNav() { initNav(); initDropdowns(); initActiveLink(); initCopyButtons(); }
 
   if (document.readyState === 'loading') {
@@ -244,5 +324,6 @@
     announce: announce,
     setText: setText,
     monthlyPayment: monthlyPayment,
+    renderLineChart: renderLineChart,
   };
 })();
