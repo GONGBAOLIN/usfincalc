@@ -1,0 +1,41 @@
+# USFinCalc
+
+> Free, fast U.S. personal-finance calculators built on published formulas and current tax rules (IRS brackets, federal student-loan amortization, FICA, capital-gains rates). Every calculator explains its formula and shows a worked example. All calculations run entirely in the user's browser — no sign-up, no data stored, no inputs transmitted. Content is educational only and is not financial, tax, or investment advice.
+
+Published and maintained by Gong Baolin, AFP, at WisePath Technology LLC (Delaware, USA). Each tool page names the formula it uses, cites its source (IRS, U.S. Department of Education, etc.) where practical, and includes a plain-language explanation plus its limitations.
+
+## Calculators
+
+- [Student Loan Payment Calculator](https://usfincalc.com/student-loan-calculator): Monthly payment, total interest, and interest/time saved from paying extra, using federal standard amortization.
+- [529 College Savings Calculator](https://usfincalc.com/529-college-savings-calculator): Projects a 529 balance at matriculation against the inflated cost of a degree and the monthly contribution to fully fund it.
+- [Mortgage Calculator](https://usfincalc.com/mortgage-calculator): True monthly payment as full PITI — principal, interest, property tax, insurance, PMI, and HOA.
+- [Home Affordability Calculator](https://usfincalc.com/home-affordability-calculator): Maximum home price from the lender's 28/36 rule and full PITI.
+- [Take-Home Pay Calculator](https://usfincalc.com/paycheck-calculator): Net paycheck after federal tax, FICA (7.65%), and state income tax for all 50 states, 2026 brackets.
+- [Auto Loan Calculator](https://usfincalc.com/auto-loan-calculator): Monthly car payment and total interest from price, sales tax, trade-in, down payment, rate, and term.
+- [Capital Gains Tax Calculator](https://usfincalc.com/capital-gains-calculator): Federal tax on an asset sale — 2026 long-term rates (0/15/20%), short-term ordinary rates, and the 3.8% NIIT.
+- [Retirement Calculator](https://usfincalc.com/retirement-calculator): Projects a 401(k)/IRA balance to retirement with employer match, then adjusts for inflation.
+- [RSU Tax Calculator](https://usfincalc.com/rsu-tax-calculator): After-tax value of vesting RSUs and the shortfall when 22% withholding is below your marginal rate.
+- [HSA Tax Savings Calculator](https://usfincalc.com/hsa-tax-savings-calculator): First-year federal, FICA, and state tax savings from an HSA, plus tax-free growth. 2026 limits.
+
+## Guides
+
+- [How Much Will My Student Loan Payment Be?](https://usfincalc.com/guides/student-loan-payment-estimate): The repayment formula, 2026 federal rates, and what moves your bill.
+- [Student Loan Payoff Strategies](https://usfincalc.com/guides/student-loan-payoff-strategies): Avalanche vs. snowball and when extra payments win.
+- [Student Loan Interest & Capitalization](https://usfincalc.com/guides/student-loan-interest-capitalization): How interest accrues daily and when unpaid interest is added to principal.
+- [529 Plan Growth Projections](https://usfincalc.com/guides/529-growth-projections): How monthly contributions, return, fees, and time build a college fund.
+- [What Counts as a Qualified 529 Expense?](https://usfincalc.com/guides/529-qualified-expenses): Which college costs a 529 can pay tax-free and the non-qualified withdrawal penalty.
+- [Understanding Tax Brackets](https://usfincalc.com/guides/understanding-tax-brackets): How marginal rates work and why a raise is never fully taxed away.
+- [Take-Home Pay by State](https://usfincalc.com/guides/take-home-pay-by-state): How state income tax changes your net pay.
+- [Long-Term vs. Short-Term Capital Gains](https://usfincalc.com/guides/long-term-vs-short-term-capital-gains): Why the one-year holding period splits gains into two tax treatments.
+- [The HSA Triple Tax Advantage](https://usfincalc.com/guides/hsa-triple-tax-advantage): Deductible in, tax-free growth, tax-free out for medical costs.
+- [RSU Taxes Explained](https://usfincalc.com/guides/rsu-tax-explained): The 22% withholding trap and how to avoid a surprise bill.
+- [Maximize Your 401(k) Employer Match](https://usfincalc.com/guides/maximize-401k-employer-match): How matching works and why it's a guaranteed return.
+- [The 28/36 Rule Explained](https://usfincalc.com/guides/28-36-rule-explained): How lenders use front-end and back-end debt-to-income ratios.
+- [How Much Car Can I Afford? The 20/4/10 Rule](https://usfincalc.com/guides/how-much-car-can-i-afford): A simple rule for a car budget you can sustain.
+- [How PMI Works](https://usfincalc.com/guides/how-pmi-works): Why private mortgage insurance is charged and how to remove it.
+
+## About
+
+- [About USFinCalc](https://usfincalc.com/about): Who builds the site and the editorial approach.
+- [Contact](https://usfincalc.com/contact): How to reach the team.
+- [Disclaimer](https://usfincalc.com/disclaimer): The full educational-use disclaimer.

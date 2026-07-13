@@ -8,4 +8,27 @@ Disallow: /assets/fonts/README.md
 # Cloudflare Email Obfuscation link — not a real page, causes false 404s in GSC.
 Disallow: /cdn-cgi/
 
+# AI answer engines are welcome to crawl and cite this educational content.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# LLM-friendly site map: https://usfincalc.com/llms.txt
 Sitemap: https://usfincalc.com/sitemap.xml
