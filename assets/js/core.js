@@ -194,7 +194,37 @@
     });
   }
 
-  function bootNav() { initNav(); initDropdowns(); initActiveLink(); }
+  /* ---- Copy-to-clipboard (auto-wires [data-copy] buttons) ----
+     A [data-copy="#targetId"] button copies the text/value of #targetId
+     and briefly swaps its label to confirm. Used by "cite this tool" blocks. */
+  function initCopyButtons() {
+    const buttons = Array.prototype.slice.call(document.querySelectorAll('[data-copy]'));
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const sel = btn.getAttribute('data-copy');
+        const target = sel && document.querySelector(sel);
+        if (!target) return;
+        const text = 'value' in target ? target.value : target.textContent;
+        const done = function () {
+          const original = btn.getAttribute('data-label') || btn.textContent;
+          btn.setAttribute('data-label', original);
+          btn.textContent = 'Copied';
+          announce('Copied to clipboard');
+          window.setTimeout(function () { btn.textContent = original; }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () {
+            if ('select' in target) { target.select(); }
+          });
+        } else if ('select' in target) {
+          target.select();
+          try { document.execCommand('copy'); done(); } catch (e) { /* no-op */ }
+        }
+      });
+    });
+  }
+
+  function bootNav() { initNav(); initDropdowns(); initActiveLink(); initCopyButtons(); }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootNav);
