@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Security Break-Even Calculator — When Delaying Pays Off — USFinCalc</title>
+  <meta name="description" content="Free Social Security break-even calculator: compare claiming at 62, your full retirement age, or 70, and find the age when waiting for a larger check pays off.">
+  <link rel="canonical" href="https://usfincalc.com/social-security-break-even-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Social Security Break-Even Calculator — When Delaying Pays Off">
+  <meta property="og:description" content="Compare claiming Social Security early vs. later and find the break-even age when the larger delayed check overtakes the smaller early one.">
+  <meta property="og:url" content="https://usfincalc.com/social-security-break-even-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Social Security Break-Even Calculator",
+      "url": "https://usfincalc.com/social-security-break-even-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Social Security Break-Even Calculator",
+          "item": "https://usfincalc.com/social-security-break-even-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Social Security break-even age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The break-even age is the point at which the higher lifetime total from claiming Social Security later overtakes the running total from claiming earlier. Before that age, the earlier claimer is ahead because they collected checks for more years; after it, the later claimer's larger monthly benefit wins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does delaying Social Security increase my benefit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claiming before your full retirement age (FRA) permanently reduces your monthly benefit — roughly 6.67% per year for the first three years early and 5% per year beyond that. Delaying past FRA earns Delayed Retirement Credits of 8% per year until age 70, after which there is no further increase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is my full retirement age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Full retirement age (FRA) is when you can claim 100% of your primary insurance amount. For anyone born in 1960 or later it is 67. It phases in from 66 to 67 for those born between 1955 and 1959. You can claim as early as 62 or as late as 70."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I always wait until 70 to claim Social Security?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. Waiting maximizes the monthly check and pays off if you live past the break-even age, but claiming earlier can make sense if you have a shorter life expectancy, need the income, or want to preserve savings. Break-even is only one factor alongside health, other income, and spousal or survivor benefits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this break-even calculator financial advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is an educational estimate that compares two claiming ages on lifetime totals. It does not model spousal or survivor benefits, the earnings test, benefit taxation, or cost-of-living adjustments in detail. Confirm your own numbers on your Social Security statement at ssa.gov and consult a financial advisor."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to find your Social Security break-even age",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Enter your benefit at full retirement age",
+          "text": "Enter your estimated monthly benefit at full retirement age (your primary insurance amount), which you can find on your Social Security statement at ssa.gov."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Set your full retirement age",
+          "text": "Enter your full retirement age — 67 for anyone born in 1960 or later."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose two claiming ages to compare",
+          "text": "Pick an earlier and a later claiming age between 62 and 70, such as 62 versus 67 or 67 versus 70."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Read your break-even age",
+          "text": "The calculator reduces or increases your benefit for each claiming age using the statutory factors, then compares cumulative lifetime totals to show the age at which delaying pays off."
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Social Security Break-Even Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        A Social Security break-even calculator compares claiming your benefit earlier versus later and finds the age at which the larger delayed check overtakes the smaller early one. Claiming before your full retirement age permanently shrinks your monthly benefit, while delaying past it earns <strong>8% more per year</strong> up to age 70. This tool reduces or increases your benefit for each claiming age and shows the break-even age and lifetime totals.
+      </p>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        Compare claiming at <strong>62</strong>, your full retirement age, or <strong>70</strong> — and see the age when waiting for a bigger check actually pays off.
+      </p>
+      <p class="muted prose" style="margin-top:var(--space-2);font-size:var(--fs-sm)">
+        By <a href="/about" rel="author">Gong Baolin</a>, AFP · Founder, USFinCalc · Last updated July 2026
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="ssForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="fraBenefit">Monthly benefit at full retirement age</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="fraBenefit" type="text" inputmode="numeric" value="2000">
+              </div>
+              <span class="field__hint">Your primary insurance amount, from your statement at ssa.gov.</span>
+            </div>
+
+            <div class="field">
+              <label for="fra">Full retirement age</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="fra" type="text" inputmode="decimal" value="67">
+                <span class="input-wrap__affix input-wrap__affix--suffix">years</span>
+              </div>
+              <span class="field__hint">67 if you were born in 1960 or later.</span>
+            </div>
+
+            <div class="field">
+              <label for="earlyAge">Earlier claiming age</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="earlyAge" type="text" inputmode="decimal" value="62">
+                <span class="input-wrap__affix input-wrap__affix--suffix">years</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="lateAge">Later claiming age</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="lateAge" type="text" inputmode="decimal" value="70">
+                <span class="input-wrap__affix input-wrap__affix--suffix">years</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="lifeExp">Life expectancy</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="lifeExp" type="text" inputmode="numeric" value="85">
+                <span class="input-wrap__affix input-wrap__affix--suffix">years</span>
+              </div>
+              <span class="field__hint">Used only for the lifetime-total comparison.</span>
+            </div>
+
+            <div class="field">
+              <label for="cola">Annual COLA</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="cola" type="text" inputmode="decimal" value="0">
+                <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+              </div>
+              <span class="field__hint">Optional cost-of-living adjustment. Leave at 0 to compare in today's dollars.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Break-even age</span>
+              <div class="result__figure" id="outBreakEven">—</div>
+            </div>
+            <p class="center muted" style="font-size:var(--fs-sm)">
+              claiming at <span id="outLateLabel">70</span> overtakes claiming at <span id="outEarlyLabel">62</span> here
+            </p>
+
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Monthly benefit if claimed early</dt><dd id="outEarlyBenefit">$0</dd></div>
+              <div class="breakdown__row"><dt>Monthly benefit if delayed</dt><dd id="outLateBenefit">$0</dd></div>
+              <div class="breakdown__row"><dt>Lifetime total (early)</dt><dd id="outEarlyTotal">$0</dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Lifetime total (delayed)</dt><dd id="outLateTotal">$0</dd></div>
+            </dl>
+            <p class="estimate-note">Estimate only — not financial advice. Compares two claiming ages on lifetime totals; it does not model spousal, survivor, or taxation rules.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Cumulative benefits by age</h2>
+      <div id="ssChart"></div>
+      <p class="chart__caption">Each line is the running total you'd have collected by a given age. The earlier claim leads at first; the two lines cross at the break-even age, after which the delayed claim pulls ahead.</p>
+    </section>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this Social Security break-even calculator works</h2>
+      <p>Social Security lets you claim your retirement benefit any time from age 62 to 70. The trade-off is simple to state and surprisingly hard to feel: claim early and you get a smaller check for more years; wait and you get a larger check for fewer years. The <strong>break-even age</strong> is where those two paths cross — the age at which the delayed claimer's higher lifetime total finally overtakes the early claimer's head start.</p>
+      <p>The calculator starts from your benefit at <strong>full retirement age</strong> (FRA) — the amount Social Security calls your primary insurance amount. It then adjusts that figure for each claiming age using the statutory formula: benefits are reduced about <strong>6.67% per year</strong> for each of the first three years you claim before FRA and <strong>5% per year</strong> for any earlier years, and increased by <strong>8% per year</strong> (Delayed Retirement Credits) for each year you wait past FRA, up to age 70. It then walks both claiming choices month by month and reports the age where their cumulative totals are equal.</p>
+
+      <h2>A worked example</h2>
+      <p>Suppose your benefit at an FRA of 67 is $2,000 a month. Claiming at 62 cuts it by 30% to about <strong>$1,400</strong>; waiting until 70 adds 24% in delayed credits, lifting it to about <strong>$2,480</strong>. The age-62 claimer banks checks for five extra years, building an early lead. But the age-70 claimer collects $1,080 more every month once they start. Those larger checks grind down the lead, and the two totals typically cross in the early-to-mid 80s. Live past that and waiting wins; die before it and claiming early came out ahead.</p>
+
+      <h2>Why break-even isn't the whole story</h2>
+      <p>Break-even is a clean number, but it answers only one question: "how long must I live for waiting to pay off?" It can't tell you whether you <em>will</em>. Several things matter alongside it. <strong>Longevity</strong> — your health and family history — is the real driver; delaying is essentially insurance against outliving your money. <strong>Spousal and survivor benefits</strong> can tip the decision, because a higher earner's delayed benefit also raises what a surviving spouse receives. <strong>Other income and taxes</strong> matter too: claiming early to preserve an invested portfolio, or to stay under a tax or Medicare-premium threshold, can be rational even when the raw break-even math favors waiting.</p>
+      <p>This tool deliberately models the single-earner break-even and leaves those layers to you and an advisor. Once you know your number, it's worth checking how the rest of your retirement picture fits: project the savings you'd draw on with our <a href="/retirement-calculator">retirement calculator</a>, and if you're still working, see how income affects your <a href="/paycheck-calculator">take-home pay</a>. Social Security rules have real edge cases — confirm your own figures on your statement at ssa.gov, which controls.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is the Social Security break-even age?</summary><div>The break-even age is the point at which the higher lifetime total from claiming Social Security later overtakes the running total from claiming earlier. Before that age, the earlier claimer is ahead because they collected checks for more years; after it, the later claimer's larger monthly benefit wins.</div></details>
+        <details class="faq__item"><summary>How much does delaying Social Security increase my benefit?</summary><div>Claiming before your full retirement age (FRA) permanently reduces your monthly benefit — roughly 6.67% per year for the first three years early and 5% per year beyond that. Delaying past FRA earns Delayed Retirement Credits of 8% per year until age 70, after which there is no further increase.</div></details>
+        <details class="faq__item"><summary>What is my full retirement age?</summary><div>Full retirement age (FRA) is when you can claim 100% of your primary insurance amount. For anyone born in 1960 or later it is 67. It phases in from 66 to 67 for those born between 1955 and 1959. You can claim as early as 62 or as late as 70.</div></details>
+        <details class="faq__item"><summary>Should I always wait until 70 to claim Social Security?</summary><div>Not necessarily. Waiting maximizes the monthly check and pays off if you live past the break-even age, but claiming earlier can make sense if you have a shorter life expectancy, need the income, or want to preserve savings. Break-even is only one factor alongside health, other income, and spousal or survivor benefits.</div></details>
+        <details class="faq__item"><summary>Is this break-even calculator financial advice?</summary><div>No. It is an educational estimate that compares two claiming ages on lifetime totals. It does not model spousal or survivor benefits, the earnings test, benefit taxation, or cost-of-living adjustments in detail. Confirm your own numbers on your Social Security statement at ssa.gov and consult a financial advisor.</div></details>
+      </div>
+    </section>
+
+    <section class="container cite-tool">
+      <h2>Cite or link to this calculator</h2>
+      <p class="cite-tool__intro">Writing about Social Security claiming? You're welcome to reference this free tool. Copy a ready-made citation or link below.</p>
+
+      <div class="cite-tool__box">
+        <label class="cite-tool__box-label" for="cite-link">Link (HTML)</label>
+        <textarea class="cite-tool__code" id="cite-link" rows="2" readonly>&lt;a href="https://usfincalc.com/social-security-break-even-calculator"&gt;Social Security Break-Even Calculator&lt;/a&gt; by USFinCalc</textarea>
+        <div class="cite-tool__actions">
+          <button type="button" class="btn btn--ghost" data-copy="#cite-link">Copy link code</button>
+        </div>
+      </div>
+
+      <div class="cite-tool__box">
+        <label class="cite-tool__box-label" for="cite-text">Plain-text citation</label>
+        <textarea class="cite-tool__code" id="cite-text" rows="2" readonly>USFinCalc. "Social Security Break-Even Calculator." https://usfincalc.com/social-security-break-even-calculator</textarea>
+        <div class="cite-tool__actions">
+          <button type="button" class="btn btn--ghost" data-copy="#cite-text">Copy citation</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">Project the 401(k) or IRA savings you'll draw on alongside Social Security.</span>
+        </a>
+        <a class="card" href="/capital-gains-calculator">
+          <span class="card__title">Capital Gains Tax Calculator</span>
+          <span class="card__desc">Estimate tax on selling investments to fund early retirement years.</span>
+        </a>
+        <a class="card" href="/hsa-tax-savings-calculator">
+          <span class="card__title">HSA Tax Savings Calculator</span>
+          <span class="card__desc">See how an HSA covers medical costs tax-free in retirement.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or investment advice. This Social Security break-even tool compares two claiming ages on lifetime totals using the statutory reduction and delayed-credit factors; it does not model spousal or survivor benefits, the earnings test, or benefit taxation. Confirm your figures at ssa.gov and consult a licensed financial advisor before making claiming decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/social-security-break-even.js" defer></script>
+</body>
+</html>

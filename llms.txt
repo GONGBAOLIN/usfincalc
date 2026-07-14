@@ -14,6 +14,7 @@ Published and maintained by Gong Baolin, AFP, at WisePath Technology LLC (Delawa
 - [Auto Loan Calculator](https://usfincalc.com/auto-loan-calculator): Monthly car payment and total interest from price, sales tax, trade-in, down payment, rate, and term.
 - [Capital Gains Tax Calculator](https://usfincalc.com/capital-gains-calculator): Federal tax on an asset sale — 2026 long-term rates (0/15/20%), short-term ordinary rates, and the 3.8% NIIT.
 - [Retirement Calculator](https://usfincalc.com/retirement-calculator): Projects a 401(k)/IRA balance to retirement with employer match, then adjusts for inflation.
+- [Social Security Break-Even Calculator](https://usfincalc.com/social-security-break-even-calculator): Compares claiming Social Security early vs. later and finds the break-even age when the larger delayed benefit overtakes the smaller early one.
 - [RSU Tax Calculator](https://usfincalc.com/rsu-tax-calculator): After-tax value of vesting RSUs and the shortfall when 22% withholding is below your marginal rate.
 - [HSA Tax Savings Calculator](https://usfincalc.com/hsa-tax-savings-calculator): First-year federal, FICA, and state tax savings from an HSA, plus tax-free growth. 2026 limits.
 
