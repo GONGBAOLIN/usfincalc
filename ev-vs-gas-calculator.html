@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EV vs Gas Car Cost Calculator — 5-Year Total Comparison | USFinCalc</title>
+  <meta name="description" content="Compare the 5-year total cost of an electric vehicle vs. a gas car. Includes fuel, maintenance, insurance, tax credits, and the $7,500 federal EV credit.">
+  <link rel="canonical" href="https://usfincalc.com/ev-vs-gas-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="EV vs Gas Car Cost Calculator — 5-Year Comparison">
+  <meta property="og:description" content="Compare 5-year total cost of ownership: fuel, maintenance, insurance, and tax credits.">
+  <meta property="og:url" content="https://usfincalc.com/ev-vs-gas-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "EV vs Gas Car Cost Calculator",
+      "url": "https://usfincalc.com/ev-vs-gas-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "EV vs Gas Car Cost Calculator", "item": "https://usfincalc.com/ev-vs-gas-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is an electric car cheaper to own than a gas car?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. EVs like the Tesla Model 3, Hyundai Ioniq 5, and Chevy Equinox EV have lower fuel and maintenance costs. Combined with the $7,500 federal tax credit, many EVs reach total-cost parity within 2 to 3 years." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to charge an EV vs. filling up with gas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "At $0.16/kWh and 3.5 mi/kWh efficiency, an EV costs about $0.046 per mile in fuel. A 28 MPG gas car at $3.50/gallon costs $0.125 per mile — nearly 3x more." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the federal EV tax credit for 2026?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Up to $7,500 for new EVs meeting domestic content and assembly requirements under the Inflation Reduction Act. Income caps apply: $150,000 AGI for single filers, $300,000 for joint. Vehicle MSRP caps: $55,000 for sedans, $80,000 for SUVs and trucks." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are EV maintenance costs really lower?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. EVs have no oil changes, fewer brake replacements (regenerative braking), no transmission fluid, and fewer moving parts. Average annual maintenance is $600–$800 vs. $1,000–$1,400 for gas vehicles." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does EV insurance cost more?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Typically $100–$300 more per year due to higher repair costs for battery and electronics. This gap is narrowing as more repair shops gain EV certification." }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to compare EV vs gas car total cost",
+      "step": [
+        { "@type": "HowToStep", "name": "Enter driving habits", "text": "Enter your annual miles driven and fuel costs." },
+        { "@type": "HowToStep", "name": "Enter vehicle prices", "text": "Enter purchase prices for both vehicles and any tax credits." },
+        { "@type": "HowToStep", "name": "Enter running costs", "text": "Enter annual maintenance and insurance costs for each vehicle." },
+        { "@type": "HowToStep", "name": "Compare results", "text": "See the 5-year total cost, break-even year, and cost per mile for each vehicle." }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>EV vs Gas Car Cost Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        Compare the true 5-year cost of owning an electric vehicle — like the Tesla Model 3, Hyundai Ioniq 5, or Chevy Equinox EV — against a comparable gas car. This calculator includes purchase price, fuel, maintenance, insurance, the <strong>$7,500 federal EV tax credit</strong>, and annual fuel-price escalation.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" data-ad-format="horizontal"></div>
+
+    <form class="calc container" id="evGasForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="annualMiles">Annual miles driven</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="annualMiles" type="text" inputmode="numeric" value="12000">
+              <span class="input-wrap__affix">mi</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="gasPrice">Gas price</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="gasPrice" type="text" inputmode="decimal" value="3.50">
+              <span class="input-wrap__affix">$/gal</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="gasMPG">Gas car fuel economy</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="gasMPG" type="text" inputmode="numeric" value="28">
+              <span class="input-wrap__affix">MPG</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="elecRate">Electricity rate</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="elecRate" type="text" inputmode="decimal" value="0.16">
+              <span class="input-wrap__affix">$/kWh</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="evEfficiency">EV efficiency</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="evEfficiency" type="text" inputmode="decimal" value="3.5">
+              <span class="input-wrap__affix">mi/kWh</span>
+            </div>
+            <span class="field__hint">Tesla Model 3: ~4.0, Model Y: ~3.5, Ford F-150 Lightning: ~2.1</span>
+          </div>
+          <div class="field">
+            <label for="evPrice">EV purchase price</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="evPrice" type="text" inputmode="numeric" value="35000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="gasCarPrice">Gas car purchase price</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="gasCarPrice" type="text" inputmode="numeric" value="32000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="evCredit">Federal EV tax credit</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="evCredit" type="text" inputmode="numeric" value="7500">
+            </div>
+            <span class="field__hint">Up to $7,500. Income and MSRP caps apply.</span>
+          </div>
+          <div class="field">
+            <label for="stateIncentive">State EV incentive</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="stateIncentive" type="text" inputmode="numeric" value="0">
+            </div>
+          </div>
+          <div class="field">
+            <label for="evMaintenance">EV annual maintenance</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="evMaintenance" type="text" inputmode="numeric" value="600">
+            </div>
+          </div>
+          <div class="field">
+            <label for="gasMaintenance">Gas car annual maintenance</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="gasMaintenance" type="text" inputmode="numeric" value="1200">
+            </div>
+          </div>
+          <div class="field">
+            <label for="insuranceDiff">Insurance difference (EV − gas, per year)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="insuranceDiff" type="text" inputmode="numeric" value="200">
+            </div>
+            <span class="field__hint">Positive = EV costs more. Negative = EV costs less.</span>
+          </div>
+          <div class="field">
+            <label for="fuelIncrease">Annual fuel/electricity price increase</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="fuelIncrease" type="text" inputmode="decimal" value="3">
+              <span class="input-wrap__affix">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">5-year EV savings</span>
+            <div class="result__figure" id="outSavings">—</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row"><dt>EV 5-year total</dt><dd id="outEVTotal">$0</dd></div>
+            <div class="breakdown__row"><dt>Gas car 5-year total</dt><dd id="outGasTotal">$0</dd></div>
+            <div class="breakdown__row"><dt>Break-even year</dt><dd id="outBreakEven">—</dd></div>
+            <div class="breakdown__row"><dt>EV fuel cost (year 1)</dt><dd id="outEVFuel">$0/yr</dd></div>
+            <div class="breakdown__row"><dt>Gas fuel cost (year 1)</dt><dd id="outGasFuel">$0/yr</dd></div>
+            <div class="breakdown__row"><dt>EV cost per mile</dt><dd id="outEVPerMile">$0/mi</dd></div>
+            <div class="breakdown__row"><dt>Gas cost per mile</dt><dd id="outGasPerMile">$0/mi</dd></div>
+            <div class="breakdown__row"><dt>5-year maintenance savings</dt><dd id="outMaintSavings">$0</dd></div>
+          </dl>
+          <p class="estimate-note">Estimate only. Does not include depreciation, financing costs, or resale value differences.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Cumulative cost over 5 years</h2>
+      <div id="evGasChart"></div>
+      <p class="chart__caption">Total ownership cost year by year. When the EV line (green) is below the gas line (amber), the EV is cheaper to own at that point.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" data-ad-format="rectangle"></div>
+
+    <section class="container prose">
+      <h2>How this comparison works</h2>
+      <p>This calculator adds up every major ownership cost over 5 years: purchase price (minus tax credits), fuel, scheduled maintenance, and the insurance premium difference between an EV and a comparable gas vehicle.</p>
+
+      <h3>What drives the difference</h3>
+      <dl class="breakdown">
+        <div class="breakdown__row"><dt>Fuel cost gap</dt><dd>Electricity is typically 60–70% cheaper per mile than gasoline</dd></div>
+        <div class="breakdown__row"><dt>Maintenance</dt><dd>No oil changes, fewer brake jobs, no transmission service — EVs save $400–$800/year</dd></div>
+        <div class="breakdown__row"><dt>Tax credits</dt><dd>The $7,500 federal credit closes most of the purchase-price gap on day one</dd></div>
+        <div class="breakdown__row"><dt>Insurance</dt><dd>EV premiums are $100–$300/year higher due to repair complexity</dd></div>
+      </dl>
+
+      <h3>Popular EV models for comparison</h3>
+      <p>The default values approximate a <strong>Tesla Model 3</strong> or <strong>Chevy Equinox EV</strong> vs. a mid-size gas sedan. For trucks, try the <strong>Ford F-150 Lightning</strong> (2.1 mi/kWh, $55,000) against a gas F-150 (20 MPG, $48,000). The <strong>Hyundai Ioniq 5</strong> and <strong>Tesla Model Y</strong> fall between sedans and trucks in efficiency.</p>
+    </section>
+
+    <section class="container prose">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Is an electric car cheaper to own than a gas car?</summary><p>In most cases over 5 years, yes. Lower fuel and maintenance costs plus the federal tax credit typically offset a higher sticker price within 2–3 years.</p></details>
+      <details><summary>How much does it cost to charge an EV vs. filling up with gas?</summary><p>At national average rates, an EV costs about $0.04–$0.05 per mile in electricity. A 28 MPG gas car at $3.50/gallon costs about $0.13 per mile — roughly 3x more.</p></details>
+      <details><summary>What is the federal EV tax credit for 2026?</summary><p>Up to $7,500 for qualifying new EVs under the Inflation Reduction Act. Income limits apply ($150K single, $300K joint) and the vehicle MSRP must be under $55K for sedans or $80K for SUVs/trucks.</p></details>
+      <details><summary>Are EV maintenance costs really lower?</summary><p>Yes. EVs skip oil changes, have fewer brake replacements thanks to regenerative braking, and have no transmission. Average annual maintenance is $600–$800 vs. $1,000–$1,400 for gas vehicles.</p></details>
+      <details><summary>Does this include depreciation?</summary><p>No. Depreciation varies widely by make, model, and market conditions. This calculator focuses on out-of-pocket operating costs where EVs have a structural advantage.</p></details>
+    </section>
+
+    <section class="container">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/solar-calculator"><span class="card__title">Solar Payback</span><span class="card__desc">Break-even year and 25-year ROI for home solar panels.</span></a>
+        <a class="card" href="/auto-loan-calculator"><span class="card__title">Auto Loan</span><span class="card__desc">Monthly payment and total interest for any vehicle loan.</span></a>
+        <a class="card" href="/home-battery-calculator"><span class="card__title">Home Battery ROI</span><span class="card__desc">Peak/off-peak savings and payback for home energy storage.</span></a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" data-ad-format="horizontal"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or automotive advice. Actual costs vary by vehicle, driving habits, local energy prices, and available incentives. The federal EV tax credit is subject to income and MSRP limits — confirm eligibility with the IRS or a tax professional.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/ev-vs-gas.js" defer></script>
+</body>
+</html>

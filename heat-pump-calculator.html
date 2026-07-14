@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heat Pump Savings Calculator — Payback Period & Annual Savings | USFinCalc</title>
+  <meta name="description" content="Calculate heat pump savings vs. gas, oil, or propane. See your payback period, 15-year savings, and CO2 reduction including the $2,000 federal 25C tax credit.">
+  <link rel="canonical" href="https://usfincalc.com/heat-pump-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Heat Pump Savings Calculator — Payback & CO2 Reduction">
+  <meta property="og:description" content="See your payback period, 15-year savings, and CO2 reduction vs. gas, oil, or propane heating.">
+  <meta property="og:url" content="https://usfincalc.com/heat-pump-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Heat Pump Savings Calculator",
+      "url": "https://usfincalc.com/heat-pump-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Heat Pump Savings Calculator", "item": "https://usfincalc.com/heat-pump-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much can a heat pump save per year?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A heat pump typically saves 30% to 60% on heating costs compared to a gas furnace, and 20% to 40% on cooling vs. a standard central AC. Annual savings range from $500 to $2,000 depending on climate, fuel prices, and system efficiency." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the federal heat pump tax credit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Under Section 25C of the Inflation Reduction Act, qualifying heat pumps are eligible for a tax credit of up to $2,000 per year. The system must meet ENERGY STAR Most Efficient criteria or CEE Tier 1 requirements." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do heat pumps work in cold climates?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Modern cold-climate heat pumps (ccASHP) operate efficiently down to -15°F. In IECC Climate Zones 5–7, they may need supplemental heat on the coldest days, but still deliver 50%+ savings over the full heating season." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is HSPF and why does it matter?",
+          "acceptedAnswer": { "@type": "Answer", "text": "HSPF (Heating Seasonal Performance Factor) measures heating efficiency over a full season. Higher HSPF means more heat per unit of electricity. HSPF 10 is efficient; HSPF 13+ is top-tier. Dividing HSPF by 3.412 gives the seasonal COP." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a heat pump cheaper to run than gas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In most cases yes, because a heat pump delivers 2.5 to 4 units of heat per unit of electricity consumed. Even if electricity costs more per BTU than gas, the efficiency multiplier makes heat pumps cheaper to operate in most climates." }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to calculate heat pump savings",
+      "step": [
+        { "@type": "HowToStep", "name": "Enter current heating costs", "text": "Select your current fuel type and enter annual heating and cooling costs." },
+        { "@type": "HowToStep", "name": "Enter heat pump specs", "text": "Enter the SEER and HSPF ratings of the heat pump you're considering." },
+        { "@type": "HowToStep", "name": "Enter costs and incentives", "text": "Enter installation cost, the $2,000 federal credit, and any state rebates." },
+        { "@type": "HowToStep", "name": "Read your results", "text": "See annual savings, payback period, 15-year total savings, and CO2 reduction." }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Heat Pump Savings Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        See how much a heat pump can save you compared to gas, oil, propane, or electric resistance heating. This calculator estimates your annual savings, payback period after the <strong>$2,000 federal 25C tax credit</strong>, 15-year total savings, and CO2 reduction based on your climate zone and current system efficiency.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" data-ad-format="horizontal"></div>
+
+    <form class="calc container" id="heatPumpForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="fuelType">Current heating fuel</label>
+            <select class="input" id="fuelType">
+              <option value="gas">Natural gas</option>
+              <option value="oil">Heating oil</option>
+              <option value="propane">Propane</option>
+              <option value="electric">Electric resistance</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fuelPrice">Fuel price</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="fuelPrice" type="text" inputmode="decimal" value="1.20">
+              <span class="input-wrap__affix">$/therm</span>
+            </div>
+            <span class="field__hint">Gas: $/therm. Oil: $/gal. Propane: $/gal. Electric: $/kWh.</span>
+          </div>
+          <div class="field">
+            <label for="annualHeating">Annual heating cost</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="annualHeating" type="text" inputmode="numeric" value="1800">
+            </div>
+          </div>
+          <div class="field">
+            <label for="annualCooling">Annual cooling cost</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="annualCooling" type="text" inputmode="numeric" value="600">
+            </div>
+          </div>
+          <div class="field">
+            <label for="hspf">Heat pump HSPF</label>
+            <input class="input" id="hspf" type="text" inputmode="decimal" value="10">
+            <span class="field__hint">Heating efficiency. Good: 9–10. Excellent: 12+.</span>
+          </div>
+          <div class="field">
+            <label for="seer">Heat pump SEER</label>
+            <input class="input" id="seer" type="text" inputmode="decimal" value="20">
+            <span class="field__hint">Cooling efficiency. Good: 16–18. Excellent: 20+.</span>
+          </div>
+          <div class="field">
+            <label for="installCost">Installation cost</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="installCost" type="text" inputmode="numeric" value="12000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="existingEfficiency">Existing system AFUE</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="existingEfficiency" type="text" inputmode="numeric" value="80">
+              <span class="input-wrap__affix">%</span>
+            </div>
+            <span class="field__hint">Older furnaces: 60–80%. New condensing: 90–98%. Electric resistance: use 100%.</span>
+          </div>
+          <div class="field">
+            <label for="climateZone">IECC Climate Zone</label>
+            <select class="input" id="climateZone">
+              <option value="1">Zone 1 — Hot-humid (Miami, Honolulu)</option>
+              <option value="2">Zone 2 — Hot (Houston, Phoenix)</option>
+              <option value="3">Zone 3 — Warm (Atlanta, LA)</option>
+              <option value="4" selected>Zone 4 — Mixed (DC, Seattle)</option>
+              <option value="5">Zone 5 — Cool (Chicago, Denver)</option>
+              <option value="6">Zone 6 — Cold (Minneapolis, Burlington)</option>
+              <option value="7">Zone 7 — Very cold (Duluth, Fairbanks)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="federalCredit">Federal 25C tax credit</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="federalCredit" type="text" inputmode="numeric" value="2000">
+            </div>
+            <span class="field__hint">Up to $2,000/year for qualifying heat pumps under the IRA.</span>
+          </div>
+          <div class="field">
+            <label for="stateRebate">State/utility rebate</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix">$</span>
+              <input class="input" id="stateRebate" type="text" inputmode="numeric" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">Annual savings</span>
+            <div class="result__figure" id="outAnnualSavings">—</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row"><dt>Payback period</dt><dd id="outPayback">—</dd></div>
+            <div class="breakdown__row"><dt>15-year total savings</dt><dd id="outSavings15">$0</dd></div>
+            <div class="breakdown__row"><dt>CO2 reduction</dt><dd id="outCO2">0 lbs/yr</dd></div>
+            <div class="breakdown__row"><dt>Monthly heating savings</dt><dd id="outMonthlyHeating">$0</dd></div>
+            <div class="breakdown__row"><dt>Monthly cooling savings</dt><dd id="outMonthlyCooling">$0</dd></div>
+            <div class="breakdown__row"><dt>Net installation cost</dt><dd id="outNetCost">$0</dd></div>
+          </dl>
+          <p class="estimate-note">Estimate based on average climate zone loads. Actual savings depend on insulation, home size, and local utility rates.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Savings timeline</h2>
+      <div id="heatPumpChart"></div>
+      <p class="chart__caption">Cumulative savings (green) vs. net installation cost (amber). The crossover is your payback year.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" data-ad-format="rectangle"></div>
+
+    <section class="container prose">
+      <h2>How heat pump savings work</h2>
+      <p>A heat pump moves heat rather than generating it, delivering 2.5 to 4 units of heating energy for every unit of electricity consumed. This efficiency multiplier is why heat pumps cost less to operate than even high-efficiency gas furnaces in most climates.</p>
+
+      <h3>Key factors</h3>
+      <dl class="breakdown">
+        <div class="breakdown__row"><dt>HSPF / COP</dt><dd>Higher HSPF = more efficient heating. COP = HSPF / 3.412.</dd></div>
+        <div class="breakdown__row"><dt>SEER</dt><dd>Higher SEER = more efficient cooling. Replaces your AC and furnace in one unit.</dd></div>
+        <div class="breakdown__row"><dt>Climate zone</dt><dd>Warmer zones get more cooling benefit; colder zones get more heating benefit.</dd></div>
+        <div class="breakdown__row"><dt>Existing system</dt><dd>Replacing an old 60% AFUE furnace saves far more than replacing a 95% condensing unit.</dd></div>
+        <div class="breakdown__row"><dt>Federal credit</dt><dd>$2,000/year for ENERGY STAR Most Efficient heat pumps under Section 25C.</dd></div>
+      </dl>
+
+      <h3>Cold-climate performance</h3>
+      <p>Modern cold-climate air-source heat pumps (ccASHP) rated for Zone 5–7 maintain heating capacity down to −15°F. In extremely cold snaps, a backup electric resistance strip or existing gas furnace supplements the heat pump. Even with supplemental heat, annual savings typically exceed 40% in Zones 5–6.</p>
+    </section>
+
+    <section class="container prose">
+      <h2>Frequently asked questions</h2>
+      <details><summary>How much can a heat pump save per year?</summary><p>Typically $500 to $2,000 per year depending on climate, fuel prices, and system efficiency. Homes replacing oil or propane see the largest savings.</p></details>
+      <details><summary>What is the federal heat pump tax credit?</summary><p>Up to $2,000/year under Section 25C for qualifying heat pumps meeting ENERGY STAR Most Efficient or CEE Tier 1 criteria.</p></details>
+      <details><summary>Do heat pumps work in cold climates?</summary><p>Yes. Cold-climate models operate efficiently to −15°F and cover 90%+ of heating hours without backup in Zones 5–6. Zone 7 may need supplemental heat on the coldest days.</p></details>
+      <details><summary>What is HSPF and why does it matter?</summary><p>HSPF measures seasonal heating efficiency. Higher = cheaper to heat. Minimum federal standard is 8.8; efficient models range from 10 to 14.</p></details>
+      <details><summary>Is a heat pump cheaper to run than gas?</summary><p>Usually yes, because a COP of 3 means you get 3x the heating per dollar of electricity compared to burning gas at 100% efficiency. The crossover depends on local gas vs. electricity pricing.</p></details>
+    </section>
+
+    <section class="container">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/solar-calculator"><span class="card__title">Solar Payback</span><span class="card__desc">Break-even year and 25-year ROI for home solar panels.</span></a>
+        <a class="card" href="/home-battery-calculator"><span class="card__title">Home Battery ROI</span><span class="card__desc">Peak/off-peak savings and payback for home energy storage.</span></a>
+        <a class="card" href="/ev-vs-gas-calculator"><span class="card__title">EV vs Gas Cost</span><span class="card__desc">5-year total cost comparison including fuel, maintenance, and credits.</span></a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" data-ad-format="horizontal"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not energy or HVAC advice. Actual savings depend on home insulation, ductwork, local climate patterns, and utility rate structures. Consult a licensed HVAC contractor for a site-specific assessment.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/heat-pump.js" defer></script>
+</body>
+</html>
