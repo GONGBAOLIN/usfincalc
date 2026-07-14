@@ -13,6 +13,14 @@
   --color-accent-hover:   #246340;
   --color-warning:        #b45309;   /* amber — cost/debt */
 
+  /* ---- Categorical chart palette (donut segments) ---- */
+  --chart-1: #2e7d4f;   /* green  — net / kept / positive */
+  --chart-2: #b45309;   /* amber  — primary cost / federal tax */
+  --chart-3: #1a5c8a;   /* blue   — principal / secondary */
+  --chart-4: #7c3aed;   /* violet — third slice */
+  --chart-5: #0891b2;   /* teal   — fourth slice */
+  --chart-6: #64748b;   /* slate  — remainder / minor */
+
   /* ---- Surfaces & text (light) ---- */
   --color-bg:        #f8fafc;        /* page background */
   --color-surface:   #ffffff;        /* cards */
@@ -95,6 +103,14 @@
     --color-accent:         #4caf7a;
     --color-accent-hover:   #63c08f;
     --color-warning:        #f0a35e;
+
+    /* Categorical chart palette — brighter for dark surfaces */
+    --chart-1: #4caf7a;
+    --chart-2: #f0a35e;
+    --chart-3: #4ba3d3;
+    --chart-4: #a78bfa;
+    --chart-5: #22d3ee;
+    --chart-6: #94a3b8;
 
     --color-bg:        #0b1220;
     --color-surface:   #131c2e;

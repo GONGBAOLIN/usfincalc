@@ -165,6 +165,26 @@
     U.announce('After-tax RSU value ' + U.formatUSD(r.net, false) +
       (underWithheld ? '. Warning: 22% withholding under-withholds by about ' +
         U.formatUSD(r.gap, false) + ', which may be owed at filing.' : '.'));
+
+    drawChart(r);
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('rsuChart');
+    if (!container || !U.renderDonutChart) return;
+    U.renderDonutChart(container, {
+      segments: [
+        { label: 'After-tax value', value: r.net,         color: 'var(--chart-1)' },
+        { label: 'Federal tax',     value: r.actualFed,   color: 'var(--chart-2)' },
+        { label: 'Social Security', value: r.rsuSS,       color: 'var(--chart-3)' },
+        { label: 'Medicare',        value: r.rsuMedicare, color: 'var(--chart-5)' },
+        { label: 'State tax',       value: r.rsuState,    color: 'var(--chart-4)' }
+      ],
+      centerLabel: U.formatUSD(r.rsu, false),
+      centerSub: 'RSU value',
+      valueFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'After-tax RSU value versus federal tax, FICA and state tax'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

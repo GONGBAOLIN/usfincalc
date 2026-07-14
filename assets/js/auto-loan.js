@@ -46,6 +46,7 @@
     var totalCost = down + trade + totalPaid;
 
     return {
+      price: price,
       salesTax: salesTax,
       financed: financed,
       monthly: monthly,
@@ -76,6 +77,24 @@
 
     U.announce('Estimated car payment ' + U.formatUSD(r.monthly, true) +
                ' per month, financing ' + U.formatUSD(r.financed, false) + '.');
+
+    drawChart(r);
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('autoChart');
+    if (!container || !U.renderDonutChart) return;
+    U.renderDonutChart(container, {
+      segments: [
+        { label: 'Vehicle price', value: r.price,         color: 'var(--chart-3)' },
+        { label: 'Sales tax',     value: r.salesTax,      color: 'var(--chart-2)' },
+        { label: 'Interest',      value: r.totalInterest, color: 'var(--chart-4)' }
+      ],
+      centerLabel: U.formatUSD(r.totalCost, false),
+      centerSub: 'total cost',
+      valueFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'Total cost of the car: vehicle price, sales tax and loan interest'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

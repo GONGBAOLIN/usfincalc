@@ -157,6 +157,26 @@
     }
 
     U.announce('Estimated maximum home price ' + U.formatUSD(r.maxPrice, false) + '.');
+
+    drawChart(r);
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('affChart');
+    if (!container || !U.renderDonutChart) return;
+    U.renderDonutChart(container, {
+      segments: [
+        { label: 'Principal & interest', value: r.pi,         color: 'var(--chart-3)' },
+        { label: 'Property tax',         value: r.taxMonthly, color: 'var(--chart-2)' },
+        { label: 'Home insurance',       value: r.insMonthly, color: 'var(--chart-5)' },
+        { label: 'PMI',                  value: r.pmiApplies ? r.pmiMonthly : 0, color: 'var(--chart-4)' },
+        { label: 'HOA',                  value: r.hoaMonthly, color: 'var(--chart-6)' }
+      ],
+      centerLabel: U.formatUSD(r.maxPiti, true),
+      centerSub: 'max PITI / mo',
+      valueFormat: function (v) { return U.formatUSD(v, true); },
+      title: 'How your maximum monthly payment splits across principal, interest, taxes, insurance, PMI and HOA'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

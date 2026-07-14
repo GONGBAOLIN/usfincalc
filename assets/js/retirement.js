@@ -47,11 +47,15 @@
     var matchAnnual = salary * matchedRate * matchPct;
 
     var totalOwn = 0, totalMatch = 0;
+    var path = [balance];          // total balance at year 0,1,2,...
+    var contribPath = [startBalance]; // cumulative principal (start + contributions) each year
     for (var y = 0; y < years; y++) {
       balance = balance * (1 + r);
       balance += ownAnnual + matchAnnual;
       totalOwn += ownAnnual;
       totalMatch += matchAnnual;
+      path.push(balance);
+      contribPath.push(startBalance + totalOwn + totalMatch);
     }
 
     var nominal = balance;
@@ -70,7 +74,10 @@
       totalMatch: totalMatch,
       totalContrib: totalOwn + totalMatch,
       startBalance: startBalance,
-      growth: growth
+      growth: growth,
+      currentAge: currentAge,
+      path: path,
+      contribPath: contribPath
     };
   }
 
@@ -103,6 +110,48 @@
     U.announce('Projected retirement balance ' + U.formatUSD(r.nominal, false) +
       ' nominal, about ' + U.formatUSD(r.real, false) +
       ' in today’s dollars after ' + r.years + ' years.');
+
+    drawChart(r);
+  }
+
+  /* Downsample a path to at most `max` points, always keeping the last. */
+  function sample(path, max) {
+    var n = path.length;
+    if (n <= max) return path.slice();
+    var out = [], step = (n - 1) / (max - 1);
+    for (var k = 0; k < max; k++) out.push(path[Math.round(k * step)]);
+    out[out.length - 1] = path[n - 1];
+    return out;
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('balanceChart');
+    if (!container || !U.renderLineChart) return;
+    var path = r.path || [];
+    if (path.length < 2) { container.innerHTML = ''; return; }
+
+    var TARGET = 60;
+    var balS = sample(path, TARGET);
+    var contribS = sample(r.contribPath || [], TARGET);
+
+    var midAge = r.currentAge + Math.round(r.years / 2);
+    var endAge = r.currentAge + r.years;
+    var xTicks = [
+      { i: 0, label: String(r.currentAge) },
+      { i: Math.round((balS.length - 1) / 2), label: String(midAge) },
+      { i: balS.length - 1, label: String(endAge) }
+    ];
+
+    U.renderLineChart(container, {
+      series: [
+        { points: balS, color: 'var(--color-primary)', label: 'Total balance' },
+        { points: contribS, color: 'var(--color-muted)', label: 'Contributions' }
+      ],
+      xLabel: 'Age',
+      xTicks: xTicks,
+      yFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'Projected retirement balance growth by age, total balance versus contributions'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

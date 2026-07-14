@@ -95,18 +95,28 @@
     var totalSavings = fedSavings + ficaSavings + stateSavings;
     var effRate = contribution > 0 ? totalSavings / contribution : 0;
 
-    // Tax-free growth: contribute `contribution` each year for `years` at `ret`.
+    // Tax-free growth value: contribute `contribution` each year for `years` at
+    // `ret`. `growth` is the total future account value (ordinary annuity: each
+    // year the balance earns the return, then a contribution is added). Paths
+    // feed the chart — valuePath is the balance, contribPath the principal only.
     var growth = 0;
+    var valuePath = [0], contribPath = [0];
     if (years > 0) {
-      growth = (ret === 0) ? contribution * years
-                           : contribution * ((Math.pow(1 + ret, years) - 1) / ret);
+      var bal = 0;
+      for (var y = 0; y < years; y++) {
+        bal = bal * (1 + ret) + contribution;
+        valuePath.push(bal);
+        contribPath.push(contribution * (y + 1));
+      }
+      growth = bal;
     }
 
     return {
       limit: limit, contribution: contribution, cappedAtLimit: cappedAtLimit,
       fedSavings: fedSavings, ficaSavings: ficaSavings, stateSavings: stateSavings,
       totalSavings: totalSavings, effRate: effRate, growth: growth,
-      payroll: payroll, years: years
+      payroll: payroll, years: years,
+      valuePath: valuePath, contribPath: contribPath
     };
   }
 
@@ -154,6 +164,45 @@
     }
 
     U.announce('Estimated first-year HSA tax savings ' + U.formatUSD(r.totalSavings, false) + '.');
+
+    drawChart(r);
+  }
+
+  /* Downsample a path to at most `max` points, always keeping the last. */
+  function sample(path, max) {
+    var n = path.length;
+    if (n <= max) return path.slice();
+    var out = [], step = (n - 1) / (max - 1);
+    for (var k = 0; k < max; k++) out.push(path[Math.round(k * step)]);
+    out[out.length - 1] = path[n - 1];
+    return out;
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('hsaGrowthChart');
+    if (!container || !U.renderLineChart) return;
+    var path = r.valuePath || [];
+    if (!(r.years > 0) || path.length < 2) { container.innerHTML = ''; return; }
+
+    var TARGET = 60;
+    var valS = sample(path, TARGET);
+    var contribS = sample(r.contribPath || [], TARGET);
+    var xTicks = [
+      { i: 0, label: '0' },
+      { i: Math.round((valS.length - 1) / 2), label: Math.round(r.years / 2) + 'y' },
+      { i: valS.length - 1, label: r.years + 'y' }
+    ];
+
+    U.renderLineChart(container, {
+      series: [
+        { points: valS, color: 'var(--color-accent)', label: 'Account value' },
+        { points: contribS, color: 'var(--color-muted)', label: 'Contributions' }
+      ],
+      xLabel: 'Years',
+      xTicks: xTicks,
+      yFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'Tax-free HSA growth over time, account value versus total contributions'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

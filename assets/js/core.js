@@ -304,6 +304,74 @@
     container.innerHTML = svg + legend;
   }
 
+  /* Donut / composition chart. Splits a total into proportional arcs using
+     stroke-dasharray on concentric <circle> elements (no arc-path trig, fully
+     deterministic). Zero-value segments are skipped. Renders a center label and
+     a legend with amount + percent per segment.
+       opts.segments   : [{ label, value, color }]  value >= 0
+       opts.centerLabel : big text in the hole (e.g. total)
+       opts.centerSub   : small text under it
+       opts.valueFormat : fn(value) -> string for legend amounts
+       opts.title       : accessible <title> */
+  function renderDonutChart(container, opts) {
+    if (!container) return;
+    opts = opts || {};
+    var segs = (opts.segments || []).filter(function (s) { return s && s.value > 0; });
+    var total = segs.reduce(function (a, s) { return a + s.value; }, 0);
+    if (!segs.length || total <= 0) { container.innerHTML = ''; return; }
+
+    var svgns = 'http://www.w3.org/2000/svg';
+    var W = 260, H = 260, cx = W / 2, cy = H / 2;
+    var r = 92, sw = 34;               // ring radius + stroke width
+    var C = 2 * Math.PI * r;           // circumference
+    var valueFormat = opts.valueFormat || function (v) { return String(Math.round(v)); };
+
+    var parts = [];
+    // track ring (subtle full circle behind the segments)
+    parts.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" ' +
+               'class="chart__donut-track" stroke-width="' + sw + '"/>');
+
+    // segment arcs, rotated so they start at 12 o'clock and go clockwise
+    var offset = 0;
+    segs.forEach(function (s) {
+      var frac = s.value / total;
+      var len = frac * C;
+      parts.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" ' +
+                 'stroke="' + (s.color || 'currentColor') + '" stroke-width="' + sw + '" ' +
+                 'stroke-dasharray="' + len.toFixed(2) + ' ' + (C - len).toFixed(2) + '" ' +
+                 'stroke-dashoffset="' + (-offset).toFixed(2) + '" ' +
+                 'transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
+      offset += len;
+    });
+
+    // center text
+    if (opts.centerLabel) {
+      parts.push('<text x="' + cx + '" y="' + (cy - 2) +
+                 '" class="chart__donut-center" text-anchor="middle">' + opts.centerLabel + '</text>');
+    }
+    if (opts.centerSub) {
+      parts.push('<text x="' + cx + '" y="' + (cy + 20) +
+                 '" class="chart__donut-sub" text-anchor="middle">' + opts.centerSub + '</text>');
+    }
+
+    var titleId = 'donut-title-' + (container.id || 'x');
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="chart__svg chart__svg--donut" ' +
+              'role="img" aria-labelledby="' + titleId + '" preserveAspectRatio="xMidYMid meet" xmlns="' + svgns + '">' +
+              '<title id="' + titleId + '">' + (opts.title || 'Chart') + '</title>' +
+              parts.join('') + '</svg>';
+
+    var legend = '<ul class="chart__legend chart__legend--donut">' + segs.map(function (s) {
+      var pct = Math.round((s.value / total) * 100);
+      return '<li class="chart__legend-item"><span class="chart__swatch chart__swatch--box" style="background:' +
+             (s.color || 'currentColor') + '"></span>' +
+             '<span class="chart__legend-label">' + (s.label || '') + '</span>' +
+             '<span class="chart__legend-value">' + valueFormat(s.value) + '</span>' +
+             '<span class="chart__legend-pct">' + pct + '%</span></li>';
+    }).join('') + '</ul>';
+
+    container.innerHTML = '<div class="chart__donut-wrap">' + svg + legend + '</div>';
+  }
+
   function bootNav() { initNav(); initDropdowns(); initActiveLink(); initCopyButtons(); }
 
   if (document.readyState === 'loading') {
@@ -325,5 +393,6 @@
     setText: setText,
     monthlyPayment: monthlyPayment,
     renderLineChart: renderLineChart,
+    renderDonutChart: renderDonutChart,
   };
 })();

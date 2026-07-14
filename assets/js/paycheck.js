@@ -126,6 +126,27 @@
 
     U.announce('Estimated take-home pay ' + U.formatUSD(r.netPerPeriod, true) +
                ' per ' + per + ', or ' + U.formatUSD(r.net, false) + ' per year.');
+
+    drawChart(r);
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('paycheckChart');
+    if (!container || !U.renderDonutChart) return;
+    U.renderDonutChart(container, {
+      segments: [
+        { label: 'Take-home pay', value: r.net,             color: 'var(--chart-1)' },
+        { label: 'Federal tax',   value: r.federal,         color: 'var(--chart-2)' },
+        { label: 'Social Security', value: r.socialSecurity, color: 'var(--chart-3)' },
+        { label: 'Medicare',      value: r.medicare,        color: 'var(--chart-5)' },
+        { label: 'State tax',     value: r.state,           color: 'var(--chart-4)' },
+        { label: '401(k)',        value: r.pretax401k,      color: 'var(--chart-6)' }
+      ],
+      centerLabel: U.formatUSD(r.gross, false),
+      centerSub: 'gross / year',
+      valueFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'Where your gross pay goes: take-home pay, federal tax, FICA, state tax and 401(k)'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }

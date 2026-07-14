@@ -139,6 +139,24 @@
 
     U.announce('Estimated capital gains tax ' + U.formatUSD(r.totalTax, false) +
                ' on a ' + U.formatUSD(r.gain, false) + ' gain.');
+
+    drawChart(r);
+  }
+
+  function drawChart(r) {
+    var container = document.getElementById('cgChart');
+    if (!container || !U.renderDonutChart) return;
+    U.renderDonutChart(container, {
+      segments: [
+        { label: 'You keep',    value: r.net,     color: 'var(--chart-1)' },
+        { label: 'Federal tax', value: r.federal, color: 'var(--chart-2)' },
+        { label: 'NIIT (3.8%)', value: r.niit,    color: 'var(--chart-4)' }
+      ],
+      centerLabel: U.formatUSD(r.gain, false),
+      centerSub: 'total gain',
+      valueFormat: function (v) { return U.formatUSD(v, false); },
+      title: 'How the gain splits: what you keep, federal capital gains tax and NIIT'
+    });
   }
 
   function recalc() { render(compute(readInputs())); }
