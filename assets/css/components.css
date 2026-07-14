@@ -109,8 +109,23 @@
     border-bottom: 1px solid var(--color-border);
   }
   .site-nav__links > li:last-child a { border-bottom: none; }
-  /* On mobile the dropdown is always expanded inline (no toggle behavior). */
-  .nav-dropdown__toggle { display: none; }
+  /* On mobile the dropdown is always expanded inline (no toggle behavior);
+     the toggle button becomes a static section header. */
+  .nav-dropdown__toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: var(--space-3) var(--space-2) var(--space-1);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--color-muted);
+    pointer-events: none;
+  }
+  .nav-dropdown__toggle svg { display: none; }
   .nav-dropdown__menu {
     list-style: none;
     padding: 0;
