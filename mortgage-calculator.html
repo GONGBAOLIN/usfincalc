@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Mortgage Calculator",
-        "url": "https://usfincalc.com/mortgage-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Mortgage Calculator",
+      "url": "https://usfincalc.com/mortgage-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Mortgage Calculator", "item": "https://usfincalc.com/mortgage-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is PITI?", "acceptedAnswer": { "@type": "Answer", "text": "PITI stands for Principal, Interest, Taxes, and Insurance — the four parts of a typical monthly mortgage payment. Many calculators only show principal and interest, which understates your true cost." } },
-          { "@type": "Question", "name": "When do I have to pay PMI?", "acceptedAnswer": { "@type": "Answer", "text": "Private mortgage insurance is usually required on conventional loans when your down payment is less than 20% of the home price. It typically falls off once you reach 20% equity." } },
-          { "@type": "Question", "name": "How is my monthly mortgage payment calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Principal and interest are calculated from the loan amount, interest rate, and term using a standard amortization formula. Property tax, home insurance, PMI, and HOA dues are then added to reach your full monthly payment." } },
-          { "@type": "Question", "name": "Does a larger down payment lower my payment?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A larger down payment reduces the loan amount, lowers monthly principal and interest, and — once you reach 20% down — removes PMI entirely." } },
-          { "@type": "Question", "name": "Are property taxes included in this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can enter property tax as an annual dollar amount or as a percentage of the home price, and it is included in your monthly PITI estimate." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mortgage Calculator",
+          "item": "https://usfincalc.com/mortgage-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PITI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PITI stands for Principal, Interest, Taxes, and Insurance — the four parts of a typical monthly mortgage payment. Many calculators only show principal and interest, which understates your true cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When do I have to pay PMI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Private mortgage insurance is usually required on conventional loans when your down payment is less than 20% of the home price. It typically falls off once you reach 20% equity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is my monthly mortgage payment calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Principal and interest are calculated from the loan amount, interest rate, and term using a standard amortization formula. Property tax, home insurance, PMI, and HOA dues are then added to reach your full monthly payment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a larger down payment lower my payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A larger down payment reduces the loan amount, lowers monthly principal and interest, and — once you reach 20% down — removes PMI entirely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are property taxes included in this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can enter property tax as an annual dollar amount or as a percentage of the home price, and it is included in your monthly PITI estimate."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>Mortgage Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         A mortgage payment is made up of four parts, known as <strong>PITI</strong>: principal, interest, taxes, and insurance. Lenders quote only principal and interest, but property taxes, homeowners insurance, PMI (if your down payment is under 20%), and any HOA dues are part of what you actually pay each month. This calculator adds all of them to show your true monthly payment.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

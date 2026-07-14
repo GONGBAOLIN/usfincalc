@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Retirement Calculator",
-        "url": "https://usfincalc.com/retirement-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Retirement Calculator",
+      "url": "https://usfincalc.com/retirement-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Retirement Calculator", "item": "https://usfincalc.com/retirement-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "How much will my 401(k) be worth at retirement?", "acceptedAnswer": { "@type": "Answer", "text": "Your ending balance depends on your current balance, annual contributions, employer match, expected return, and years until retirement. This calculator compounds each year's growth and adds contributions to project both a nominal balance and its value in today's dollars." } },
-          { "@type": "Question", "name": "How does an employer 401(k) match work?", "acceptedAnswer": { "@type": "Answer", "text": "Employers commonly match a percentage of what you contribute, up to a limit. A typical example is 50% of your contributions up to 6% of salary. The match is free money, so contributing at least enough to get the full match is usually the highest-return move available." } },
-          { "@type": "Question", "name": "What is an inflation-adjusted retirement balance?", "acceptedAnswer": { "@type": "Answer", "text": "A future balance looks large partly because money loses purchasing power over time. The inflation-adjusted (real) balance restates that future amount in today's dollars, so you can judge what it would actually buy when you retire." } },
-          { "@type": "Question", "name": "What return should I assume for retirement projections?", "acceptedAnswer": { "@type": "Answer", "text": "A diversified stock-heavy portfolio has historically returned around 7% to 10% annually before inflation over long periods. Many planners use 6% to 7% as a conservative long-run assumption. Actual returns vary year to year, so treat any projection as an estimate." } },
-          { "@type": "Question", "name": "How much should I contribute to my 401(k)?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum, contribute enough to capture the full employer match. Beyond that, a common target is 15% of income including the match. The 2026 IRS employee contribution limit is higher than prior years, so check the current cap if you contribute aggressively." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Retirement Calculator",
+          "item": "https://usfincalc.com/retirement-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much will my 401(k) be worth at retirement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your ending balance depends on your current balance, annual contributions, employer match, expected return, and years until retirement. This calculator compounds each year's growth and adds contributions to project both a nominal balance and its value in today's dollars."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does an employer 401(k) match work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Employers commonly match a percentage of what you contribute, up to a limit. A typical example is 50% of your contributions up to 6% of salary. The match is free money, so contributing at least enough to get the full match is usually the highest-return move available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an inflation-adjusted retirement balance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A future balance looks large partly because money loses purchasing power over time. The inflation-adjusted (real) balance restates that future amount in today's dollars, so you can judge what it would actually buy when you retire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What return should I assume for retirement projections?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A diversified stock-heavy portfolio has historically returned around 7% to 10% annually before inflation over long periods. Many planners use 6% to 7% as a conservative long-run assumption. Actual returns vary year to year, so treat any projection as an estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should I contribute to my 401(k)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At minimum, contribute enough to capture the full employer match. Beyond that, a common target is 15% of income including the match. The 2026 IRS employee contribution limit is higher than prior years, so check the current cap if you contribute aggressively."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>Retirement Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         A retirement calculator projects your 401(k) or IRA balance at retirement by compounding your current savings and yearly contributions at an expected rate of return. It adds any employer match to your contributions, then adjusts the final balance for inflation to show what it is really worth in today's dollars. This tool shows both the future balance and that inflation-adjusted value.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

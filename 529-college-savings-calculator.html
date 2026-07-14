@@ -44,56 +44,139 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "529 College Savings Calculator",
-        "url": "https://usfincalc.com/529-college-savings-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "datePublished": "2026-06-10",
-        "dateModified": "2026-06-22",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "creator": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "529 College Savings Calculator",
+      "url": "https://usfincalc.com/529-college-savings-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "529 college savings plans", "Education funding", "Investment planning"]
+      "datePublished": "2026-06-10",
+      "dateModified": "2026-06-22",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "529 College Savings Calculator", "item": "https://usfincalc.com/529-college-savings-calculator" }
-        ]
+      "creator": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is a 529 plan?", "acceptedAnswer": { "@type": "Answer", "text": "A 529 is a tax-advantaged investment account for education. Contributions grow tax-deferred, and withdrawals are federal-income-tax-free when used for qualified education expenses like tuition, fees, books, and room and board. Many states also offer a deduction or credit for contributions." } },
-          { "@type": "Question", "name": "How much should I save in a 529 each month?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your child's age, how much you've already saved, your expected investment return, and the type of school. This calculator projects your current plan against the inflated cost of college and shows the monthly contribution needed to fully fund your goal." } },
-          { "@type": "Question", "name": "What return should I assume for a 529?", "acceptedAnswer": { "@type": "Answer", "text": "529 plans typically hold diversified stock and bond funds, often in age-based portfolios that grow more conservative as college nears. A long-run assumption of 5–7% before inflation is common, but younger children can take more equity risk while accounts near matriculation are usually de-risked, lowering the expected return." } },
-          { "@type": "Question", "name": "Why does college cost grow faster than regular inflation?", "acceptedAnswer": { "@type": "Answer", "text": "College costs have historically risen faster than the general inflation rate — often around 5% per year. That is why projecting today's tuition forward matters: a degree that costs $30,000 a year now can cost far more by the time a young child enrolls. This calculator inflates each future college year separately." } },
-          { "@type": "Question", "name": "What happens to leftover 529 money?", "acceptedAnswer": { "@type": "Answer", "text": "Unused funds can be kept for graduate school, transferred to another eligible family member, or — under current federal rules and within annual and lifetime limits — rolled into a Roth IRA for the beneficiary. Non-qualified withdrawals of earnings are taxed and generally face a 10% penalty." } },
-          { "@type": "Question", "name": "Is a 529 plan tax deductible?", "acceptedAnswer": { "@type": "Answer", "text": "Not on your federal return — 529 contributions are made with after-tax dollars. The federal benefit is tax-free growth and tax-free withdrawals for qualified education expenses. Many states offer a state income tax deduction or credit for contributions to their plan; the amount and rules vary by state, so check your own state's plan." } },
-          { "@type": "Question", "name": "Is it ever too late to start a 529?", "acceptedAnswer": { "@type": "Answer", "text": "No. Even a few years of tax-free growth helps, and contributions can still be withdrawn tax-free for qualified expenses regardless of when you started. Starting earlier gives compounding more time to work, but a later start still captures the tax advantage on whatever you contribute." } }
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "529 college savings plans",
+        "Education funding",
+        "Investment planning"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "529 College Savings Calculator",
+          "item": "https://usfincalc.com/529-college-savings-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a 529 plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 529 is a tax-advantaged investment account for education. Contributions grow tax-deferred, and withdrawals are federal-income-tax-free when used for qualified education expenses like tuition, fees, books, and room and board. Many states also offer a deduction or credit for contributions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should I save in a 529 each month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your child's age, how much you've already saved, your expected investment return, and the type of school. This calculator projects your current plan against the inflated cost of college and shows the monthly contribution needed to fully fund your goal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What return should I assume for a 529?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "529 plans typically hold diversified stock and bond funds, often in age-based portfolios that grow more conservative as college nears. A long-run assumption of 5–7% before inflation is common, but younger children can take more equity risk while accounts near matriculation are usually de-risked, lowering the expected return."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does college cost grow faster than regular inflation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "College costs have historically risen faster than the general inflation rate — often around 5% per year. That is why projecting today's tuition forward matters: a degree that costs $30,000 a year now can cost far more by the time a young child enrolls. This calculator inflates each future college year separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to leftover 529 money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unused funds can be kept for graduate school, transferred to another eligible family member, or — under current federal rules and within annual and lifetime limits — rolled into a Roth IRA for the beneficiary. Non-qualified withdrawals of earnings are taxed and generally face a 10% penalty."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 529 plan tax deductible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on your federal return — 529 contributions are made with after-tax dollars. The federal benefit is tax-free growth and tax-free withdrawals for qualified education expenses. Many states offer a state income tax deduction or credit for contributions to their plan; the amount and rules vary by state, so check your own state's plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it ever too late to start a 529?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Even a few years of tax-free growth helps, and contributions can still be withdrawn tax-free for qualified expenses regardless of when you started. Starting earlier gives compounding more time to work, but a later start still captures the tax advantage on whatever you contribute."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -132,7 +215,7 @@
   <main id="main">
     <div class="container">
       <h1>529 College Savings Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         A 529 college savings calculator projects what your plan will be worth when your child starts college and compares it to the inflated cost of a degree. As a benchmark, a $10,000 head start plus <strong>$300 a month</strong> at a 6% return grows to roughly <strong>$145,000</strong> over 18 years. This tool shows your projected balance, any shortfall, and the monthly contribution needed to fully fund the goal.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

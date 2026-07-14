@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Take-Home Pay Calculator",
-        "url": "https://usfincalc.com/paycheck-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Take-Home Pay Calculator",
+      "url": "https://usfincalc.com/paycheck-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Paycheck Calculator", "item": "https://usfincalc.com/paycheck-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "How is take-home pay calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Take-home pay is your gross salary minus federal income tax, Social Security and Medicare (FICA), state income tax, and any pre-tax deductions like a 401(k). What remains is your net pay." } },
-          { "@type": "Question", "name": "Which states have no income tax?", "acceptedAnswer": { "@type": "Answer", "text": "Nine states have no state income tax on wages: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. In these states your take-home pay is higher because only federal tax and FICA are withheld." } },
-          { "@type": "Question", "name": "What is FICA?", "acceptedAnswer": { "@type": "Answer", "text": "FICA is the payroll tax that funds Social Security and Medicare. Social Security is 6.2% on wages up to an annual cap ($184,500 in 2026); Medicare is 1.45% on all wages, plus an extra 0.9% on high earnings." } },
-          { "@type": "Question", "name": "Does a 401(k) lower my taxes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Traditional 401(k) contributions are deducted from your pay before federal and state income tax, lowering your taxable income. They do not, however, reduce Social Security or Medicare tax." } },
-          { "@type": "Question", "name": "Why is my take-home pay lower than my salary?", "acceptedAnswer": { "@type": "Answer", "text": "Your gross salary is reduced by federal income tax, Social Security, Medicare, state income tax, and any pre-tax benefits. Combined, these can take 20% to 40% of gross pay depending on your income and state." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Paycheck Calculator",
+          "item": "https://usfincalc.com/paycheck-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is take-home pay calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take-home pay is your gross salary minus federal income tax, Social Security and Medicare (FICA), state income tax, and any pre-tax deductions like a 401(k). What remains is your net pay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which states have no income tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nine states have no state income tax on wages: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. In these states your take-home pay is higher because only federal tax and FICA are withheld."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is FICA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FICA is the payroll tax that funds Social Security and Medicare. Social Security is 6.2% on wages up to an annual cap ($184,500 in 2026); Medicare is 1.45% on all wages, plus an extra 0.9% on high earnings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a 401(k) lower my taxes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Traditional 401(k) contributions are deducted from your pay before federal and state income tax, lowering your taxable income. They do not, however, reduce Social Security or Medicare tax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my take-home pay lower than my salary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your gross salary is reduced by federal income tax, Social Security, Medicare, state income tax, and any pre-tax benefits. Combined, these can take 20% to 40% of gross pay depending on your income and state."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>Take-Home Pay Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         Your take-home pay is your gross salary minus federal income tax, FICA taxes, and state income tax. FICA alone takes <strong>7.65%</strong> of wages — 6.2% for Social Security up to the annual wage cap, plus 1.45% for Medicare. What remains after federal, FICA, and state tax is your net paycheck, which this calculator estimates for all 50 states using 2026 brackets.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

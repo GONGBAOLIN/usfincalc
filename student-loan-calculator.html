@@ -44,56 +44,139 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Student Loan Calculator",
-        "url": "https://usfincalc.com/student-loan-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "datePublished": "2026-06-10",
-        "dateModified": "2026-06-22",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "creator": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Student Loan Calculator",
+      "url": "https://usfincalc.com/student-loan-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "Student loans", "US income tax", "Debt repayment"]
+      "datePublished": "2026-06-10",
+      "dateModified": "2026-06-22",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Student Loan Calculator", "item": "https://usfincalc.com/student-loan-calculator" }
-        ]
+      "creator": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "How is the standard student loan payment calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The federal Standard Repayment Plan amortizes your balance into fixed monthly payments over a set term — 10 years (120 months) by default. The payment is the amount that fully pays off the balance plus interest by the end of the term at your interest rate." } },
-          { "@type": "Question", "name": "How does paying extra each month help?", "acceptedAnswer": { "@type": "Answer", "text": "Every extra dollar goes straight to principal, so less interest accrues in the months that follow. This both shortens your payoff time and reduces the total interest you pay. There is no federal prepayment penalty on student loans." } },
-          { "@type": "Question", "name": "Is there a penalty for paying off student loans early?", "acceptedAnswer": { "@type": "Answer", "text": "No. Federal student loans (and nearly all private ones) have no prepayment penalty. You can pay extra or pay the balance in full at any time, and you only ever owe the remaining principal plus interest accrued to that date." } },
-          { "@type": "Question", "name": "Does this calculator cover income-driven repayment?", "acceptedAnswer": { "@type": "Answer", "text": "No. This tool models the fixed standard repayment schedule. Income-driven plans (IBR, PAYE, SAVE) set payments as a share of your discretionary income and can lead to forgiveness; their math is different and depends on income and family size." } },
-          { "@type": "Question", "name": "Should I pay extra on student loans or invest?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your loan's interest rate versus your expected investment return, and your tolerance for risk. Paying off a high-rate loan is a guaranteed return equal to the rate; investing may return more but is not guaranteed. Many people do some of both." } },
-          { "@type": "Question", "name": "What is the average student loan payment?", "acceptedAnswer": { "@type": "Answer", "text": "There is no single average — your payment depends on your balance, interest rate, and term. As a reference point, a $30,000 balance at 6.5% on the standard 10-year plan works out to roughly $340 per month. Enter your own numbers for an estimate based on your actual loan." } },
-          { "@type": "Question", "name": "How long does it take to pay off a student loan?", "acceptedAnswer": { "@type": "Answer", "text": "The federal Standard Repayment Plan runs 10 years (120 months) by default. Paying more than the scheduled amount shortens that: every extra dollar goes to principal, so the balance reaches zero sooner." } }
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "Student loans",
+        "US income tax",
+        "Debt repayment"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Student Loan Calculator",
+          "item": "https://usfincalc.com/student-loan-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is the standard student loan payment calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The federal Standard Repayment Plan amortizes your balance into fixed monthly payments over a set term — 10 years (120 months) by default. The payment is the amount that fully pays off the balance plus interest by the end of the term at your interest rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does paying extra each month help?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every extra dollar goes straight to principal, so less interest accrues in the months that follow. This both shortens your payoff time and reduces the total interest you pay. There is no federal prepayment penalty on student loans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a penalty for paying off student loans early?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Federal student loans (and nearly all private ones) have no prepayment penalty. You can pay extra or pay the balance in full at any time, and you only ever owe the remaining principal plus interest accrued to that date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator cover income-driven repayment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This tool models the fixed standard repayment schedule. Income-driven plans (IBR, PAYE, SAVE) set payments as a share of your discretionary income and can lead to forgiveness; their math is different and depends on income and family size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I pay extra on student loans or invest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your loan's interest rate versus your expected investment return, and your tolerance for risk. Paying off a high-rate loan is a guaranteed return equal to the rate; investing may return more but is not guaranteed. Many people do some of both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the average student loan payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no single average — your payment depends on your balance, interest rate, and term. As a reference point, a $30,000 balance at 6.5% on the standard 10-year plan works out to roughly $340 per month. Enter your own numbers for an estimate based on your actual loan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to pay off a student loan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The federal Standard Repayment Plan runs 10 years (120 months) by default. Paying more than the scheduled amount shortens that: every extra dollar goes to principal, so the balance reaches zero sooner."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -132,7 +215,7 @@
   <main id="main">
     <div class="container">
       <h1>Student Loan Payment Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         Your monthly student loan payment is the fixed amount that pays off your balance plus interest over the loan term. On the federal Standard Repayment Plan (10 years), a $30,000 balance at a 6.5% interest rate works out to about <strong>$340 per month</strong>. Paying extra each month lowers the total interest and shortens the payoff time.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

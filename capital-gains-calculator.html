@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Capital Gains Tax Calculator",
-        "url": "https://usfincalc.com/capital-gains-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Capital Gains Tax Calculator",
+      "url": "https://usfincalc.com/capital-gains-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Capital Gains Tax Calculator", "item": "https://usfincalc.com/capital-gains-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is the difference between long-term and short-term capital gains?", "acceptedAnswer": { "@type": "Answer", "text": "It is about how long you held the asset. Hold it more than one year and the profit is a long-term gain, taxed at the preferential 0%, 15%, or 20% rate. Hold it one year or less and it is a short-term gain, taxed as ordinary income at your regular marginal rate, which is usually higher." } },
-          { "@type": "Question", "name": "How are 2026 long-term capital gains rates determined?", "acceptedAnswer": { "@type": "Answer", "text": "The rate depends on your total taxable income. For 2026 a single filer pays 0% on long-term gains while taxable income stays under $49,450, 15% up to $545,500, and 20% above that. The gain stacks on top of your other taxable income, so part of it can fall in more than one band." } },
-          { "@type": "Question", "name": "What is the 3.8% Net Investment Income Tax (NIIT)?", "acceptedAnswer": { "@type": "Answer", "text": "The NIIT is an extra 3.8% tax on investment income, including capital gains, for higher earners. It applies to the lesser of your net investment income or the amount your modified adjusted gross income exceeds $200,000 (single) or $250,000 (married filing jointly). It is on top of the regular capital gains tax." } },
-          { "@type": "Question", "name": "Does this calculator include state capital gains tax?", "acceptedAnswer": { "@type": "Answer", "text": "No. This tool estimates federal capital gains tax only. Most states also tax capital gains, usually as ordinary income at the state rate, and a few have no income tax at all. Check your state's rules for the full picture." } },
-          { "@type": "Question", "name": "How can I reduce capital gains tax?", "acceptedAnswer": { "@type": "Answer", "text": "Common strategies include holding assets longer than a year to get long-term rates, harvesting losses to offset gains, using tax-advantaged accounts like IRAs and 401(k)s, and timing sales for a year when your income is lower. This tool is informational; consult a tax professional for your situation." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Capital Gains Tax Calculator",
+          "item": "https://usfincalc.com/capital-gains-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between long-term and short-term capital gains?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is about how long you held the asset. Hold it more than one year and the profit is a long-term gain, taxed at the preferential 0%, 15%, or 20% rate. Hold it one year or less and it is a short-term gain, taxed as ordinary income at your regular marginal rate, which is usually higher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are 2026 long-term capital gains rates determined?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The rate depends on your total taxable income. For 2026 a single filer pays 0% on long-term gains while taxable income stays under $49,450, 15% up to $545,500, and 20% above that. The gain stacks on top of your other taxable income, so part of it can fall in more than one band."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 3.8% Net Investment Income Tax (NIIT)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The NIIT is an extra 3.8% tax on investment income, including capital gains, for higher earners. It applies to the lesser of your net investment income or the amount your modified adjusted gross income exceeds $200,000 (single) or $250,000 (married filing jointly). It is on top of the regular capital gains tax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator include state capital gains tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This tool estimates federal capital gains tax only. Most states also tax capital gains, usually as ordinary income at the state rate, and a few have no income tax at all. Check your state's rules for the full picture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I reduce capital gains tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common strategies include holding assets longer than a year to get long-term rates, harvesting losses to offset gains, using tax-advantaged accounts like IRAs and 401(k)s, and timing sales for a year when your income is lower. This tool is informational; consult a tax professional for your situation."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>Capital Gains Tax Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         Capital gains tax is the federal tax on the profit from selling an asset. If you held it more than one year, the gain is taxed at the long-term rate of <strong>0%, 15%, or 20%</strong> depending on your income; if you held it a year or less, it is taxed as ordinary income at your regular bracket. High earners may also owe the <strong>3.8% Net Investment Income Tax</strong> on top.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "HSA Tax Savings Calculator",
-        "url": "https://usfincalc.com/hsa-tax-savings-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "HSA Tax Savings Calculator",
+      "url": "https://usfincalc.com/hsa-tax-savings-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "HSA Tax Savings Calculator", "item": "https://usfincalc.com/hsa-tax-savings-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is the HSA triple tax advantage?", "acceptedAnswer": { "@type": "Answer", "text": "An HSA is taxed favorably three times: contributions are pre-tax (lowering your taxable income, and avoiding FICA when made through payroll), the balance grows tax-free, and withdrawals for qualified medical expenses are tax-free. No other account combines all three." } },
-          { "@type": "Question", "name": "What are the 2026 HSA contribution limits?", "acceptedAnswer": { "@type": "Answer", "text": "For 2026, the IRS limit is $4,400 for self-only coverage and $8,750 for family coverage. If you are age 55 or older, you can add a $1,000 catch-up contribution. You must be covered by a qualifying high-deductible health plan (HDHP) to contribute." } },
-          { "@type": "Question", "name": "Do HSA contributions avoid Social Security and Medicare tax?", "acceptedAnswer": { "@type": "Answer", "text": "Only when contributed through payroll deduction under your employer's cafeteria plan. Those contributions skip the 7.65% employee FICA tax in addition to income tax. Contributions you make directly and deduct on your tax return save income tax but not FICA." } },
-          { "@type": "Question", "name": "Does my state tax HSA contributions?", "acceptedAnswer": { "@type": "Answer", "text": "Most states follow the federal rule and exclude HSA contributions from state income tax. A few — notably California and New Jersey — do not, so contributions are still subject to state tax there. Enter your state's marginal rate (or 0% if your state has no income tax or fully conforms) to estimate the state savings." } },
-          { "@type": "Question", "name": "Can I invest my HSA?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many HSA providers let you invest the balance above a small cash threshold in mutual funds or ETFs. Because growth and qualified withdrawals are tax-free, a long-invested HSA can become a powerful retirement-health account. This calculator projects that tax-free growth over the years you choose." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "HSA Tax Savings Calculator",
+          "item": "https://usfincalc.com/hsa-tax-savings-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the HSA triple tax advantage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An HSA is taxed favorably three times: contributions are pre-tax (lowering your taxable income, and avoiding FICA when made through payroll), the balance grows tax-free, and withdrawals for qualified medical expenses are tax-free. No other account combines all three."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the 2026 HSA contribution limits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For 2026, the IRS limit is $4,400 for self-only coverage and $8,750 for family coverage. If you are age 55 or older, you can add a $1,000 catch-up contribution. You must be covered by a qualifying high-deductible health plan (HDHP) to contribute."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do HSA contributions avoid Social Security and Medicare tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only when contributed through payroll deduction under your employer's cafeteria plan. Those contributions skip the 7.65% employee FICA tax in addition to income tax. Contributions you make directly and deduct on your tax return save income tax but not FICA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my state tax HSA contributions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most states follow the federal rule and exclude HSA contributions from state income tax. A few — notably California and New Jersey — do not, so contributions are still subject to state tax there. Enter your state's marginal rate (or 0% if your state has no income tax or fully conforms) to estimate the state savings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I invest my HSA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many HSA providers let you invest the balance above a small cash threshold in mutual funds or ETFs. Because growth and qualified withdrawals are tax-free, a long-invested HSA can become a powerful retirement-health account. This calculator projects that tax-free growth over the years you choose."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>HSA Tax Savings Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         A Health Savings Account (HSA) saves you money through a triple tax advantage: contributions are tax-deductible, the balance grows tax-free, and withdrawals for qualified medical expenses are tax-free. Contributing through payroll also avoids the <strong>7.65% FICA</strong> tax, so a contribution can save federal income tax, FICA, and state tax all at once. This calculator estimates your first-year savings and tax-free growth using 2026 limits.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Auto Loan Calculator",
-        "url": "https://usfincalc.com/auto-loan-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Auto Loan Calculator",
+      "url": "https://usfincalc.com/auto-loan-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Auto Loan Calculator", "item": "https://usfincalc.com/auto-loan-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Does a trade-in reduce sales tax?", "acceptedAnswer": { "@type": "Answer", "text": "In most states, yes. Sales tax is charged on the vehicle price minus your trade-in value, so a trade-in lowers both the amount you finance and the tax you pay. A few states tax the full price regardless of trade-in." } },
-          { "@type": "Question", "name": "How is my car payment calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The amount financed is the vehicle price plus sales tax, minus your down payment and trade-in. That balance is amortized over your loan term at your APR to produce a fixed monthly payment." } },
-          { "@type": "Question", "name": "What is APR on a car loan?", "acceptedAnswer": { "@type": "Answer", "text": "APR is the annual percentage rate — the yearly cost of borrowing, including interest. A lower APR means a lower monthly payment and less total interest over the life of the loan." } },
-          { "@type": "Question", "name": "Is a longer loan term cheaper?", "acceptedAnswer": { "@type": "Answer", "text": "A longer term lowers your monthly payment but increases total interest paid. A 72-month loan costs less per month than a 48-month loan but more overall. Try different terms to see the trade-off." } },
-          { "@type": "Question", "name": "Should I make a down payment on a car?", "acceptedAnswer": { "@type": "Answer", "text": "A larger down payment reduces the amount financed, lowering your monthly payment and total interest. It also reduces the risk of owing more than the car is worth early in the loan." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Auto Loan Calculator",
+          "item": "https://usfincalc.com/auto-loan-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does a trade-in reduce sales tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most states, yes. Sales tax is charged on the vehicle price minus your trade-in value, so a trade-in lowers both the amount you finance and the tax you pay. A few states tax the full price regardless of trade-in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is my car payment calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The amount financed is the vehicle price plus sales tax, minus your down payment and trade-in. That balance is amortized over your loan term at your APR to produce a fixed monthly payment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is APR on a car loan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "APR is the annual percentage rate — the yearly cost of borrowing, including interest. A lower APR means a lower monthly payment and less total interest over the life of the loan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a longer loan term cheaper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A longer term lowers your monthly payment but increases total interest paid. A 72-month loan costs less per month than a 48-month loan but more overall. Try different terms to see the trade-off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I make a down payment on a car?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A larger down payment reduces the amount financed, lowering your monthly payment and total interest. It also reduces the risk of owing more than the car is worth early in the loan."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>Auto Loan Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         Your monthly car payment is set by the amount financed, the interest rate, and the loan term. The amount financed is the vehicle price plus sales tax, minus your down payment and any trade-in credit. A longer term lowers the monthly payment but raises the total interest you pay over the life of the loan. This calculator shows both your payment and that total interest.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "RSU Tax Calculator",
-        "url": "https://usfincalc.com/rsu-tax-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "RSU Tax Calculator",
+      "url": "https://usfincalc.com/rsu-tax-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "RSU Tax Calculator", "item": "https://usfincalc.com/rsu-tax-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "How are RSUs taxed?", "acceptedAnswer": { "@type": "Answer", "text": "When RSUs vest, their full market value is treated as ordinary income — just like salary. It is subject to federal income tax, Social Security and Medicare, and state income tax in the year of vesting." } },
-          { "@type": "Question", "name": "Why might I owe more tax on my RSUs at filing?", "acceptedAnswer": { "@type": "Answer", "text": "Employers withhold federal tax on RSU income at the 22% supplemental flat rate. If your marginal tax bracket is higher than 22% — common for engineers and high earners — too little is withheld, and you owe the difference when you file." } },
-          { "@type": "Question", "name": "What is the 22% RSU withholding rate?", "acceptedAnswer": { "@type": "Answer", "text": "The IRS supplemental wage withholding rate is 22% on amounts up to $1 million, and 37% above that. Many employers use it for RSUs by default, which can under-withhold for people in the 32% or 35% brackets." } },
-          { "@type": "Question", "name": "Do RSUs get hit with Social Security and Medicare tax?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RSU income is wages, so Social Security applies up to the annual wage base and Medicare applies to all of it. High earners also pay the 0.9% additional Medicare tax above the threshold." } },
-          { "@type": "Question", "name": "How can I avoid an RSU tax surprise?", "acceptedAnswer": { "@type": "Answer", "text": "Estimate your true marginal rate, compare it to the 22% withheld, and set aside the difference — or increase your withholding or make estimated tax payments. This calculator shows that gap for your situation." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "RSU Tax Calculator",
+          "item": "https://usfincalc.com/rsu-tax-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How are RSUs taxed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When RSUs vest, their full market value is treated as ordinary income — just like salary. It is subject to federal income tax, Social Security and Medicare, and state income tax in the year of vesting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why might I owe more tax on my RSUs at filing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Employers withhold federal tax on RSU income at the 22% supplemental flat rate. If your marginal tax bracket is higher than 22% — common for engineers and high earners — too little is withheld, and you owe the difference when you file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 22% RSU withholding rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The IRS supplemental wage withholding rate is 22% on amounts up to $1 million, and 37% above that. Many employers use it for RSUs by default, which can under-withhold for people in the 32% or 35% brackets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do RSUs get hit with Social Security and Medicare tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. RSU income is wages, so Social Security applies up to the annual wage base and Medicare applies to all of it. High earners also pay the 0.9% additional Medicare tax above the threshold."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I avoid an RSU tax surprise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Estimate your true marginal rate, compare it to the 22% withheld, and set aside the difference — or increase your withholding or make estimated tax payments. This calculator shows that gap for your situation."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>RSU Tax Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         RSUs are taxed as ordinary income when they vest, based on the share price on the vesting date. Employers usually withhold a flat <strong>22%</strong> for federal tax, but if your marginal rate is higher — 32% or 37% for many tech employees — that withholding falls short and you owe the difference at tax time. This calculator shows your real after-tax value and any shortfall.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">

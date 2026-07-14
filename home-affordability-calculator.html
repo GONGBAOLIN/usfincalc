@@ -44,37 +44,93 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Home Affordability Calculator",
-        "url": "https://usfincalc.com/home-affordability-calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web Browser",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Home Affordability Calculator",
+      "url": "https://usfincalc.com/home-affordability-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Home Affordability Calculator", "item": "https://usfincalc.com/home-affordability-calculator" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What is the 28/36 rule?", "acceptedAnswer": { "@type": "Answer", "text": "The 28/36 rule is a common guideline lenders use. It says your housing payment (PITI) should not exceed 28% of your gross monthly income (the front-end ratio), and your total debt payments — housing plus car loans, student loans, and minimum credit card payments — should not exceed 36% (the back-end ratio). This calculator applies the lower of the two limits." } },
-          { "@type": "Question", "name": "How much house can I afford on my salary?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on far more than salary: your existing debts, down payment, interest rate, property tax rate, and insurance all change the answer. Enter them here and the calculator solves for the maximum home price that keeps you within the 28/36 limits, including full PITI." } },
-          { "@type": "Question", "name": "Does this include property tax, insurance, and PMI?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It uses full PITI: principal and interest, property tax, homeowners insurance, and PMI when your down payment is under 20%. This matters because taxes and insurance can add hundreds of dollars a month, which lowers the price you can afford compared with a principal-and-interest-only estimate." } },
-          { "@type": "Question", "name": "What counts as monthly debts in the back-end ratio?", "acceptedAnswer": { "@type": "Answer", "text": "Recurring minimum debt payments: car loans, student loans, personal loans, and the minimum payments on credit cards. It does not include things like utilities, groceries, or insurance that isn't part of the mortgage. Higher monthly debts directly reduce how much home you can afford." } },
-          { "@type": "Question", "name": "Should I borrow the maximum I qualify for?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not. Qualifying for a payment is not the same as it being comfortable. The 28/36 rule is an upper bound; many people are happier targeting a lower payment that leaves room for savings, emergencies, and the non-mortgage costs of owning a home. Treat the result as a ceiling, not a goal." } }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Home Affordability Calculator",
+          "item": "https://usfincalc.com/home-affordability-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the 28/36 rule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 28/36 rule is a common guideline lenders use. It says your housing payment (PITI) should not exceed 28% of your gross monthly income (the front-end ratio), and your total debt payments — housing plus car loans, student loans, and minimum credit card payments — should not exceed 36% (the back-end ratio). This calculator applies the lower of the two limits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much house can I afford on my salary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on far more than salary: your existing debts, down payment, interest rate, property tax rate, and insurance all change the answer. Enter them here and the calculator solves for the maximum home price that keeps you within the 28/36 limits, including full PITI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this include property tax, insurance, and PMI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It uses full PITI: principal and interest, property tax, homeowners insurance, and PMI when your down payment is under 20%. This matters because taxes and insurance can add hundreds of dollars a month, which lowers the price you can afford compared with a principal-and-interest-only estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What counts as monthly debts in the back-end ratio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Recurring minimum debt payments: car loans, student loans, personal loans, and the minimum payments on credit cards. It does not include things like utilities, groceries, or insurance that isn't part of the mortgage. Higher monthly debts directly reduce how much home you can afford."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I borrow the maximum I qualify for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. Qualifying for a payment is not the same as it being comfortable. The 28/36 rule is an upper bound; many people are happier targeting a lower payment that leaves room for savings, emergencies, and the non-mortgage costs of owning a home. Treat the result as a ceiling, not a goal."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -113,7 +169,7 @@
   <main id="main">
     <div class="container">
       <h1>Home Affordability Calculator</h1>
-      <p class="prose" style="margin-top:var(--space-2)">
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         How much house you can afford is usually set by the lender's <strong>28/36 rule</strong>: your total housing payment should stay under 28% of gross monthly income, and all your debt payments combined under 36%. Applying those limits to your income, debts, down payment, and rate — using full PITI, not just principal and interest — gives your realistic maximum home price, which this calculator estimates.
       </p>
       <p class="muted prose" style="margin-top:var(--space-2)">
