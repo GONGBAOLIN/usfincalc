@@ -45,30 +45,89 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "How PMI Works: Private Mortgage Insurance Explained",
-        "description": "What private mortgage insurance is, when it's required, what it costs, and how to remove it at 20% equity.",
-        "author": { "@type": "Organization", "name": "USFinCalc" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-06-09",
-        "dateModified": "2026-06-22",
-        "mainEntityOfPage": "https://usfincalc.com/guides/how-pmi-works"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How PMI Works: Private Mortgage Insurance Explained",
+      "description": "What private mortgage insurance is, when it's required, what it costs, and how to remove it at 20% equity.",
+      "author": {
+        "@type": "Organization",
+        "name": "USFinCalc"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "How PMI Works", "item": "https://usfincalc.com/guides/how-pmi-works" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
+      },
+      "datePublished": "2026-06-09",
+      "dateModified": "2026-06-22",
+      "mainEntityOfPage": "https://usfincalc.com/guides/how-pmi-works"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How PMI Works",
+          "item": "https://usfincalc.com/guides/how-pmi-works"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PMI and why do I pay it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Private mortgage insurance protects the lender, not you, when you put down less than 20%. If you default early and the home sells for less than the balance, PMI covers the lender's loss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does PMI cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PMI typically runs between 0.3% and 1.5% of the loan amount per year, billed monthly. Your rate depends on your credit score, down payment size, and loan type — a lower score or smaller down payment raises it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get rid of PMI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Borrower-paid PMI ends in four ways; the fastest is to request cancellation once you reach 20% equity. By law, the lender must automatically cancel it once your balance reaches 78% of the original home value, if you're current on payments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is avoiding PMI always worth it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. PMI is the cost of buying before you've saved a full 20% down. If home prices are rising faster than you can save, paying PMI for a while can be a reasonable trade-off."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -163,6 +222,16 @@
 
       <p class="estimate-note">This guide is general information, not financial advice. PMI rules and rates vary by lender and loan type — confirm specifics with your lender.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is PMI and why do I pay it?</summary><div>Private mortgage insurance protects the lender, not you, when you put down less than 20%. If you default early and the home sells for less than the balance, PMI covers the lender's loss.</div></details>
+        <details class="faq__item"><summary>How much does PMI cost?</summary><div>PMI typically runs between 0.3% and 1.5% of the loan amount per year, billed monthly. Your rate depends on your credit score, down payment size, and loan type — a lower score or smaller down payment raises it.</div></details>
+        <details class="faq__item"><summary>How do I get rid of PMI?</summary><div>Borrower-paid PMI ends in four ways; the fastest is to request cancellation once you reach 20% equity. By law, the lender must automatically cancel it once your balance reaches 78% of the original home value, if you're current on payments.</div></details>
+        <details class="faq__item"><summary>Is avoiding PMI always worth it?</summary><div>Not necessarily. PMI is the cost of buying before you've saved a full 20% down. If home prices are rising faster than you can save, paying PMI for a while can be a reasonable trade-off.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>

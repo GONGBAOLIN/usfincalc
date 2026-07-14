@@ -45,43 +45,105 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "529 Plan Growth Projections: How a Monthly Contribution Becomes a College Fund",
-        "description": "How monthly contributions, investment return, fees, and time horizon turn into a real 529 college fund, with worked projections.",
-        "image": "https://usfincalc.com/assets/img/og-default.png",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-06-22T00:00:00-04:00",
-        "dateModified": "2026-06-22T00:00:00-04:00",
-        "mainEntityOfPage": "https://usfincalc.com/guides/529-growth-projections"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "529 Plan Growth Projections: How a Monthly Contribution Becomes a College Fund",
+      "description": "How monthly contributions, investment return, fees, and time horizon turn into a real 529 college fund, with worked projections.",
+      "image": "https://usfincalc.com/assets/img/og-default.png",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "529 college savings plans", "Investment planning"]
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "529 Plan Growth Projections", "item": "https://usfincalc.com/guides/529-growth-projections" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "datePublished": "2026-06-22T00:00:00-04:00",
+      "dateModified": "2026-06-22T00:00:00-04:00",
+      "mainEntityOfPage": "https://usfincalc.com/guides/529-growth-projections"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "529 college savings plans",
+        "Investment planning"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "529 Plan Growth Projections",
+          "item": "https://usfincalc.com/guides/529-growth-projections"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What drives how much a 529 grows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two engines: the cash you contribute (starting balance plus monthly contributions) and investment growth on money already invested. Over time, compounding growth increasingly outweighs new contributions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What return should I assume for a 529?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a conservative return. Planning at 5% and beating it is a good outcome; planning at 9% and missing it leaves a real gap when tuition bills arrive. Re-run the projection once a year."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do 529 plan fees really matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. An expense ratio looks trivial, but it's charged every year on your whole balance, so it compounds against you. On a $300-a-month, 18-year projection, moving from a low-cost to a higher-fee plan can cost thousands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the single biggest factor in a 529 projection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Time. The monthly contribution and low fees matter, but the dominant variable is how many years the money compounds — every year earlier you start adds a compounding year to every dollar."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -184,6 +246,16 @@
 
       <p class="estimate-note">Educational information, not investment advice. Projections depend on returns, fees, and college-cost inflation, all of which vary and are not guaranteed. Verify plan details with your 529 program and consult a licensed financial professional for your situation.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What drives how much a 529 grows?</summary><div>Two engines: the cash you contribute (starting balance plus monthly contributions) and investment growth on money already invested. Over time, compounding growth increasingly outweighs new contributions.</div></details>
+        <details class="faq__item"><summary>What return should I assume for a 529?</summary><div>Use a conservative return. Planning at 5% and beating it is a good outcome; planning at 9% and missing it leaves a real gap when tuition bills arrive. Re-run the projection once a year.</div></details>
+        <details class="faq__item"><summary>Do 529 plan fees really matter?</summary><div>Yes. An expense ratio looks trivial, but it's charged every year on your whole balance, so it compounds against you. On a $300-a-month, 18-year projection, moving from a low-cost to a higher-fee plan can cost thousands.</div></details>
+        <details class="faq__item"><summary>What's the single biggest factor in a 529 projection?</summary><div>Time. The monthly contribution and low fees matter, but the dominant variable is how many years the money compounds — every year earlier you start adds a compounding year to every dollar.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>

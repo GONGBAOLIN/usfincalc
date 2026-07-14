@@ -45,43 +45,105 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "The 28/36 Rule Explained: How Lenders Decide What You Can Afford",
-        "description": "What the 28/36 rule means, how front-end and back-end debt-to-income ratios work, and how to apply the rule to your own home budget.",
-        "image": "https://usfincalc.com/assets/img/og-default.png",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-07-08T00:00:00-04:00",
-        "dateModified": "2026-07-08T00:00:00-04:00",
-        "mainEntityOfPage": "https://usfincalc.com/guides/28-36-rule-explained"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The 28/36 Rule Explained: How Lenders Decide What You Can Afford",
+      "description": "What the 28/36 rule means, how front-end and back-end debt-to-income ratios work, and how to apply the rule to your own home budget.",
+      "image": "https://usfincalc.com/assets/img/og-default.png",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "Mortgage financing", "Home affordability"]
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "The 28/36 Rule Explained", "item": "https://usfincalc.com/guides/28-36-rule-explained" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "datePublished": "2026-07-08T00:00:00-04:00",
+      "dateModified": "2026-07-08T00:00:00-04:00",
+      "mainEntityOfPage": "https://usfincalc.com/guides/28-36-rule-explained"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "Mortgage financing",
+        "Home affordability"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The 28/36 Rule Explained",
+          "item": "https://usfincalc.com/guides/28-36-rule-explained"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the 28/36 rule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's a lender guideline for mortgage affordability: your total monthly housing payment (full PITI plus PMI and HOA) should stay within 28% of your gross monthly income, and all your monthly debt payments combined should stay within 36%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the rule based on gross income?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lenders use gross (pre-tax) income because it's easy to verify and doesn't vary with state tax or benefit elections. But you spend after-tax dollars, so a payment at 28% of gross can feel higher against your actual take-home pay — worth being cautious about."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get approved above 28/36?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The 28/36 ratios are the benchmark for a qualified conventional loan, but lenders regularly approve higher debt-to-income ratios when there are compensating factors like strong credit, large reserves, or a big down payment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the rule not account for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It ignores non-debt costs — maintenance, utilities, childcare — and doesn't judge income stability. A household with heavy childcare or variable income has less real room than its ratios suggest."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -194,6 +256,16 @@
 
       <p class="estimate-note">This guide is general information, not financial advice. Underwriting standards vary by lender and loan program — confirm specifics with your lender, and consult a licensed professional for guidance on your situation.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What is the 28/36 rule?</summary><div>It's a lender guideline for mortgage affordability: your total monthly housing payment (full PITI plus PMI and HOA) should stay within 28% of your gross monthly income, and all your monthly debt payments combined should stay within 36%.</div></details>
+        <details class="faq__item"><summary>Why is the rule based on gross income?</summary><div>Lenders use gross (pre-tax) income because it's easy to verify and doesn't vary with state tax or benefit elections. But you spend after-tax dollars, so a payment at 28% of gross can feel higher against your actual take-home pay — worth being cautious about.</div></details>
+        <details class="faq__item"><summary>Can I get approved above 28/36?</summary><div>Yes. The 28/36 ratios are the benchmark for a qualified conventional loan, but lenders regularly approve higher debt-to-income ratios when there are compensating factors like strong credit, large reserves, or a big down payment.</div></details>
+        <details class="faq__item"><summary>What does the rule not account for?</summary><div>It ignores non-debt costs — maintenance, utilities, childcare — and doesn't judge income stability. A household with heavy childcare or variable income has less real room than its ratios suggest.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>

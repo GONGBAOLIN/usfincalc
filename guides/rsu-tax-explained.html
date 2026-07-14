@@ -45,30 +45,89 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "RSU Taxes Explained: The 22% Withholding Trap",
-        "description": "How RSUs are taxed at vesting and why standard 22% withholding under-taxes high earners.",
-        "author": { "@type": "Organization", "name": "USFinCalc" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-06-09",
-        "dateModified": "2026-06-22",
-        "mainEntityOfPage": "https://usfincalc.com/guides/rsu-tax-explained"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "RSU Taxes Explained: The 22% Withholding Trap",
+      "description": "How RSUs are taxed at vesting and why standard 22% withholding under-taxes high earners.",
+      "author": {
+        "@type": "Organization",
+        "name": "USFinCalc"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "RSU Taxes Explained", "item": "https://usfincalc.com/guides/rsu-tax-explained" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
+      },
+      "datePublished": "2026-06-09",
+      "dateModified": "2026-06-22",
+      "mainEntityOfPage": "https://usfincalc.com/guides/rsu-tax-explained"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RSU Taxes Explained",
+          "item": "https://usfincalc.com/guides/rsu-tax-explained"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How are RSUs taxed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At vesting, the full market value of the shares that day is taxed as ordinary income, exactly like salary — 500 shares vesting at $200 is $100,000 added to your W-2."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 22% withholding trap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Employers often withhold a flat 22% on RSU income, but if that value stacks on a high salary your real marginal rate may be 32% or 37% — so 22% withholding falls short and you owe the difference at tax time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are vesting and selling RSUs taxed separately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, they're two events. Vesting is taxed as ordinary income on the full value; later selling triggers capital gains or losses only on the change in value since vesting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I avoid an RSU tax surprise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare your true marginal rate to the 22% withheld, and set aside the difference before filing season. Don't forget state tax, which the flat withholding may also under-cover."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -166,6 +225,16 @@
 
       <p class="estimate-note">Educational information, not tax advice. RSU and withholding rules vary; consult a CPA for your situation.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How are RSUs taxed?</summary><div>At vesting, the full market value of the shares that day is taxed as ordinary income, exactly like salary — 500 shares vesting at $200 is $100,000 added to your W-2.</div></details>
+        <details class="faq__item"><summary>What is the 22% withholding trap?</summary><div>Employers often withhold a flat 22% on RSU income, but if that value stacks on a high salary your real marginal rate may be 32% or 37% — so 22% withholding falls short and you owe the difference at tax time.</div></details>
+        <details class="faq__item"><summary>Are vesting and selling RSUs taxed separately?</summary><div>Yes, they're two events. Vesting is taxed as ordinary income on the full value; later selling triggers capital gains or losses only on the change in value since vesting.</div></details>
+        <details class="faq__item"><summary>How do I avoid an RSU tax surprise?</summary><div>Compare your true marginal rate to the 22% withheld, and set aside the difference before filing season. Don't forget state tax, which the flat withholding may also under-cover.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>

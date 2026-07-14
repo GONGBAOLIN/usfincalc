@@ -45,43 +45,106 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "Long-Term vs. Short-Term Capital Gains: Why the Holding Period Matters",
-        "description": "How the one-year holding period splits capital gains into two different tax treatments, how the clock is measured, and the mistakes that reset it.",
-        "image": "https://usfincalc.com/assets/img/og-default.png",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-07-08T00:00:00-04:00",
-        "dateModified": "2026-07-08T00:00:00-04:00",
-        "mainEntityOfPage": "https://usfincalc.com/guides/long-term-vs-short-term-capital-gains"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Long-Term vs. Short-Term Capital Gains: Why the Holding Period Matters",
+      "description": "How the one-year holding period splits capital gains into two different tax treatments, how the clock is measured, and the mistakes that reset it.",
+      "image": "https://usfincalc.com/assets/img/og-default.png",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "US income tax", "Capital gains taxation", "Investment planning"]
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "Long-Term vs. Short-Term Capital Gains", "item": "https://usfincalc.com/guides/long-term-vs-short-term-capital-gains" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "datePublished": "2026-07-08T00:00:00-04:00",
+      "dateModified": "2026-07-08T00:00:00-04:00",
+      "mainEntityOfPage": "https://usfincalc.com/guides/long-term-vs-short-term-capital-gains"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "US income tax",
+        "Capital gains taxation",
+        "Investment planning"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Long-Term vs. Short-Term Capital Gains",
+          "item": "https://usfincalc.com/guides/long-term-vs-short-term-capital-gains"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between long-term and short-term capital gains?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Short-term gains (assets held one year or less) are taxed at your ordinary income rate. Long-term gains (held more than a year) get preferential rates of 0%, 15%, or 20% depending on income."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the one-year holding period measured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The clock starts the day after you acquire the asset and includes the day you sell. A sale on the one-year anniversary itself is still short-term — you need more than a full year."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much can the holding period save?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A lot. A $20,000 gain taxed at a 32% short-term rate costs $6,400; the same gain held past a year and taxed at 15% costs $3,000 — but never hold a risky position purely to hit the one-year mark."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do capital losses work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Losses net against gains in order: short-term losses first offset short-term gains, long-term against long-term, then the two nets offset each other. Watch the wash-sale rule when repurchasing."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -183,6 +246,16 @@
 
       <p class="estimate-note">Educational information, not tax advice. Capital-gains thresholds change annually and state treatment varies — verify current figures with IRS.gov and consult a licensed tax professional for your situation.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What's the difference between long-term and short-term capital gains?</summary><div>Short-term gains (assets held one year or less) are taxed at your ordinary income rate. Long-term gains (held more than a year) get preferential rates of 0%, 15%, or 20% depending on income.</div></details>
+        <details class="faq__item"><summary>How is the one-year holding period measured?</summary><div>The clock starts the day after you acquire the asset and includes the day you sell. A sale on the one-year anniversary itself is still short-term — you need more than a full year.</div></details>
+        <details class="faq__item"><summary>How much can the holding period save?</summary><div>A lot. A $20,000 gain taxed at a 32% short-term rate costs $6,400; the same gain held past a year and taxed at 15% costs $3,000 — but never hold a risky position purely to hit the one-year mark.</div></details>
+        <details class="faq__item"><summary>How do capital losses work?</summary><div>Losses net against gains in order: short-term losses first offset short-term gains, long-term against long-term, then the two nets offset each other. Watch the wash-sale rule when repurchasing.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>

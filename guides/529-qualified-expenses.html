@@ -45,43 +45,105 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "What Counts as a Qualified 529 Expense?",
-        "description": "Which college costs a 529 plan can pay tax-free, which it can't, and how the penalty on non-qualified withdrawals actually works.",
-        "image": "https://usfincalc.com/assets/img/og-default.png",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-07-08T00:00:00-04:00",
-        "dateModified": "2026-07-08T00:00:00-04:00",
-        "mainEntityOfPage": "https://usfincalc.com/guides/529-qualified-expenses"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "What Counts as a Qualified 529 Expense?",
+      "description": "Which college costs a 529 plan can pay tax-free, which it can't, and how the penalty on non-qualified withdrawals actually works.",
+      "image": "https://usfincalc.com/assets/img/og-default.png",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "529 college savings plans", "Education funding"]
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "What Counts as a Qualified 529 Expense?", "item": "https://usfincalc.com/guides/529-qualified-expenses" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "datePublished": "2026-07-08T00:00:00-04:00",
+      "dateModified": "2026-07-08T00:00:00-04:00",
+      "mainEntityOfPage": "https://usfincalc.com/guides/529-qualified-expenses"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "529 college savings plans",
+        "Education funding"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Counts as a Qualified 529 Expense?",
+          "item": "https://usfincalc.com/guides/529-qualified-expenses"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What can a 529 pay for tax-free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tuition and mandatory fees at eligible institutions, room and board up to the school's published allowance, and required books and technology. Newer categories like K-12 tuition and student loan repayment have their own caps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a 529 NOT cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Transportation (flights, a car, gas, parking), health insurance and medical costs, and other costs the school doesn't bill for. Spending 529 money on these makes it a non-qualified withdrawal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the 529 penalty actually work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A non-qualified withdrawal isn't taxed in full. Each withdrawal is split pro-rata between contributions (always tax-free) and earnings; only the earnings portion is taxed and hit with the 10% penalty."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my child doesn't need the money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are many options: change the beneficiary to another family member, use it for graduate school, or roll it (within limits) to a Roth IRA — so an unused 529 is rarely wasted."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -186,6 +248,16 @@
 
       <p class="estimate-note">Educational information, not tax advice. Qualified-expense rules are set by federal law and IRS Publication 970, caps change over time, and state tax treatment varies — verify current rules with IRS.gov and your plan administrator before withdrawing.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>What can a 529 pay for tax-free?</summary><div>Tuition and mandatory fees at eligible institutions, room and board up to the school's published allowance, and required books and technology. Newer categories like K-12 tuition and student loan repayment have their own caps.</div></details>
+        <details class="faq__item"><summary>What does a 529 NOT cover?</summary><div>Transportation (flights, a car, gas, parking), health insurance and medical costs, and other costs the school doesn't bill for. Spending 529 money on these makes it a non-qualified withdrawal.</div></details>
+        <details class="faq__item"><summary>How does the 529 penalty actually work?</summary><div>A non-qualified withdrawal isn't taxed in full. Each withdrawal is split pro-rata between contributions (always tax-free) and earnings; only the earnings portion is taxed and hit with the 10% penalty.</div></details>
+        <details class="faq__item"><summary>What if my child doesn't need the money?</summary><div>There are many options: change the beneficiary to another family member, use it for graduate school, or roll it (within limits) to a Roth IRA — so an unused 529 is rarely wasted.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>

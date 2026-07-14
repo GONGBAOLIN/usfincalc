@@ -45,43 +45,105 @@
   <script src="/assets/js/ads.js" defer></script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "How Much Will My Student Loan Payment Actually Be? (2026 Federal Rates)",
-        "description": "How the standard student loan repayment formula works, what current federal rates mean for your payment, and what raises or lowers the monthly bill.",
-        "image": "https://usfincalc.com/assets/img/og-default.png",
-        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-        "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-        "datePublished": "2026-06-22T00:00:00-04:00",
-        "dateModified": "2026-06-22T00:00:00-04:00",
-        "mainEntityOfPage": "https://usfincalc.com/guides/student-loan-payment-estimate"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How Much Will My Student Loan Payment Actually Be? (2026 Federal Rates)",
+      "description": "How the standard student loan repayment formula works, what current federal rates mean for your payment, and what raises or lowers the monthly bill.",
+      "image": "https://usfincalc.com/assets/img/og-default.png",
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       },
-      {
-        "@type": "Person",
-        "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
-        "jobTitle": "Founder, USFinCalc",
-        "url": "https://usfincalc.com/about",
-        "sameAs": [
-          "https://wisepath.ltd",
-          "https://www.linkedin.com/in/baolin-gong-b7839129/"
-        ],
-        "knowsAbout": ["Personal finance", "Student loans", "Debt repayment"]
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://usfincalc.com/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "Student Loan Payment Estimate", "item": "https://usfincalc.com/guides/student-loan-payment-estimate" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "datePublished": "2026-06-22T00:00:00-04:00",
+      "dateModified": "2026-06-22T00:00:00-04:00",
+      "mainEntityOfPage": "https://usfincalc.com/guides/student-loan-payment-estimate"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Gong Baolin",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
+      ],
+      "knowsAbout": [
+        "Personal finance",
+        "Student loans",
+        "Debt repayment"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://usfincalc.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Student Loan Payment Estimate",
+          "item": "https://usfincalc.com/guides/student-loan-payment-estimate"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is a standard student loan payment calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The federal Standard Repayment Plan uses the amortization formula to pay the loan off in fixed monthly payments over 10 years (120 months), based on your balance, rate, and term."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are 2026 federal student loan rates set?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Federal rates are fixed for the life of each loan and reset once a year for new loans disbursed on or after July 1, based on the May 10-year Treasury note auction plus a statutory add-on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What moves my monthly payment the most?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three inputs: balance (scales the payment directly), interest rate (a higher rate raises it), and term (a longer term lowers the monthly payment but raises total interest)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why might my real payment differ from the estimate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard formula assumes one fixed-rate loan paid on schedule. Income-driven plans (IBR, PAYE, SAVE) set payments as a share of your discretionary income and can differ substantially."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -179,6 +241,16 @@
 
       <p class="estimate-note">Educational information, not financial advice. Rates change annually and vary by loan type and disbursement year; verify your figures at studentaid.gov and with your loan servicer.</p>
     </article>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How is a standard student loan payment calculated?</summary><div>The federal Standard Repayment Plan uses the amortization formula to pay the loan off in fixed monthly payments over 10 years (120 months), based on your balance, rate, and term.</div></details>
+        <details class="faq__item"><summary>How are 2026 federal student loan rates set?</summary><div>Federal rates are fixed for the life of each loan and reset once a year for new loans disbursed on or after July 1, based on the May 10-year Treasury note auction plus a statutory add-on.</div></details>
+        <details class="faq__item"><summary>What moves my monthly payment the most?</summary><div>Three inputs: balance (scales the payment directly), interest rate (a higher rate raises it), and term (a longer term lowers the monthly payment but raises total interest).</div></details>
+        <details class="faq__item"><summary>Why might my real payment differ from the estimate?</summary><div>The standard formula assumes one fixed-rate loan paid on schedule. Income-driven plans (IBR, PAYE, SAVE) set payments as a share of your discretionary income and can differ substantially.</div></details>
+      </div>
+    </section>
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2>Keep exploring</h2>
