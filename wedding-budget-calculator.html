@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Budget Calculator — Plan Your Wedding Costs — USFinCalc</title>
+  <meta name="description" content="Free wedding budget calculator: enter your total budget and guest count, get a smart vendor-category breakdown and monthly savings plan based on US average wedding costs.">
+  <link rel="canonical" href="https://usfincalc.com/wedding-budget-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Wedding Budget Calculator — Plan Your Wedding Costs">
+  <meta property="og:description" content="Enter your total wedding budget and guest count. Get a percentage-based vendor breakdown and a monthly savings timeline to reach your goal.">
+  <meta property="og:url" content="https://usfincalc.com/wedding-budget-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <!-- Google Consent Mode v2 — defaults DENIED before any tag loads -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Wedding Budget Calculator",
+      "url": "https://usfincalc.com/wedding-budget-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Wedding Budget Calculator",
+          "item": "https://usfincalc.com/wedding-budget-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does the average US wedding cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The average US wedding cost is approximately $33,000–$35,000 as of 2025 (source: The Knot Real Weddings Study). This varies significantly by region — weddings in metro areas like New York or San Francisco often exceed $50,000, while weddings in rural areas may be well under $20,000."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What percentage of the wedding budget should go to the venue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Venue and rentals typically account for about 30% of a wedding budget. This is the single largest line item and often includes the ceremony site, reception space, tables, chairs, and linens. All-inclusive venues may bundle catering into this cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in advance should I start saving for a wedding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most financial planners recommend 12–18 months of dedicated saving. Starting earlier reduces the monthly amount needed. For example, saving $30,000 over 12 months requires $2,500 per month, but spreading it over 18 months drops that to about $1,667 per month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What wedding costs are often forgotten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commonly overlooked costs include vendor tips (usually 15–20% of each vendor's fee), marriage license fees, alterations for wedding attire, day-of coordination staff, overtime charges for venues and DJs, guest hotel room blocks, and post-wedding brunch. A 3–5% buffer in your budget helps cover these surprises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this wedding budget calculator financial advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This calculator provides estimated budget allocations based on US national averages. Your actual costs will vary by region, season, vendor choices, and personal priorities. Use it as a starting framework, then adjust categories to fit your wedding vision."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to plan your wedding budget",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Enter your total budget",
+          "text": "Enter the total amount you plan to spend on your wedding, combining savings, family contributions, and any other funding sources."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Set your guest count",
+          "text": "Enter your expected guest count. Per-guest costs like catering and invitations scale with this number, shifting the budget allocation automatically."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Review the category breakdown",
+          "text": "The calculator allocates your budget across 10 vendor categories using US average percentages, adjusted for your guest count. Larger guest lists shift more budget toward catering; smaller ones free up money for photography and decor."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Plan your savings timeline",
+          "text": "Enter how many months until your wedding and any amount already saved. The calculator shows how much to save each month and charts your progress toward the goal."
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Calculators <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><span class="nav-dropdown__group-label">Income &amp; Tax</span></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><span class="nav-dropdown__group-label">Loans</span></li>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><span class="nav-dropdown__group-label">Retirement &amp; Savings</span></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><span class="nav-dropdown__group-label">Life Events</span></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <h1>Wedding Budget Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        A wedding budget calculator that breaks your total budget into vendor categories using US average percentages, automatically adjusted for your guest count. Larger guest lists shift more money toward catering; smaller ones free up budget for photography and decor. It also calculates a <strong>monthly savings target</strong> so you know exactly what to set aside each month to be fully funded by your wedding date.
+      </p>
+      <p class="muted prose" style="margin-top:var(--space-2)">
+        Enter your total budget and guest count — see where every dollar goes and how much to save each month.
+      </p>
+      <p class="muted prose" style="margin-top:var(--space-2);font-size:var(--fs-sm)">
+        By <a href="/about" rel="author">Gong Baolin</a>, AFP · Founder, USFinCalc · Last updated July 2026
+      </p>
+    </div>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true"><!-- AD SLOT 1 --></div>
+
+    <div class="container">
+      <form class="calc" id="weddingForm" novalidate>
+        <div class="calc__grid">
+          <div class="calc__inputs">
+            <div class="field">
+              <label for="totalBudget">Total wedding budget</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="totalBudget" type="text" inputmode="numeric" value="30000">
+              </div>
+              <span class="field__hint">Combined savings, family contributions, and any other funding.</span>
+            </div>
+
+            <div class="field">
+              <label for="guestCount">Expected guest count</label>
+              <div class="input-wrap">
+                <input class="input" id="guestCount" type="text" inputmode="numeric" value="120">
+              </div>
+              <span class="field__hint">Per-guest costs (catering, invites, favors) scale with this number.</span>
+            </div>
+
+            <div class="field">
+              <label for="monthsToSave">Months until wedding</label>
+              <div class="input-wrap input-wrap--suffix">
+                <input class="input" id="monthsToSave" type="text" inputmode="numeric" value="12">
+                <span class="input-wrap__affix input-wrap__affix--suffix">months</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="alreadySaved">Amount already saved</label>
+              <div class="input-wrap input-wrap--prefix">
+                <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+                <input class="input" id="alreadySaved" type="text" inputmode="numeric" value="0">
+              </div>
+              <span class="field__hint">Money you've already set aside for the wedding.</span>
+            </div>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result">
+              <span class="result__label">Cost per guest</span>
+              <div class="result__figure" id="outPerGuest">—</div>
+            </div>
+            <p class="center muted" style="font-size:var(--fs-sm)">
+              Save <strong id="outMonthlySavings">$0/mo</strong> · <span id="outSavingsProgress">0% funded</span>
+            </p>
+
+            <dl class="breakdown">
+              <div class="breakdown__row"><dt>Venue & Rentals</dt><dd><span id="outPctVenue">30%</span> · <span id="outVenue">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Catering & Bar</dt><dd><span id="outPctCatering">25%</span> · <span id="outCatering">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Photography & Video</dt><dd><span id="outPctPhoto">12%</span> · <span id="outPhoto">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Music & Entertainment</dt><dd><span id="outPctMusic">8%</span> · <span id="outMusic">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Flowers & Decor</dt><dd><span id="outPctFlowers">8%</span> · <span id="outFlowers">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Attire & Beauty</dt><dd><span id="outPctAttire">7%</span> · <span id="outAttire">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Stationery & Invites</dt><dd><span id="outPctStationery">3%</span> · <span id="outStationery">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Transportation</dt><dd><span id="outPctTransport">2%</span> · <span id="outTransport">$0</span></dd></div>
+              <div class="breakdown__row"><dt>Favors & Gifts</dt><dd><span id="outPctFavors">2%</span> · <span id="outFavors">$0</span></dd></div>
+              <div class="breakdown__row breakdown__row--total"><dt>Buffer & Tips</dt><dd><span id="outPctBuffer">3%</span> · <span id="outBuffer">$0</span></dd></div>
+            </dl>
+            <p class="estimate-note">Allocations based on US 2024–2026 wedding industry averages. Adjust to fit your priorities — this is a starting framework, not a rule.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Savings timeline</h2>
+      <div id="weddingChart"></div>
+      <p class="chart__caption">The line shows your cumulative savings growing month by month toward your total budget goal, starting from the amount already saved.</p>
+    </section>
+
+    <div class="container ad-slot ad-slot--rect" aria-hidden="true"><!-- AD SLOT 2 --></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this wedding budget calculator works</h2>
+      <p>The calculator takes your total budget and distributes it across 10 standard vendor categories using percentages derived from US wedding industry data (The Knot, Zola, WeddingWire annual surveys). The key insight: not all categories scale the same way with guest count. Catering is almost entirely per-head, while photography is a flat fee regardless of whether you invite 50 or 250 people.</p>
+      <p>When your guest count differs from the 120-person US baseline, per-guest categories (catering, stationery, favors) scale proportionally. Fixed-cost categories stay constant. All percentages are then re-normalized to 100% so your entire budget is allocated. The effect: a 50-person wedding shifts budget away from food and toward photography and decor; a 200-person wedding concentrates spending on catering.</p>
+
+      <h2>A worked example</h2>
+      <p>Suppose your budget is <strong>$40,000</strong> with <strong>150 guests</strong> and a wedding in <strong>18 months</strong>, with <strong>$5,000</strong> already saved. The guest count is 25% above baseline, so catering scales up from 25% to about 27% of budget (~$10,800). Photography stays at its base percentage (~11%, or ~$4,400). Your per-guest cost is $267. You need to save the remaining $35,000 over 18 months — about <strong>$1,944 per month</strong>.</p>
+
+      <h2>How to use these numbers</h2>
+      <p>Treat the breakdown as a starting framework, not a prescription. If you care deeply about photography, pull budget from favors or flowers. If you're having a backyard wedding, the venue line drops to nearly zero and everything else gets more room. The percentages reflect what couples <em>typically</em> spend — not what you <em>must</em> spend.</p>
+      <p>The savings timeline is the most actionable number: set up automatic transfers of that monthly amount into a dedicated wedding fund. If you're also saving for a home, compare this with our <a href="/home-affordability-calculator">home affordability calculator</a> to make sure both goals fit your income. And for understanding how wedding expenses affect your take-home pay, try the <a href="/paycheck-calculator">paycheck calculator</a>.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-6)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item"><summary>How much does the average US wedding cost?</summary><div>The average US wedding cost is approximately $33,000–$35,000 as of 2025 (source: The Knot Real Weddings Study). This varies significantly by region — weddings in metro areas like New York or San Francisco often exceed $50,000, while weddings in rural areas may be well under $20,000.</div></details>
+        <details class="faq__item"><summary>What percentage of the wedding budget should go to the venue?</summary><div>Venue and rentals typically account for about 30% of a wedding budget. This is the single largest line item and often includes the ceremony site, reception space, tables, chairs, and linens. All-inclusive venues may bundle catering into this cost.</div></details>
+        <details class="faq__item"><summary>How far in advance should I start saving for a wedding?</summary><div>Most financial planners recommend 12–18 months of dedicated saving. Starting earlier reduces the monthly amount needed. For example, saving $30,000 over 12 months requires $2,500 per month, but spreading it over 18 months drops that to about $1,667 per month.</div></details>
+        <details class="faq__item"><summary>What wedding costs are often forgotten?</summary><div>Commonly overlooked costs include vendor tips (usually 15–20% of each vendor's fee), marriage license fees, alterations for wedding attire, day-of coordination staff, overtime charges for venues and DJs, guest hotel room blocks, and post-wedding brunch. A 3–5% buffer in your budget helps cover these surprises.</div></details>
+        <details class="faq__item"><summary>Is this wedding budget calculator financial advice?</summary><div>No. This calculator provides estimated budget allocations based on US national averages. Your actual costs will vary by region, season, vendor choices, and personal priorities. Use it as a starting framework, then adjust categories to fit your wedding vision.</div></details>
+      </div>
+    </section>
+
+    <section class="container cite-tool">
+      <h2>Cite or link to this calculator</h2>
+      <p class="cite-tool__intro">Writing about wedding budgets? You're welcome to reference this free tool. Copy a ready-made citation or link below.</p>
+
+      <div class="cite-tool__box">
+        <label class="cite-tool__box-label" for="cite-link">Link (HTML)</label>
+        <textarea class="cite-tool__code" id="cite-link" rows="2" readonly>&lt;a href="https://usfincalc.com/wedding-budget-calculator"&gt;Wedding Budget Calculator&lt;/a&gt; by USFinCalc</textarea>
+        <div class="cite-tool__actions">
+          <button type="button" class="btn btn--ghost" data-copy="#cite-link">Copy link code</button>
+        </div>
+      </div>
+
+      <div class="cite-tool__box">
+        <label class="cite-tool__box-label" for="cite-text">Plain-text citation</label>
+        <textarea class="cite-tool__code" id="cite-text" rows="2" readonly>USFinCalc. "Wedding Budget Calculator." https://usfincalc.com/wedding-budget-calculator</textarea>
+        <div class="cite-tool__actions">
+          <button type="button" class="btn btn--ghost" data-copy="#cite-text">Copy citation</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators &amp; guides</h2>
+      <div class="cards" style="margin-top:var(--space-5)">
+        <a class="card" href="/home-affordability-calculator">
+          <span class="card__title">Home Affordability Calculator</span>
+          <span class="card__desc">Planning a home purchase after the wedding? See how much house fits your income.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">Understand your take-home pay to set a realistic monthly savings target.</span>
+        </a>
+        <a class="card" href="/529-college-savings-calculator">
+          <span class="card__title">529 College Savings Calculator</span>
+          <span class="card__desc">Thinking ahead to kids? See how early college savings compounds over time.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container ad-slot ad-slot--banner" aria-hidden="true" style="margin-top:var(--space-7)"><!-- AD SLOT 3 --></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial or investment advice. This wedding budget calculator allocates spending across vendor categories using US industry averages (The Knot, Zola) and adjusts for guest count. Actual costs vary by region, season, and vendor. Use as a planning framework and adjust to your priorities.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/wedding-budget.js" defer></script>
+</body>
+</html>
