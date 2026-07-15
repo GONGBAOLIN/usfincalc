@@ -132,71 +132,119 @@
 
     <section class="container" style="margin-top:var(--space-7)">
       <h2 class="center">Choose a calculator</h2>
-      <div class="cards" style="margin-top:var(--space-5)">
-        <a class="card" href="/mortgage-calculator">
-          <span class="card__title">Mortgage Calculator</span>
-          <span class="card__desc">Full PITI: principal, interest, taxes, insurance & PMI — not just P&amp;I.</span>
-        </a>
-        <a class="card" href="/home-affordability-calculator">
-          <span class="card__title">Home Affordability Calculator</span>
-          <span class="card__desc">How much house can you afford? The 28/36 rule with full PITI.</span>
-        </a>
-        <a class="card" href="/solar-calculator">
-          <span class="card__title">Solar Payback Calculator</span>
-          <span class="card__desc">Years to break even on rooftop solar with ITC, net metering & degradation.</span>
-        </a>
-        <a class="card" href="/ev-vs-gas-calculator">
-          <span class="card__title">EV vs Gas Calculator</span>
-          <span class="card__desc">5-year total cost comparison: fuel, maintenance & incentives side by side.</span>
-        </a>
-        <a class="card" href="/heat-pump-calculator">
-          <span class="card__title">Heat Pump Savings Calculator</span>
-          <span class="card__desc">Annual savings over gas, oil, or propane with federal 25C credit.</span>
-        </a>
-        <a class="card" href="/home-battery-calculator">
-          <span class="card__title">Home Battery ROI Calculator</span>
-          <span class="card__desc">Payback from peak/off-peak arbitrage, demand savings & backup value.</span>
-        </a>
-        <a class="card" href="/paycheck-calculator">
-          <span class="card__title">Paycheck Calculator</span>
-          <span class="card__desc">Real take-home pay with federal, FICA & all-50-state taxes.</span>
-        </a>
-        <a class="card" href="/auto-loan-calculator">
-          <span class="card__title">Auto Loan Calculator</span>
-          <span class="card__desc">True monthly cost with sales tax, trade-in & down payment.</span>
-        </a>
-        <a class="card" href="/student-loan-calculator">
-          <span class="card__title">Student Loan Calculator</span>
-          <span class="card__desc">Standard payment plus interest and time saved by paying extra.</span>
-        </a>
-        <a class="card" href="/rsu-tax-calculator">
-          <span class="card__title">RSU Tax Calculator</span>
-          <span class="card__desc">After-tax value of vesting RSUs with bracket & FICA analysis.</span>
-        </a>
-        <a class="card" href="/capital-gains-calculator">
-          <span class="card__title">Capital Gains Tax Calculator</span>
-          <span class="card__desc">Federal tax on a sale: long-term 0/15/20%, short-term, and NIIT.</span>
-        </a>
-        <a class="card" href="/retirement-calculator">
-          <span class="card__title">Retirement Calculator</span>
-          <span class="card__desc">401k/IRA growth with employer match and inflation.</span>
-        </a>
-        <a class="card" href="/529-college-savings-calculator">
-          <span class="card__title">529 College Savings Calculator</span>
-          <span class="card__desc">Project a 529 against rising tuition — and the gap to close.</span>
-        </a>
-        <a class="card" href="/hsa-tax-savings-calculator">
-          <span class="card__title">HSA Tax Savings Calculator</span>
-          <span class="card__desc">Federal, FICA & state savings from an HSA, plus tax-free growth.</span>
-        </a>
-        <a class="card" href="/social-security-break-even-calculator">
-          <span class="card__title">Social Security Break-Even Calculator</span>
-          <span class="card__desc">When claiming later pays off: break-even age for delaying benefits.</span>
-        </a>
-        <a class="card" href="/wedding-budget-calculator">
-          <span class="card__title">Wedding Budget Calculator</span>
-          <span class="card__desc">Allocate a total budget across every category with per-guest costs.</span>
-        </a>
+
+      <!-- Income & Tax -->
+      <div class="card-group card-group--income">
+        <div class="card-group__header">
+          <span class="card-group__icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <span class="card-group__title">Income & Tax</span>
+        </div>
+        <div class="cards">
+          <a class="card" href="/paycheck-calculator">
+            <span class="card__title">Paycheck Calculator</span>
+            <span class="card__desc">Real take-home pay with federal, FICA & all-50-state taxes.</span>
+          </a>
+          <a class="card" href="/rsu-tax-calculator">
+            <span class="card__title">RSU Tax Calculator</span>
+            <span class="card__desc">After-tax value of vesting RSUs with bracket & FICA analysis.</span>
+          </a>
+          <a class="card" href="/capital-gains-calculator">
+            <span class="card__title">Capital Gains Tax Calculator</span>
+            <span class="card__desc">Federal tax on a sale: long-term 0/15/20%, short-term, and NIIT.</span>
+          </a>
+          <a class="card" href="/hsa-tax-savings-calculator">
+            <span class="card__title">HSA Tax Savings Calculator</span>
+            <span class="card__desc">Federal, FICA & state savings from an HSA, plus tax-free growth.</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Home & Energy -->
+      <div class="card-group card-group--energy">
+        <div class="card-group__header">
+          <span class="card-group__icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="card-group__title">Home & Energy</span>
+        </div>
+        <div class="cards">
+          <a class="card" href="/mortgage-calculator">
+            <span class="card__title">Mortgage Calculator</span>
+            <span class="card__desc">Full PITI: principal, interest, taxes, insurance & PMI — not just P&amp;I.</span>
+          </a>
+          <a class="card" href="/home-affordability-calculator">
+            <span class="card__title">Home Affordability Calculator</span>
+            <span class="card__desc">How much house can you afford? The 28/36 rule with full PITI.</span>
+          </a>
+          <a class="card" href="/solar-calculator">
+            <span class="card__title">Solar Payback Calculator</span>
+            <span class="card__desc">Years to break even on rooftop solar with ITC, net metering & degradation.</span>
+          </a>
+          <a class="card" href="/ev-vs-gas-calculator">
+            <span class="card__title">EV vs Gas Calculator</span>
+            <span class="card__desc">5-year total cost comparison: fuel, maintenance & incentives side by side.</span>
+          </a>
+          <a class="card" href="/heat-pump-calculator">
+            <span class="card__title">Heat Pump Savings Calculator</span>
+            <span class="card__desc">Annual savings over gas, oil, or propane with federal 25C credit.</span>
+          </a>
+          <a class="card" href="/home-battery-calculator">
+            <span class="card__title">Home Battery ROI Calculator</span>
+            <span class="card__desc">Payback from peak/off-peak arbitrage, demand savings & backup value.</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Loans -->
+      <div class="card-group card-group--loans">
+        <div class="card-group__header">
+          <span class="card-group__icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <span class="card-group__title">Loans</span>
+        </div>
+        <div class="cards">
+          <a class="card" href="/auto-loan-calculator">
+            <span class="card__title">Auto Loan Calculator</span>
+            <span class="card__desc">True monthly cost with sales tax, trade-in & down payment.</span>
+          </a>
+          <a class="card" href="/student-loan-calculator">
+            <span class="card__title">Student Loan Calculator</span>
+            <span class="card__desc">Standard payment plus interest and time saved by paying extra.</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Retirement & Savings -->
+      <div class="card-group card-group--retire">
+        <div class="card-group__header">
+          <span class="card-group__icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <span class="card-group__title">Retirement & Savings</span>
+        </div>
+        <div class="cards">
+          <a class="card" href="/retirement-calculator">
+            <span class="card__title">Retirement Calculator</span>
+            <span class="card__desc">401k/IRA growth with employer match and inflation.</span>
+          </a>
+          <a class="card" href="/social-security-break-even-calculator">
+            <span class="card__title">Social Security Break-Even Calculator</span>
+            <span class="card__desc">When claiming later pays off: break-even age for delaying benefits.</span>
+          </a>
+          <a class="card" href="/529-college-savings-calculator">
+            <span class="card__title">529 College Savings Calculator</span>
+            <span class="card__desc">Project a 529 against rising tuition — and the gap to close.</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Life Events -->
+      <div class="card-group card-group--life">
+        <div class="card-group__header">
+          <span class="card-group__icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+          <span class="card-group__title">Life Events</span>
+        </div>
+        <div class="cards">
+          <a class="card" href="/wedding-budget-calculator">
+            <span class="card__title">Wedding Budget Calculator</span>
+            <span class="card__desc">Allocate a total budget across every category with per-guest costs.</span>
+          </a>
+        </div>
       </div>
     </section>
 
