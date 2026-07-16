@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Life Insurance Needs Calculator — How Much Coverage Do You Need? | USFinCalc</title>
+  <meta name="description" content="Calculate how much life insurance you need using the DIME method. Factor in income replacement, mortgage, education, and debt to find your coverage gap.">
+  <link rel="canonical" href="https://usfincalc.com/life-insurance-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Life Insurance Needs Calculator — Coverage Gap Analysis">
+  <meta property="og:description" content="Find your ideal life insurance coverage using the DIME method: Debt, Income, Mortgage, and Education needs minus existing resources.">
+  <meta property="og:url" content="https://usfincalc.com/life-insurance-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Life Insurance Needs Calculator",
+      "url": "https://usfincalc.com/life-insurance-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Life Insurance Needs Calculator", "item": "https://usfincalc.com/life-insurance-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much life insurance do I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The DIME method recommends covering your Debt, Income replacement (typically 10–12 years), Mortgage balance, and Education costs for dependents. Subtract existing savings and coverage to find your gap. Most working adults with dependents need 10–15 times their annual income in coverage." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between term and whole life insurance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Term life covers a fixed period (10, 20, or 30 years) and is significantly cheaper — often 5 to 15 times less expensive than whole life for the same death benefit. Whole life builds cash value but at a high cost. Most financial planners recommend term life paired with separate investing for the vast majority of families." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does employer-provided life insurance count?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, include employer group life insurance in your existing coverage. However, this coverage typically ends when you leave the job, so financial planners recommend owning a separate policy that you control regardless of employment status." }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I increase my life insurance coverage?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Recalculate coverage after major life events: marriage, buying a home, having a child, taking on significant debt, or a large income increase. Each of these events increases the financial loss your family would face without you." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does age affect life insurance premiums?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Premiums increase with age because mortality risk rises. A healthy 30-year-old might pay $25–$35 per month for a $500,000 20-year term policy, while a 45-year-old could pay $70–$120 for the same coverage. Locking in a policy earlier saves significantly over the term." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do stay-at-home parents need life insurance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The economic value of childcare, household management, transportation, and meal preparation often exceeds $40,000–$60,000 per year. If a stay-at-home parent passed away, the surviving parent would need to pay for these services while continuing to work." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <span>Life Insurance Needs Calculator</span>
+      </nav>
+      <h1>Life Insurance Needs Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        Use the DIME method (Debt, Income, Mortgage, Education) to calculate how much life insurance your family needs — then subtract what you already have to find the gap.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+
+    <form class="calc container" id="lifeInsuranceForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <h2 style="font-size:var(--fs-md);margin-bottom:var(--space-4)">Income replacement</h2>
+          <div class="field">
+            <label for="income">Annual income (pre-tax)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="income" type="text" inputmode="numeric" value="85,000">
+            </div>
+            <span class="field__hint">Your gross salary or total household income that needs replacing.</span>
+          </div>
+          <div class="field">
+            <label for="replaceYears">Years of income to replace</label>
+            <input class="input" id="replaceYears" type="text" inputmode="numeric" value="10">
+            <span class="field__hint">How many years your family would need support (until youngest child is independent).</span>
+          </div>
+
+          <h2 style="font-size:var(--fs-md);margin:var(--space-5) 0 var(--space-4)">Education</h2>
+          <div class="field">
+            <label for="children">Children needing college funding</label>
+            <input class="input" id="children" type="text" inputmode="numeric" value="2">
+          </div>
+          <div class="field">
+            <label for="collegeCost">College cost per child (4 years)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="collegeCost" type="text" inputmode="numeric" value="80,000">
+            </div>
+            <span class="field__hint">Average 4-year public university: ~$100k; private: ~$220k (2026 dollars).</span>
+          </div>
+
+          <h2 style="font-size:var(--fs-md);margin:var(--space-5) 0 var(--space-4)">Debt & final expenses</h2>
+          <div class="field">
+            <label for="mortgageBalance">Mortgage balance</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="mortgageBalance" type="text" inputmode="numeric" value="300,000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="otherDebt">Other debt (auto, student loans, credit cards)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="otherDebt" type="text" inputmode="numeric" value="25,000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="finalExpenses">Final expenses (funeral, legal, medical)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="finalExpenses" type="text" inputmode="numeric" value="15,000">
+            </div>
+            <span class="field__hint">Average U.S. funeral cost: $8,000–$12,000 plus legal and final medical bills.</span>
+          </div>
+
+          <h2 style="font-size:var(--fs-md);margin:var(--space-5) 0 var(--space-4)">Existing resources</h2>
+          <div class="field">
+            <label for="existingCoverage">Current life insurance coverage</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="existingCoverage" type="text" inputmode="numeric" value="100,000">
+            </div>
+            <span class="field__hint">Include employer group life, personal term, and any whole life policies.</span>
+          </div>
+          <div class="field">
+            <label for="savings">Savings & investments</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="savings" type="text" inputmode="numeric" value="50,000">
+            </div>
+            <span class="field__hint">Liquid savings, brokerage accounts, and retirement funds available to survivors.</span>
+          </div>
+          <div class="field">
+            <label for="spouseIncome">Spouse/partner annual income</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="spouseIncome" type="text" inputmode="numeric" value="0">
+            </div>
+            <span class="field__hint">Counted at 50% — assumes partial reliance, not full self-sufficiency.</span>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">Coverage gap</span>
+            <div class="result__figure" id="outGap">&mdash;</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row breakdown__row--total">
+              <dt>Recommended coverage</dt>
+              <dd id="outRecommended">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Income replacement</dt>
+              <dd id="outIncome">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Education fund</dt>
+              <dd id="outEducation">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Mortgage & debt</dt>
+              <dd id="outDebt">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Final expenses</dt>
+              <dd id="outFinal">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Existing resources (minus)</dt>
+              <dd id="outResources">&mdash;</dd>
+            </div>
+          </dl>
+          <p class="estimate-note">Based on the DIME method. Not a quote — consult a licensed agent for actual premiums.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Coverage need breakdown</h2>
+      <div id="chartLifeInsurance"></div>
+      <p class="chart__caption">Proportion of total coverage need by category. Income replacement is typically the largest component.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" aria-hidden="true"></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How the DIME method works</h2>
+      <p>DIME stands for <strong>Debt, Income, Mortgage, and Education</strong> — the four major financial obligations your family would face if you died unexpectedly. This calculator totals those needs and subtracts your existing resources (current policies, savings, and a portion of your spouse's income) to reveal the gap.</p>
+      <p>The method is deliberately conservative: it assumes your family maintains their current standard of living, your children attend college, and all debts are paid off immediately rather than over time. If the result feels high, that's the point — life insurance is cheap relative to the risk it covers, and under-insurance is far more common than over-insurance.</p>
+
+      <h3>Why 10–12 years of income?</h3>
+      <p>Financial planners typically recommend replacing 10 to 12 years of income because that covers the window until a surviving spouse can fully re-establish earning capacity, or until dependent children reach financial independence. If you have young children, err toward 15 years. If your children are teenagers, 5–7 years may suffice.</p>
+
+      <h3>Term life vs. whole life</h3>
+      <p>For pure income replacement, <strong>term life insurance</strong> is almost always the right tool. A healthy 35-year-old can get $1 million in 20-year term coverage for $40–$60 per month. Whole life costs 5–15x more for the same death benefit. The standard advice: buy term and invest the difference in tax-advantaged accounts (401k, IRA, HSA).</p>
+
+      <h3>What this calculator doesn't include</h3>
+      <p>This tool does not estimate premiums (those depend on age, health, smoking status, and term length), nor does it account for inflation on future education costs or Social Security survivor benefits. It provides a needs-based starting point — your insurance agent can refine the number based on your full financial picture.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>How much life insurance do I need?</summary>
+          <div><p>The DIME method recommends covering your Debt, Income replacement (typically 10–12 years), Mortgage balance, and Education costs for dependents. Subtract existing savings and coverage to find your gap. Most working adults with dependents need 10–15 times their annual income in total coverage.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Term vs. whole life — which is better for income replacement?</summary>
+          <div><p>Term life is better for almost everyone seeking income replacement. It provides the highest death benefit per dollar of premium. A 20-year $1M term policy might cost $50/month, while the same death benefit in whole life could run $500–$800/month. Whole life's cash value component rarely outperforms simply investing the premium difference.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Does employer-provided life insurance count?</summary>
+          <div><p>Yes — include it in "existing coverage." But be aware: employer group life typically equals 1–2x salary and ends when you leave the company. It should supplement, not replace, your own individually-owned policy. Portability riders exist but are often expensive.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>When should I increase my coverage?</summary>
+          <div><p>Recalculate after: getting married, buying a home, having a child, taking on significant debt, or receiving a large raise. Each event increases the financial gap your family would face. Re-run this calculator annually or after any major life change.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>How does age affect premiums?</summary>
+          <div><p>Premiums roughly double every 10 years of age. A healthy 30-year-old pays about $25–$35/month for a $500K 20-year term policy; at 40, that's $50–$70; at 50, $120–$180. Locking in coverage younger saves substantially over the life of the policy.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Do stay-at-home parents need life insurance?</summary>
+          <div><p>Yes. Childcare, household management, transportation, and meal preparation have an economic replacement cost of $40,000–$60,000+ per year. The surviving working parent would need to hire help or reduce hours — either way, a financial gap exists.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">401k/IRA growth with employer match and inflation.</span>
+        </a>
+        <a class="card" href="/529-college-savings-calculator">
+          <span class="card__title">529 College Savings Calculator</span>
+          <span class="card__desc">Project a 529 against rising tuition — and the gap to close.</span>
+        </a>
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Full PITI: principal, interest, taxes, insurance & PMI.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. This tool does not provide insurance quotes or recommendations. Consult a licensed insurance agent for coverage specific to your situation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/life-insurance.js" defer></script>
+</body>
+</html>

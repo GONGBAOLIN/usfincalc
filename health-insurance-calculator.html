@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Insurance Out-of-Pocket Calculator — Deductible, Coinsurance & OOP Max | USFinCalc</title>
+  <meta name="description" content="Understand your health insurance math: see how deductibles, coinsurance, and out-of-pocket maximums determine what you actually pay. Includes HSA tax savings.">
+  <link rel="canonical" href="https://usfincalc.com/health-insurance-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Health Insurance Out-of-Pocket Calculator">
+  <meta property="og:description" content="See what you actually pay after deductibles, coinsurance, and out-of-pocket maximums — plus HSA tax savings.">
+  <meta property="og:url" content="https://usfincalc.com/health-insurance-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Health Insurance Out-of-Pocket Calculator",
+      "url": "https://usfincalc.com/health-insurance-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Health Insurance OOP Calculator", "item": "https://usfincalc.com/health-insurance-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a deductible in health insurance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A deductible is the amount you pay out of pocket before your insurance starts sharing costs. For example, with a $1,500 deductible, you pay the first $1,500 of covered medical expenses each year. After that, coinsurance kicks in." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does coinsurance work after the deductible?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Once you've met your deductible, coinsurance splits remaining costs between you and your insurer. With 20% coinsurance, you pay 20% and insurance pays 80% of covered services until you reach your out-of-pocket maximum." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an out-of-pocket maximum?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The out-of-pocket maximum is the most you'll pay for covered services in a plan year. Once you reach it, insurance covers 100% of remaining covered costs. For 2026, the ACA limits individual OOP maximums to $9,450 and family to $18,900." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does an HSA reduce healthcare costs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Health Savings Account (HSA) lets you pay medical expenses with pre-tax dollars — saving your marginal tax rate (often 22–32%) on every dollar contributed. A $4,150 individual contribution at a 24% marginal rate saves $996 in taxes." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a copay and coinsurance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A copay is a fixed dollar amount you pay per visit (e.g., $30 for a doctor visit). Coinsurance is a percentage of the total bill you pay after meeting your deductible (e.g., 20% of a $5,000 surgery = $1,000). Some plans use both." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <span>Health Insurance Out-of-Pocket Calculator</span>
+      </nav>
+      <h1>Health Insurance Out-of-Pocket Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        See what you actually pay for healthcare after deductibles, coinsurance, and your out-of-pocket maximum — plus how an HSA reduces your effective cost through tax savings.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+
+    <form class="calc container" id="healthInsuranceForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <h2 style="font-size:var(--fs-md);margin-bottom:var(--space-4)">Your plan details</h2>
+          <div class="field">
+            <label for="deductible">Annual deductible (individual)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="deductible" type="text" inputmode="numeric" value="1,500">
+            </div>
+            <span class="field__hint">Amount you pay before insurance starts sharing costs.</span>
+          </div>
+          <div class="field">
+            <label for="coinsurance">Coinsurance (your share)</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="coinsurance" type="text" inputmode="numeric" value="20">
+              <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+            </div>
+            <span class="field__hint">Percentage you pay after meeting your deductible. Common: 20% (PPO), 0–10% (HMO).</span>
+          </div>
+          <div class="field">
+            <label for="copay">Copay (primary care visit)</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="copay" type="text" inputmode="numeric" value="30">
+            </div>
+            <span class="field__hint">Fixed per-visit cost. Used for reference — main math uses coinsurance model.</span>
+          </div>
+          <div class="field">
+            <label for="oopMax">Out-of-pocket maximum</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="oopMax" type="text" inputmode="numeric" value="8,000">
+            </div>
+            <span class="field__hint">Most you'll pay in a year. 2026 ACA limit: $9,450 individual / $18,900 family.</span>
+          </div>
+
+          <h2 style="font-size:var(--fs-md);margin:var(--space-5) 0 var(--space-4)">Your costs</h2>
+          <div class="field">
+            <label for="expectedCosts">Expected annual medical costs</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="expectedCosts" type="text" inputmode="numeric" value="5,000">
+            </div>
+            <span class="field__hint">Total billed charges (before insurance). Average: $5k healthy adult, $12k+ with conditions.</span>
+          </div>
+          <div class="field">
+            <label for="premium">Monthly premium</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="premium" type="text" inputmode="numeric" value="450">
+            </div>
+            <span class="field__hint">Your share of the monthly insurance cost (what comes out of your paycheck).</span>
+          </div>
+
+          <h2 style="font-size:var(--fs-md);margin:var(--space-5) 0 var(--space-4)">HSA (optional)</h2>
+          <div class="field">
+            <label for="hsaContribution">Annual HSA contribution</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="hsaContribution" type="text" inputmode="numeric" value="0">
+            </div>
+            <span class="field__hint">2026 limits: $4,300 individual / $8,550 family. Requires HDHP plan.</span>
+          </div>
+          <div class="field">
+            <label for="taxRate">Marginal tax rate</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="taxRate" type="text" inputmode="numeric" value="24">
+              <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+            </div>
+            <span class="field__hint">Federal + state combined. Used to calculate HSA tax savings.</span>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">Total annual cost (you pay)</span>
+            <div class="result__figure" id="outTotalCost">&mdash;</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row">
+              <dt>Your cost for care</dt>
+              <dd id="outYourCost">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Annual premiums</dt>
+              <dd id="outPremiums">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>HSA tax savings</dt>
+              <dd id="outHsaSaving">&mdash;</dd>
+            </div>
+            <div class="breakdown__row breakdown__row--total">
+              <dt>Effective cost after HSA</dt>
+              <dd id="outEffective">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Insurance saved you</dt>
+              <dd id="outInsuranceSaved">&mdash;</dd>
+            </div>
+          </dl>
+          <p class="estimate-note">Models general insurance cost-sharing math. Your plan's specific benefits, network, and covered services may differ. Contact your insurer for plan-specific details.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Where your healthcare dollars go</h2>
+      <div id="chartHealthInsurance"></div>
+      <p class="chart__caption">Breakdown of total healthcare spending: what you pay (premiums + deductible + coinsurance) vs. what insurance covers.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" aria-hidden="true"></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How health insurance cost-sharing works</h2>
+      <p>Health insurance doesn't pay everything — it splits costs with you in a predictable sequence. Understanding this sequence is the key to predicting your real annual healthcare spending.</p>
+
+      <h3>The cost-sharing sequence</h3>
+      <p><strong>Step 1: Deductible.</strong> You pay 100% of covered medical costs until you've spent your deductible amount (e.g., $1,500). Preventive care (annual physicals, screenings) is typically covered at $0 before the deductible under ACA plans.</p>
+      <p><strong>Step 2: Coinsurance.</strong> After your deductible is met, you and your insurer split costs. With 20% coinsurance, you pay $200 of a $1,000 bill; insurance pays $800.</p>
+      <p><strong>Step 3: Out-of-pocket maximum.</strong> Once your total out-of-pocket spending (deductible + coinsurance) hits the OOP max, insurance pays 100% of remaining covered costs for the year. This is your financial ceiling.</p>
+
+      <h3>HDHP + HSA strategy</h3>
+      <p>A High-Deductible Health Plan (HDHP) paired with a Health Savings Account (HSA) can reduce effective costs significantly. The HSA contribution is tax-deductible (or pre-tax via payroll), grows tax-free, and withdrawals for qualified medical expenses are tax-free — a triple tax advantage. At a 24% marginal rate, a $4,300 HSA contribution saves $1,032 in taxes alone.</p>
+      <p>Use our <a href="/hsa-tax-savings-calculator">HSA Tax Savings Calculator</a> for a detailed breakdown of the triple tax benefit including FICA savings.</p>
+
+      <h3>What this calculator does not model</h3>
+      <p>This tool models the general deductible → coinsurance → OOP max sequence. It does not account for specific copay structures per service type, in-network vs. out-of-network differences, prior authorization requirements, or plan exclusions. Always check your Summary of Benefits and Coverage (SBC) for plan-specific details.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>What is a deductible in health insurance?</summary>
+          <div><p>A deductible is the amount you pay out of pocket before your insurance starts sharing costs. With a $1,500 deductible, you pay the first $1,500 of covered medical expenses each year. After that, coinsurance kicks in and your insurer starts paying a portion.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>How does coinsurance work after the deductible?</summary>
+          <div><p>Once you've met your deductible, coinsurance splits remaining costs between you and your insurer. With 20% coinsurance, you pay 20% and insurance pays 80% of covered services until you reach your out-of-pocket maximum. Then insurance covers 100%.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>What is an out-of-pocket maximum?</summary>
+          <div><p>The out-of-pocket maximum is the most you'll pay for covered services in a plan year (including deductible and coinsurance, but not premiums). Once you hit it, insurance covers everything else. For 2026, the ACA limits individual OOP maximums to $9,450 and family to $18,900.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>How does an HSA reduce my healthcare costs?</summary>
+          <div><p>An HSA lets you pay medical expenses with pre-tax dollars — saving your marginal tax rate on every dollar. At a 24% combined rate, a $4,300 contribution saves about $1,032 in taxes. Unused funds roll over indefinitely and can be invested for tax-free growth.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>What's the difference between a copay and coinsurance?</summary>
+          <div><p>A copay is a fixed dollar amount per visit ($30 for a doctor, $50 for a specialist). Coinsurance is a percentage of the total bill after your deductible (20% of a $5,000 procedure = $1,000). Many plans use copays for routine visits and coinsurance for major services.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/hsa-tax-savings-calculator">
+          <span class="card__title">HSA Tax Savings Calculator</span>
+          <span class="card__desc">Federal, FICA & state savings from an HSA, plus tax-free growth.</span>
+        </a>
+        <a class="card" href="/life-insurance-calculator">
+          <span class="card__title">Life Insurance Needs Calculator</span>
+          <span class="card__desc">How much coverage your family needs using the DIME method.</span>
+        </a>
+        <a class="card" href="/paycheck-calculator">
+          <span class="card__title">Paycheck Calculator</span>
+          <span class="card__desc">Real take-home pay with federal, FICA & all-50-state taxes.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, medical, or legal advice. This tool models general insurance cost-sharing math and does not represent any specific health plan. Contact your insurer or benefits administrator for plan-specific details.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/health-insurance.js" defer></script>
+</body>
+</html>

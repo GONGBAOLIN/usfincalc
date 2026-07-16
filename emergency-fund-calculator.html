@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emergency Fund Calculator — How Much Do You Need? | USFinCalc</title>
+  <meta name="description" content="Calculate your ideal emergency fund size based on expenses, employment type, industry stability, and dependents. See how long it takes to reach your goal.">
+  <link rel="canonical" href="https://usfincalc.com/emergency-fund-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Emergency Fund Calculator — Personalized Target">
+  <meta property="og:description" content="How many months of expenses should you save? Get a personalized emergency fund target based on your risk factors.">
+  <meta property="og:url" content="https://usfincalc.com/emergency-fund-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Emergency Fund Calculator",
+      "url": "https://usfincalc.com/emergency-fund-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Emergency Fund Calculator", "item": "https://usfincalc.com/emergency-fund-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many months of expenses should an emergency fund cover?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The standard recommendation is 3–6 months for W-2 employees in stable industries. Self-employed workers, those in volatile industries, or people with dependents should target 6–12 months. This calculator adjusts based on your specific risk factors." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should I keep my emergency fund?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A high-yield savings account (HYSA) is ideal — it's FDIC insured, earns 4–5% APY (as of 2026), and is accessible within 1–2 business days. Avoid CDs (penalties for early withdrawal), brokerage accounts (market risk), or checking accounts (too easy to spend, low yield)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I pay off debt or build an emergency fund first?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Start with a $1,000–$2,000 mini emergency fund to avoid going deeper into debt for small emergencies. Then aggressively pay high-interest debt (credit cards). Once high-interest debt is gone, build your full emergency fund before accelerating other debt payoff." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a dual-income household need less emergency savings?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Generally yes — the risk of both earners losing income simultaneously is lower than a single earner losing their job. Dual-income households can often target 3–4 months instead of 6. However, if both incomes come from the same industry or employer, treat it as single-income risk." }
+        },
+        {
+          "@type": "Question",
+          "name": "What counts as essential monthly expenses?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Include: rent/mortgage, utilities, groceries, insurance premiums (health, auto, home), minimum debt payments, transportation, and childcare. Exclude: dining out, entertainment, subscriptions, savings contributions, and discretionary shopping. The goal is survival spending, not lifestyle maintenance." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <span>Emergency Fund Calculator</span>
+      </nav>
+      <h1>Emergency Fund Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        How many months of expenses should you save? This calculator adjusts the standard "3–6 months" rule based on your employment type, industry stability, and number of dependents — then shows how long it takes to get there.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+
+    <form class="calc container" id="emergencyFundForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="monthlyExpenses">Monthly essential expenses</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="monthlyExpenses" type="text" inputmode="numeric" value="4,500">
+            </div>
+            <span class="field__hint">Rent/mortgage, utilities, groceries, insurance, minimum debt payments, transportation.</span>
+          </div>
+          <div class="field">
+            <label for="employmentType">Employment type</label>
+            <select class="input" id="employmentType">
+              <option value="W2">W-2 employee (single income)</option>
+              <option value="dual-income">Dual-income household</option>
+              <option value="self-employed">Self-employed / freelance</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="stability">Industry stability</label>
+            <select class="input" id="stability">
+              <option value="high">High (healthcare, government, utilities)</option>
+              <option value="moderate" selected>Moderate (most industries)</option>
+              <option value="low">Low (startups, seasonal, gig work)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="dependents">Number of dependents</label>
+            <input class="input" id="dependents" type="text" inputmode="numeric" value="1">
+            <span class="field__hint">Children or others who rely on your income. More dependents = larger cushion needed.</span>
+          </div>
+          <div class="field">
+            <label for="currentSavings">Current emergency savings</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="currentSavings" type="text" inputmode="numeric" value="5,000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="monthlySavings">Monthly amount you can save</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="monthlySavings" type="text" inputmode="numeric" value="500">
+            </div>
+            <span class="field__hint">Amount you can dedicate to building this fund each month.</span>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">Target emergency fund</span>
+            <div class="result__figure" id="outTarget">&mdash;</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row">
+              <dt>Recommended months</dt>
+              <dd id="outMonths">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Current gap</dt>
+              <dd id="outGap">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Time to reach goal</dt>
+              <dd id="outTimeToGoal">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Currently funded</dt>
+              <dd id="outFunded">&mdash;</dd>
+            </div>
+          </dl>
+          <p class="estimate-note">Based on financial planning best practices. Your situation may warrant a larger or smaller fund.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Savings progress toward goal</h2>
+      <div id="chartEmergencyFund"></div>
+      <p class="chart__caption">Green line shows your savings growing monthly. The amber line is your target. Where they meet is when you're fully funded.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" aria-hidden="true"></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this calculator determines your target</h2>
+      <p>The generic "save 3–6 months" advice ignores that risk varies enormously by situation. A dual-income household with government jobs needs far less cushion than a self-employed freelancer with two kids in a volatile industry. This calculator adjusts:</p>
+
+      <h3>Risk factors that increase your target</h3>
+      <p><strong>Self-employment:</strong> +3 months. Income is irregular; a dry spell or lost client can eliminate revenue for weeks. You also lack employer-provided unemployment insurance.</p>
+      <p><strong>Low industry stability:</strong> +2 months. Startup layoffs, seasonal work, and gig economy roles have higher involuntary separation rates. Even "moderate" stability adds 1 month.</p>
+      <p><strong>Dependents:</strong> +1 month per dependent (capped at +3). Children mean higher fixed expenses (childcare, food, health insurance) and less flexibility to cut costs in an emergency.</p>
+
+      <h3>Factors that reduce your target</h3>
+      <p><strong>Dual income:</strong> −2 months from the calculated base. The probability of both earners losing income simultaneously is much lower than a single earner losing their job. Exception: if both work in the same industry or company, don't apply this reduction.</p>
+
+      <h3>Where to keep it</h3>
+      <p>A high-yield savings account (HYSA) earning 4–5% APY is the standard recommendation. It's FDIC insured up to $250,000, earns meaningful interest, and is accessible within 1–2 business days. Don't invest emergency funds in stocks (too volatile) or lock them in CDs (early withdrawal penalties defeat the purpose).</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>How many months of expenses should my emergency fund cover?</summary>
+          <div><p>3–6 months for stable W-2 employees. 6–9 months for single-income households or moderate-risk industries. 9–12 months for self-employed workers, volatile industries, or households with multiple dependents. This calculator adjusts based on your specific factors.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Where should I keep my emergency fund?</summary>
+          <div><p>A high-yield savings account (HYSA) is ideal — FDIC insured, earning 4–5% APY, and accessible in 1–2 days. Avoid CDs (early withdrawal penalties), brokerage accounts (market risk), or regular checking (low yield, too easy to spend).</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Should I pay off debt or build an emergency fund first?</summary>
+          <div><p>Both. Start with a $1,000–$2,000 mini emergency fund (prevents new debt from small emergencies), then aggressively pay high-interest debt (credit cards, 20%+ APR). Once that's gone, build your full emergency fund before accelerating lower-rate debt payoff.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Does a dual-income household need less savings?</summary>
+          <div><p>Usually yes — 3–4 months is often sufficient because the risk of simultaneous job loss is low. But if both incomes come from the same industry, employer, or economic sector, treat it as single-income risk and target 6+ months.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>What counts as essential monthly expenses?</summary>
+          <div><p>Include: housing, utilities, groceries, health/auto/home insurance premiums, minimum debt payments, transportation, childcare. Exclude: dining out, entertainment, subscriptions, savings contributions, discretionary shopping. Think "survival budget," not "comfortable lifestyle."</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">401k/IRA growth with employer match and inflation.</span>
+        </a>
+        <a class="card" href="/hsa-tax-savings-calculator">
+          <span class="card__title">HSA Tax Savings Calculator</span>
+          <span class="card__desc">Federal, FICA & state savings from an HSA, plus tax-free growth.</span>
+        </a>
+        <a class="card" href="/life-insurance-calculator">
+          <span class="card__title">Life Insurance Needs Calculator</span>
+          <span class="card__desc">How much coverage your family needs using the DIME method.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. Emergency fund recommendations are based on general financial planning principles. Consult a licensed financial planner for guidance specific to your situation.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/emergency-fund.js" defer></script>
+</body>
+</html>

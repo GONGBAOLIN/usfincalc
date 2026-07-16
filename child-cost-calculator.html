@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cost of Raising a Child Calculator — Birth to 18 (and College) | USFinCalc</title>
+  <meta name="description" content="How much does it cost to raise a child in the U.S.? Calculate the total from birth to 18 by income, region, and childcare type — plus optional college costs.">
+  <link rel="canonical" href="https://usfincalc.com/child-cost-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Cost of Raising a Child Calculator — $310K+ Average">
+  <meta property="og:description" content="Calculate what it really costs to raise a child from birth to 18 — adjusted for your income, region, and childcare choices.">
+  <meta property="og:url" content="https://usfincalc.com/child-cost-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Cost of Raising a Child Calculator",
+      "url": "https://usfincalc.com/child-cost-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Cost of Raising a Child Calculator", "item": "https://usfincalc.com/child-cost-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does it cost to raise a child in the US?",
+          "acceptedAnswer": { "@type": "Answer", "text": "According to USDA data adjusted for 2026 inflation, a middle-income family spends approximately $310,000 to $330,000 to raise a child from birth to age 17, not including college. With a 4-year public university, the total can exceed $430,000." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the biggest expense in raising a child?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Housing is the single largest category at roughly 29% of total child-rearing costs. Childcare and education combined are second (16-18%), followed by food (18%) and transportation (15%). The relative weight shifts as the child ages — childcare dominates early years, while food and transportation grow in the teen years." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it cost less to raise a second child?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The USDA estimates each additional child costs about 24% less per child due to shared housing, hand-me-down clothing, bulk food purchases, and shared bedrooms. This calculator applies a sibling discount when you indicate existing children." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does childcare cost per year?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Average full-time daycare center costs range from $10,000 to $17,000 per year depending on region and age of child. Nanny care typically costs $30,000 to $50,000+ per year. Costs decrease significantly once children enter school around age 5-6." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does inflation affect the cost of raising a child?",
+          "acceptedAnswer": { "@type": "Answer", "text": "At 3% annual inflation, costs compound substantially over 18 years. A $15,000 annual cost in year 1 becomes over $25,000 by year 17. This calculator inflates all categories forward so you see the full future-dollar impact, not just today's prices." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <span>Cost of Raising a Child Calculator</span>
+      </nav>
+      <h1>Cost of Raising a Child Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        The average American family spends over $310,000 to raise a child from birth to age 17 — and that's before college. Enter your income, region, and childcare situation to see your personalized estimate.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+
+    <form class="calc container" id="childCostForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="income">Household income</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="income" type="text" inputmode="numeric" value="100,000">
+            </div>
+            <span class="field__hint">Higher income correlates with higher spending on housing, activities, and education.</span>
+          </div>
+          <div class="field">
+            <label for="region">Region</label>
+            <select class="input" id="region">
+              <option value="northeast">Northeast</option>
+              <option value="midwest">Midwest</option>
+              <option value="south">South</option>
+              <option value="west">West</option>
+            </select>
+            <span class="field__hint">Northeast and West cost more; Midwest and South cost less.</span>
+          </div>
+          <div class="field">
+            <label for="existingChildren">Children you already have</label>
+            <input class="input" id="existingChildren" type="text" inputmode="numeric" value="0">
+            <span class="field__hint">Additional children cost ~24% less each due to shared resources.</span>
+          </div>
+          <div class="field">
+            <label for="childcareType">Childcare type (ages 0–5)</label>
+            <select class="input" id="childcareType">
+              <option value="center">Daycare center</option>
+              <option value="nanny">Nanny / au pair</option>
+              <option value="family">Family / informal</option>
+              <option value="none">Stay-at-home parent</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="planCollege">Include 4-year college?</label>
+            <select class="input" id="planCollege">
+              <option value="yes">Yes — public university average</option>
+              <option value="no">No — birth to 17 only</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="inflation">Annual inflation rate</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="inflation" type="text" inputmode="numeric" value="3">
+              <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">Total cost (birth to 17)</span>
+            <div class="result__figure result__figure--cost" id="outTotal">&mdash;</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row breakdown__row--total">
+              <dt>Total with college</dt>
+              <dd id="outWithCollege">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>College (4 years, inflated)</dt>
+              <dd id="outCollege">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Annual average (birth–17)</dt>
+              <dd id="outAnnual">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Monthly average</dt>
+              <dd id="outMonthly">&mdash;</dd>
+            </div>
+          </dl>
+          <p class="estimate-note">Based on USDA Expenditures on Children data, inflation-adjusted to 2026 dollars.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Cumulative cost over time</h2>
+      <div id="chartChildCost"></div>
+      <p class="chart__caption">Total spending from birth through age 17 (and college years if included). Costs accelerate in teen years due to food, transportation, and activities.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" aria-hidden="true"></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>How this calculator works</h2>
+      <p>This tool is based on the USDA's <em>Expenditures on Children by Families</em> report, which tracked actual spending by thousands of American families across seven categories: housing, food, transportation, clothing, healthcare, childcare/education, and miscellaneous. We've adjusted these figures for 2026 inflation and allow you to customize by income level, region, childcare choice, and sibling discount.</p>
+
+      <h3>The $310,000+ figure explained</h3>
+      <p>The headline number — over $310,000 from birth to 17 for a middle-income family — is not a scare tactic. It's the sum of housing (the largest share at ~29%), food, transportation, childcare, healthcare, clothing, and miscellaneous expenses attributed to the child. It does not include college, which adds $100,000–$220,000 depending on school type.</p>
+
+      <h3>Cost factors</h3>
+      <p><strong>Income.</strong> Higher-income families spend more in absolute terms — larger homes, more activities, private lessons, travel — though as a percentage of income the burden is lower. The USDA divides families into three tiers; we use a continuous scale.</p>
+      <p><strong>Region.</strong> Northeast and West costs run 8–12% above the national average due to higher housing and childcare markets. Midwest and South run 5–8% below.</p>
+      <p><strong>Childcare.</strong> This is the most variable category. A full-time nanny can cost $30,000–$50,000/year in major metros, while a stay-at-home parent reduces this line to near zero (though with an opportunity cost not modeled here).</p>
+      <p><strong>Siblings.</strong> The USDA found that each additional child reduces per-child costs by about 24% through shared bedrooms, hand-me-downs, and bulk economies.</p>
+
+      <h3>What this doesn't include</h3>
+      <p>Opportunity cost of reduced work hours, fertility treatments, adoption fees, extracurricular activities beyond the miscellaneous category, and private K–12 tuition. The actual financial impact of a child is higher than this calculator shows for many families.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>How much does it cost to raise a child in the US?</summary>
+          <div><p>A middle-income family (earning $80,000–$130,000) spends approximately $310,000–$330,000 from birth to age 17 in 2026 dollars. Add $100,000+ for a 4-year public university. Higher-income families in expensive regions can spend $500,000+.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>What is the biggest expense in raising a child?</summary>
+          <div><p>Housing is the single largest category at roughly 29% of total costs — the additional bedroom, utilities, and furnishings attributed to the child. Childcare dominates in the early years (ages 0–5), while food and transportation grow as children become teenagers.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Does it cost less to raise a second child?</summary>
+          <div><p>Yes — about 24% less per child according to USDA data. Shared bedrooms, hand-me-down clothing, bulk food, and reused gear all reduce marginal costs. Three or more children see further per-child reductions.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>How much does childcare cost per year?</summary>
+          <div><p>Average daycare center: $10,000–$17,000/year. Nanny: $30,000–$50,000+/year in metros. Family/informal care: $3,000–$8,000/year. A stay-at-home parent eliminates this cost but forfeits income and career growth — an opportunity cost often exceeding the childcare savings.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>How does inflation affect the total cost?</summary>
+          <div><p>At 3% annual inflation, a $15,000 annual cost in year 1 becomes over $25,500 by year 17. Over 18 years, inflation adds roughly 30–35% to the nominal total compared to holding costs constant. This calculator inflates all categories forward to show real future-dollar impact.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/529-college-savings-calculator">
+          <span class="card__title">529 College Savings Calculator</span>
+          <span class="card__desc">Project a 529 against rising tuition — and the gap to close.</span>
+        </a>
+        <a class="card" href="/life-insurance-calculator">
+          <span class="card__title">Life Insurance Needs Calculator</span>
+          <span class="card__desc">How much coverage your family needs using the DIME method.</span>
+        </a>
+        <a class="card" href="/retirement-calculator">
+          <span class="card__title">Retirement Calculator</span>
+          <span class="card__desc">401k/IRA growth with employer match and inflation.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. Cost figures are based on USDA research adjusted for inflation and may not reflect your specific situation. Consult a financial planner for personalized guidance.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/child-cost.js" defer></script>
+</body>
+</html>

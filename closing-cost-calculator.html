@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closing Cost Calculator — Estimate Cash to Close by State | USFinCalc</title>
+  <meta name="description" content="Estimate your mortgage closing costs by state and loan type. See lender fees, title insurance, transfer taxes, and prepaids — plus total cash needed to close.">
+  <link rel="canonical" href="https://usfincalc.com/closing-cost-calculator">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="USFinCalc">
+  <meta property="og:title" content="Closing Cost Calculator — Cash to Close">
+  <meta property="og:description" content="Estimate closing costs by state and loan type, including lender fees, title insurance, transfer taxes, and prepaids.">
+  <meta property="og:url" content="https://usfincalc.com/closing-cost-calculator">
+  <meta property="og:image" content="https://usfincalc.com/assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dmserifdisplay-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a5c8a">
+  <meta name="google-adsense-account" content="ca-pub-9852924497430550">
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/ads.js" defer></script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Closing Cost Calculator",
+      "url": "https://usfincalc.com/closing-cost-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Closing Cost Calculator", "item": "https://usfincalc.com/closing-cost-calculator" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much are closing costs on a house?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Closing costs typically run 2% to 5% of the home's purchase price. On a $400,000 home, that's $8,000 to $20,000. The exact amount depends on your state (transfer taxes vary widely), loan type, lender fees, and whether you buy discount points." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in closing costs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Closing costs include lender fees (origination, appraisal, credit report), title fees (title insurance, title search, settlement), government fees (transfer tax, recording), and prepaid items (property tax escrow, homeowners insurance escrow, prepaid interest). FHA and VA loans add upfront mortgage insurance or funding fees." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who pays closing costs, the buyer or seller?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both pay closing costs, but for different items. Buyers typically pay lender fees, title insurance, appraisal, and prepaids. Sellers usually pay the real estate commission (5-6%) and sometimes transfer taxes. In a buyer's market, buyers can negotiate seller concessions to cover some closing costs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can closing costs be rolled into the loan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. On a refinance, closing costs are often rolled into the new loan balance. On a purchase, you generally cannot finance closing costs into a conventional loan, but you can negotiate seller-paid concessions or accept a lender credit (higher rate in exchange for the lender covering costs)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do closing costs vary so much by state?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Transfer taxes are the biggest driver. Some states (Texas, California) have low or no state transfer tax, while others (Delaware 4%, Pennsylvania 2%, Washington 1.8%) charge significant rates. Title insurance requirements, attorney involvement, and recording fees also vary by state." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="/"><img class="site-nav__logo" src="/assets/img/logo.png" width="30" height="32" alt="" decoding="async"><span>US<b>Fin</b>Calc</span></a>
+      <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul class="site-nav__links" id="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Income &amp; Tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Home &amp; Energy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Retirement &amp; Savings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Life Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="nav-dropdown__menu">
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <span>Closing Cost Calculator</span>
+      </nav>
+      <h1>Closing Cost Calculator</h1>
+      <p id="tldr" class="prose" style="margin-top:var(--space-2)">
+        Closing costs typically run 2–5% of the purchase price on top of your down payment. Estimate lender fees, title insurance, state transfer taxes, and prepaids — and see the total cash you'll need at the closing table.
+      </p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+
+    <form class="calc container" id="closingCostForm" novalidate>
+      <div class="calc__grid">
+        <div class="calc__inputs">
+          <div class="field">
+            <label for="homePrice">Home price</label>
+            <div class="input-wrap input-wrap--prefix">
+              <span class="input-wrap__affix input-wrap__affix--prefix">$</span>
+              <input class="input" id="homePrice" type="text" inputmode="numeric" value="400,000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="downPayment">Down payment</label>
+            <div class="input-wrap input-wrap--suffix">
+              <input class="input" id="downPayment" type="text" inputmode="numeric" value="20">
+              <span class="input-wrap__affix input-wrap__affix--suffix">%</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="loanType">Loan type</label>
+            <select class="input" id="loanType">
+              <option value="conventional">Conventional</option>
+              <option value="FHA">FHA (1.75% upfront MIP)</option>
+              <option value="VA">VA (2.3% funding fee)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <select class="input" id="state">
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA" selected>California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+            <span class="field__hint">Transfer tax rates vary widely by state — the largest source of variation.</span>
+          </div>
+          <div class="field">
+            <label for="points">Discount points</label>
+            <input class="input" id="points" type="text" inputmode="numeric" value="0">
+            <span class="field__hint">Each point = 1% of the loan, paid upfront to lower your rate.</span>
+          </div>
+          <div class="field">
+            <label for="titleInsurance">Owner's title insurance</label>
+            <select class="input" id="titleInsurance">
+              <option value="yes">Yes (recommended)</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc__results" aria-live="polite">
+          <div class="result">
+            <span class="result__label">Estimated closing costs</span>
+            <div class="result__figure result__figure--cost" id="outTotal">&mdash;</div>
+          </div>
+          <dl class="breakdown">
+            <div class="breakdown__row">
+              <dt>% of home price</dt>
+              <dd id="outPct">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Lender fees</dt>
+              <dd id="outLender">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Title & settlement</dt>
+              <dd id="outTitle">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Government (tax & recording)</dt>
+              <dd id="outGov">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Prepaids & escrow</dt>
+              <dd id="outPrepaids">&mdash;</dd>
+            </div>
+            <div class="breakdown__row">
+              <dt>Down payment</dt>
+              <dd id="outDown">&mdash;</dd>
+            </div>
+            <div class="breakdown__row breakdown__row--total">
+              <dt>Total cash to close</dt>
+              <dd id="outCash">&mdash;</dd>
+            </div>
+          </dl>
+          <p class="estimate-note">Estimates based on typical fee ranges. Your actual Loan Estimate from a lender will have exact figures.</p>
+        </div>
+      </div>
+    </form>
+
+    <section class="container chart" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">Closing cost breakdown</h2>
+      <div id="chartClosingCost"></div>
+      <p class="chart__caption">How your closing costs split across lender fees, title/settlement, government charges, and prepaid escrow items.</p>
+    </section>
+
+    <div class="ad-slot ad-slot--rect" aria-hidden="true"></div>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>What are closing costs?</h2>
+      <p>Closing costs are the fees and charges — separate from your down payment — that you pay to finalize a mortgage and transfer property ownership. They typically total 2–5% of the purchase price and are due at the closing table. On a $400,000 home, expect $8,000–$20,000 depending on your state and loan type.</p>
+
+      <h3>The four categories</h3>
+      <p><strong>Lender fees.</strong> Origination charges (often ~0.75–1% of the loan), appraisal ($400–$700), credit report, and flood certification. If you buy discount points to lower your rate, those go here too.</p>
+      <p><strong>Title & settlement.</strong> Owner's title insurance (protects your ownership claim), lender's title insurance (required), title search, and the settlement/escrow agent's fee. Title insurance alone can run 0.5–1% of the price.</p>
+      <p><strong>Government fees.</strong> State and local transfer taxes plus deed recording fees. This is where states diverge most: Texas charges no state transfer tax, while Delaware charges 4% and Pennsylvania 2%.</p>
+      <p><strong>Prepaids & escrow.</strong> Not fees, but money paid upfront: prepaid mortgage interest for the partial first month, plus initial deposits into your escrow account for property taxes and homeowners insurance (usually 2–3 months' worth).</p>
+
+      <h3>FHA and VA differences</h3>
+      <p>FHA loans require an upfront mortgage insurance premium (UFMIP) of 1.75% of the loan amount. VA loans charge a funding fee of 1.25–3.3% (2.3% for first-time use with less than 5% down), though some veterans are exempt. Both can be rolled into the loan balance rather than paid at closing.</p>
+
+      <h3>How to reduce closing costs</h3>
+      <p>Negotiate seller concessions (common in buyer's markets), shop lenders and compare Loan Estimates line-by-line, ask about lender credits (accept a slightly higher rate for reduced upfront costs), and compare title insurance providers — you're allowed to choose your own in most states.</p>
+    </section>
+
+    <section class="container prose" style="margin-top:var(--space-7)">
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>How much are closing costs on a house?</summary>
+          <div><p>Typically 2–5% of the purchase price. On a $400,000 home, that's $8,000–$20,000. The largest variables are state transfer taxes, loan type (FHA/VA add upfront fees), and whether you buy discount points.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>What's included in closing costs?</summary>
+          <div><p>Lender fees (origination, appraisal, credit report), title fees (owner's and lender's title insurance, search, settlement), government charges (transfer tax, recording), and prepaid items (property tax escrow, insurance escrow, prepaid interest).</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Who pays closing costs — buyer or seller?</summary>
+          <div><p>Both, for different items. Buyers pay lender fees, title insurance, appraisal, and prepaids. Sellers typically pay the real estate commission (5–6%) and sometimes transfer taxes. Buyers can negotiate seller concessions to offset costs.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Can I roll closing costs into the loan?</summary>
+          <div><p>On a refinance, usually yes. On a purchase, generally no for conventional loans — but you can negotiate seller-paid concessions or take a lender credit (higher rate in exchange for the lender covering some costs). FHA UFMIP and VA funding fees can be financed.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Why do closing costs vary so much by state?</summary>
+          <div><p>Transfer taxes are the main driver. Texas and California have low or no state transfer tax; Delaware (4%), Pennsylvania (2%), and Washington (1.8%) charge significant rates. Attorney-closing states and title insurance requirements add further variation.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:var(--space-7)">
+      <h2>Related calculators</h2>
+      <div class="cards">
+        <a class="card" href="/mortgage-calculator">
+          <span class="card__title">Mortgage Calculator</span>
+          <span class="card__desc">Full PITI: principal, interest, taxes, insurance & PMI.</span>
+        </a>
+        <a class="card" href="/home-affordability-calculator">
+          <span class="card__title">Home Affordability Calculator</span>
+          <span class="card__desc">How much house can you afford? The 28/36 rule with full PITI.</span>
+        </a>
+        <a class="card" href="/emergency-fund-calculator">
+          <span class="card__title">Emergency Fund Calculator</span>
+          <span class="card__desc">How many months of expenses you should keep in reserve.</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--banner" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>Calculators</h4>
+          <ul>
+            <li><a href="/mortgage-calculator">Mortgage</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability</a></li>
+            <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+            <li><a href="/solar-calculator">Solar Payback</a></li>
+            <li><a href="/ev-vs-gas-calculator">EV vs Gas</a></li>
+            <li><a href="/heat-pump-calculator">Heat Pump Savings</a></li>
+            <li><a href="/home-battery-calculator">Home Battery ROI</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/auto-loan-calculator">Auto Loan</a></li>
+            <li><a href="/student-loan-calculator">Student Loan</a></li>
+            <li><a href="/rsu-tax-calculator">RSU Tax</a></li>
+            <li><a href="/capital-gains-calculator">Capital Gains Tax</a></li>
+            <li><a href="/hsa-tax-savings-calculator">HSA Tax Savings</a></li>
+            <li><a href="/health-insurance-calculator">Health Insurance OOP</a></li>
+            <li><a href="/retirement-calculator">Retirement</a></li>
+            <li><a href="/social-security-break-even-calculator">Social Security Break-Even</a></li>
+            <li><a href="/529-college-savings-calculator">529 College Savings</a></li>
+            <li><a href="/emergency-fund-calculator">Emergency Fund</a></li>
+            <li><a href="/wedding-budget-calculator">Wedding Budget</a></li>
+            <li><a href="/life-insurance-calculator">Life Insurance Needs</a></li>
+            <li><a href="/child-cost-calculator">Cost of Raising a Child</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><button type="button" class="link-btn" onclick="USFC_consent&&USFC_consent.reset()">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__disclaimer">
+        USFinCalc provides free estimates for informational purposes only and is not financial, tax, or legal advice. Closing cost estimates use typical fee ranges and simplified state transfer tax rates; your lender's Loan Estimate and Closing Disclosure will contain the binding figures. Consult your lender and a real estate attorney.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/core.js" defer></script>
+  <script src="/assets/js/closing-cost.js" defer></script>
+</body>
+</html>
