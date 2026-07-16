@@ -18,6 +18,11 @@ Published and maintained by Gong Baolin, AFP, at WisePath Technology LLC (Delawa
 - [Wedding Budget Calculator](https://usfincalc.com/wedding-budget-calculator): Allocates a total wedding budget across 10 vendor categories using US averages, adjusts for guest count, and calculates a monthly savings timeline.
 - [RSU Tax Calculator](https://usfincalc.com/rsu-tax-calculator): After-tax value of vesting RSUs and the shortfall when 22% withholding is below your marginal rate.
 - [HSA Tax Savings Calculator](https://usfincalc.com/hsa-tax-savings-calculator): First-year federal, FICA, and state tax savings from an HSA, plus tax-free growth. 2026 limits.
+- [Health Insurance Out-of-Pocket Calculator](https://usfincalc.com/health-insurance-calculator): What you actually pay after the deductible → coinsurance → out-of-pocket-maximum sequence, plus HSA tax savings. 2026 ACA OOP limits.
+- [Life Insurance Needs Calculator](https://usfincalc.com/life-insurance-calculator): Coverage gap using the DIME method (Debt, Income, Mortgage, Education) minus existing resources.
+- [Cost of Raising a Child Calculator](https://usfincalc.com/child-cost-calculator): Total cost from birth to 18 (and optional college) by income, region, and childcare type, based on inflation-adjusted USDA data.
+- [Emergency Fund Calculator](https://usfincalc.com/emergency-fund-calculator): Personalized months-of-expenses target adjusted for employment type, industry stability, and dependents, plus time to reach the goal.
+- [Closing Cost Calculator](https://usfincalc.com/closing-cost-calculator): Estimated cash to close by state and loan type — lender fees, title insurance, transfer taxes, and prepaids.
 
 ## Guides
 
