@@ -55,17 +55,38 @@
       "url": "https://usfincalc.com/health-insurance-calculator",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web Browser",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
       "dateModified": "2026-07-16",
-      "author": { "@id": "https://usfincalc.com/#gongbaolin" },
-      "creator": { "@id": "https://usfincalc.com/#gongbaolin" },
-      "publisher": { "@type": "Organization", "name": "USFinCalc", "url": "https://usfincalc.com/" },
-      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "#tldr"] }
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
+      },
+      "creator": {
+        "@id": "https://usfincalc.com/#gongbaolin"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "USFinCalc",
+        "url": "https://usfincalc.com/"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#tldr"
+        ]
+      },
+      "reviewedBy": {
+        "@id": "https://usfincalc.com/#gongbaolin"
+      }
     },
     {
       "@type": "Person",
       "@id": "https://usfincalc.com/#gongbaolin",
-      "name": "Gong Baolin",
+      "name": "Baolin Gong",
       "jobTitle": "Founder, USFinCalc",
       "url": "https://usfincalc.com/about",
       "sameAs": [
@@ -82,8 +103,18 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Health Insurance OOP Calculator", "item": "https://usfincalc.com/health-insurance-calculator" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Health Insurance OOP Calculator",
+          "item": "https://usfincalc.com/health-insurance-calculator"
+        }
       ]
     },
     {
@@ -92,33 +123,48 @@
         {
           "@type": "Question",
           "name": "What is a deductible in health insurance?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A deductible is the amount you pay out of pocket before your insurance starts sharing costs. For example, with a $1,500 deductible, you pay the first $1,500 of covered medical expenses each year. After that, coinsurance kicks in." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A deductible is the amount you pay out of pocket before your insurance starts sharing costs. For example, with a $1,500 deductible, you pay the first $1,500 of covered medical expenses each year. After that, coinsurance kicks in."
+          }
         },
         {
           "@type": "Question",
           "name": "How does coinsurance work after the deductible?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Once you've met your deductible, coinsurance splits remaining costs between you and your insurer. With 20% coinsurance, you pay 20% and insurance pays 80% of covered services until you reach your out-of-pocket maximum." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once you've met your deductible, coinsurance splits remaining costs between you and your insurer. With 20% coinsurance, you pay 20% and insurance pays 80% of covered services until you reach your out-of-pocket maximum."
+          }
         },
         {
           "@type": "Question",
           "name": "What is an out-of-pocket maximum?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The out-of-pocket maximum is the most you'll pay for covered services in a plan year. Once you reach it, insurance covers 100% of remaining covered costs. For 2026, the ACA limits individual OOP maximums to $9,450 and family to $18,900." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The out-of-pocket maximum is the most you'll pay for covered services in a plan year. Once you reach it, insurance covers 100% of remaining covered costs. For 2026, the ACA limits individual OOP maximums to $9,450 and family to $18,900."
+          }
         },
         {
           "@type": "Question",
           "name": "How does an HSA reduce healthcare costs?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A Health Savings Account (HSA) lets you pay medical expenses with pre-tax dollars — saving your marginal tax rate (often 22–32%) on every dollar contributed. A $4,150 individual contribution at a 24% marginal rate saves $996 in taxes." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Health Savings Account (HSA) lets you pay medical expenses with pre-tax dollars — saving your marginal tax rate (often 22–32%) on every dollar contributed. A $4,150 individual contribution at a 24% marginal rate saves $996 in taxes."
+          }
         },
         {
           "@type": "Question",
           "name": "What is the difference between a copay and coinsurance?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A copay is a fixed dollar amount you pay per visit (e.g., $30 for a doctor visit). Coinsurance is a percentage of the total bill you pay after meeting your deductible (e.g., 20% of a $5,000 surgery = $1,000). Some plans use both." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A copay is a fixed dollar amount you pay per visit (e.g., $30 for a doctor visit). Coinsurance is a percentage of the total bill you pay after meeting your deductible (e.g., 20% of a $5,000 surgery = $1,000). Some plans use both."
+          }
         }
       ]
     }
   ]
 }
-</script>
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -188,6 +234,7 @@
         <a href="/">Home</a> &rsaquo; <span>Health Insurance Out-of-Pocket Calculator</span>
       </nav>
       <h1>Health Insurance Out-of-Pocket Calculator</h1>
+      <p class="muted prose" style="font-size:var(--font-size-sm);margin-top:var(--space-2)">By <a href="/about" rel="author">Baolin Gong, AFP</a> · Founder, USFinCalc · Reviewed against primary sources (IRS, SSA, state revenue authorities).</p>
       <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         See what you actually pay for healthcare after deductibles, coinsurance, and your out-of-pocket maximum — plus how an HSA reduces your effective cost through tax savings.
       </p>

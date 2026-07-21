@@ -62,14 +62,33 @@
       },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", "#tldr"]
+        "cssSelector": [
+          "h1",
+          "#tldr"
+        ]
+      },
+      "author": {
+        "@id": "https://usfincalc.com/#gongbaolin"
+      },
+      "reviewedBy": {
+        "@id": "https://usfincalc.com/#gongbaolin"
       }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://usfincalc.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Solar Panel Payback Calculator", "item": "https://usfincalc.com/solar-calculator" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://usfincalc.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Solar Panel Payback Calculator",
+          "item": "https://usfincalc.com/solar-calculator"
+        }
       ]
     },
     {
@@ -121,15 +140,42 @@
       "@type": "HowTo",
       "name": "How to calculate your solar payback period",
       "step": [
-        { "@type": "HowToStep", "name": "Enter system details", "text": "Enter your solar system cost and size in kW." },
-        { "@type": "HowToStep", "name": "Enter electricity costs", "text": "Enter your monthly electricity bill and rate per kWh." },
-        { "@type": "HowToStep", "name": "Add incentives", "text": "Enter your federal ITC percentage and any state incentives." },
-        { "@type": "HowToStep", "name": "Read your results", "text": "See your break-even year, 25-year savings, and return on investment." }
+        {
+          "@type": "HowToStep",
+          "name": "Enter system details",
+          "text": "Enter your solar system cost and size in kW."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Enter electricity costs",
+          "text": "Enter your monthly electricity bill and rate per kWh."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Add incentives",
+          "text": "Enter your federal ITC percentage and any state incentives."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Read your results",
+          "text": "See your break-even year, 25-year savings, and return on investment."
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://usfincalc.com/#gongbaolin",
+      "name": "Baolin Gong",
+      "jobTitle": "Founder, USFinCalc",
+      "url": "https://usfincalc.com/about",
+      "sameAs": [
+        "https://wisepath.ltd",
+        "https://www.linkedin.com/in/baolin-gong-b7839129/"
       ]
     }
   ]
 }
-</script>
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -196,6 +242,7 @@
   <main id="main">
     <div class="container">
       <h1>Solar Panel Payback Calculator</h1>
+      <p class="muted prose" style="font-size:var(--font-size-sm);margin-top:var(--space-2)">By <a href="/about" rel="author">Baolin Gong, AFP</a> · Founder, USFinCalc · Reviewed against primary sources (IRS, SSA, state revenue authorities).</p>
       <p id="tldr" class="prose" style="margin-top:var(--space-2)">
         Find out how many years until your solar panels pay for themselves. This calculator factors in the <strong>30% federal ITC</strong>, state incentives, panel degradation, rising electricity rates, and net metering to show your true break-even point and 25-year savings.
       </p>

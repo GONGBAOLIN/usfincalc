@@ -55,7 +55,10 @@
         "@type": "AboutPage",
         "url": "https://usfincalc.com/about",
         "name": "About USFinCalc",
-        "mainEntity": { "@id": "https://usfincalc.com/#organization" }
+        "dateModified": "2026-07-21",
+        "mainEntity": { "@id": "https://usfincalc.com/#organization" },
+        "author": { "@id": "https://usfincalc.com/#gongbaolin" },
+        "reviewedBy": { "@id": "https://usfincalc.com/#gongbaolin" }
       },
       {
         "@type": "Organization",
@@ -78,13 +81,18 @@
       {
         "@type": "Person",
         "@id": "https://usfincalc.com/#gongbaolin",
-        "name": "Gong Baolin",
+        "name": "Baolin Gong",
         "jobTitle": "Founder",
+        "description": "Founder of WisePath Technology LLC and the author and reviewer of USFinCalc's calculators and guides. Holds the AFP (Associate Financial Planner) designation, with hands-on experience in US personal finance and tax planning alongside a software engineering practice.",
         "worksFor": { "@id": "https://usfincalc.com/#organization" },
         "sameAs": [
           "https://wisepath.ltd",
           "https://www.linkedin.com/in/baolin-gong-b7839129/"
         ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Associate Financial Planner (AFP)"
+        },
         "knowsAbout": [
           "Personal finance",
           "US income tax",
@@ -167,7 +175,8 @@
 
     <section class="container prose" style="margin-top:var(--space-5)">
       <h2>Who's behind USFinCalc</h2>
-      <p>USFinCalc is built and maintained by <strong>Gong Baolin</strong>, founder of <a href="https://wisepath.ltd" rel="noopener" target="_blank">WisePath Technology LLC</a>, a Delaware-registered company. Baolin previously earned the AFP (Associate Financial Planner) designation and has years of hands-on experience in personal finance and US tax planning. That background — combined with a software engineering practice — is why this site pairs careful financial modeling with tools that are fast, free, and genuinely accurate. Every calculator and guide here is written and reviewed against primary tax sources before it ships. You can connect with Baolin on <a href="https://www.linkedin.com/in/baolin-gong-b7839129/" rel="noopener" target="_blank">LinkedIn</a>.</p>
+      <p>USFinCalc is built and maintained by <strong>Baolin Gong</strong>, founder of <a href="https://wisepath.ltd" rel="noopener" target="_blank">WisePath Technology LLC</a>, a Delaware-registered company. Baolin previously earned the AFP (Associate Financial Planner) designation and has years of hands-on experience in personal finance and US tax planning. That background — combined with a software engineering practice — is why this site pairs careful financial modeling with tools that are fast, free, and genuinely accurate. Every calculator and guide here is written and reviewed against primary tax sources before it ships. You can connect with Baolin on <a href="https://www.linkedin.com/in/baolin-gong-b7839129/" rel="noopener" target="_blank">LinkedIn</a>.</p>
+      <p class="muted" style="font-size:var(--font-size-sm)">Authored and reviewed by Baolin Gong, AFP · Last reviewed July 2026.</p>
 
       <h2>Why we built this</h2>
       <p>Most online financial calculators stop short. A mortgage tool shows principal and interest but skips the property taxes, insurance, and PMI that make up a large share of the real payment. A paycheck tool ignores the state you actually live in. An equity calculator forgets that your RSUs are withheld at a flat rate that may be far below your real bracket. USFinCalc exists to close that gap. We build calculators that model the costs and taxes that actually reach your bank account, so the number you see is one you can plan around.</p>
@@ -183,6 +192,16 @@
 
       <h2>Our approach to accuracy</h2>
       <p>Every calculator's math is cross-checked against known reference values before it ships. We are deliberately transparent about where we simplify: state income tax, in particular, uses generalized rate structures rather than modeling every local tax, deduction, and credit — a tradeoff we make to keep the tools fast, free, and broadly useful. Each calculator states its assumptions, and our <a href="/disclaimer">Disclaimer</a> explains the limits in full.</p>
+
+      <h2>Editorial and review policy</h2>
+      <p>Every calculator and guide on USFinCalc is written and reviewed by Baolin Gong against primary sources before it is published. Our process is deliberate:</p>
+      <ul>
+        <li><strong>Sourcing.</strong> Tax rates, contribution limits, and wage bases come from primary authorities — the IRS, the Social Security Administration, and state revenue departments — never from secondary or aggregated sites.</li>
+        <li><strong>Verification.</strong> Each calculator's math is cross-checked against a known-good reference value before it ships, and the assumptions behind every tool are stated on its page.</li>
+        <li><strong>Annual updates.</strong> When new tax-year figures are released (typically each January), we update the affected calculators and note the applicable year on each tool.</li>
+        <li><strong>Corrections.</strong> If you find an error, tell us through the <a href="/contact">Contact</a> page. We investigate every report and correct confirmed issues promptly.</li>
+      </ul>
+      <p>We do not use these tools to give individualized financial advice, and we say so plainly on every page. They are accurate estimates to help you plan — not a substitute for a licensed CPA or CFP.</p>
 
       <h2>Privacy by design</h2>
       <p>Your financial inputs are nobody's business but yours. Every calculation runs entirely in your browser. We never transmit, store, or sell the numbers you enter, and we require no account or sign-up. You can read the specifics in our <a href="/privacy-policy">Privacy Policy</a>.</p>
