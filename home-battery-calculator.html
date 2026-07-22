@@ -380,6 +380,43 @@
     </section>
 
     <section class="container prose">
+      <h2>Worked example: how the peak-to-off-peak spread drives payback</h2>
+      <p>A home battery earns most of its return through <em>arbitrage</em> — charging when electricity is cheap (off-peak or from your own solar) and discharging during expensive peak hours. The size of that price gap is what makes or breaks the economics. To show it, we held the calculator's defaults constant — a <strong>13.5 kWh battery</strong> costing $10,000 plus $3,500 installation, cycled once daily, paired with solar so the 30% ITC applies, plus $200/year of outage-backup value — and varied only the peak and off-peak rates. The ITC brings the net cost to <strong>$9,450</strong> in each case.</p>
+      <table>
+        <caption class="muted" style="text-align:left;margin-bottom:var(--space-2)">$9,450 net cost after ITC — annual savings and payback by rate spread</caption>
+        <thead>
+          <tr><th scope="col">Peak / off-peak rate</th><th scope="col">Spread</th><th scope="col">Annual savings</th><th scope="col">Payback</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$0.25 / $0.12</td><td>$0.13</td><td>$674</td><td>15+ years</td></tr>
+          <tr><td>$0.35 / $0.12 (default)</td><td>$0.23</td><td>$1,040</td><td>9.7 years</td></tr>
+          <tr><td>$0.45 / $0.15</td><td>$0.30</td><td>$1,295</td><td>7.7 years</td></tr>
+          <tr><td>$0.60 / $0.18</td><td>$0.42</td><td>$1,733</td><td>5.7 years</td></tr>
+        </tbody>
+      </table>
+      <p>The message is clear: a battery only pays for itself quickly where the peak-to-off-peak spread is wide. With a narrow $0.13 spread, payback stretches past the battery's 15-year useful life — the arbitrage alone doesn't justify the cost. But on a steep time-of-use plan with a $0.42 spread (increasingly common in California and the Northeast), the same battery pays back in under six years. If your utility charges a flat rate all day, a battery bought purely for savings rarely makes financial sense; its value then comes from backup power and solar self-consumption instead. Check whether a time-of-use plan is available to you before modeling arbitrage savings.</p>
+
+      <h2>Common mistakes to avoid</h2>
+      <p>Battery ROI is the hardest of the home-energy calculations to get right. These are the traps.</p>
+      <ul>
+        <li><strong>Expecting the ITC without solar.</strong> The 30% federal credit applies to standalone storage since 2023, but pairing with solar is the cleanest way to qualify. Confirm your installation's eligibility — it changes net cost by thousands.</li>
+        <li><strong>Assuming a flat electricity rate saves money.</strong> Arbitrage needs a peak/off-peak price gap. On a flat-rate plan there's nothing to arbitrage, and the battery's payback depends entirely on backup value.</li>
+        <li><strong>Overcounting backup value.</strong> Outage-avoidance is real but hard to quantify. Putting a large dollar figure on it can make a marginal battery look profitable on paper when it isn't in cash terms.</li>
+        <li><strong>Ignoring round-trip losses and degradation.</strong> Batteries lose a few percent of energy each charge cycle and capacity each year. A model that assumes perfect efficiency overstates savings.</li>
+        <li><strong>Cycling more than once a day.</strong> Extra daily cycles boost modeled savings but accelerate wear and may exceed what your rate plan or solar production actually supports. Keep the cycling assumption realistic.</li>
+      </ul>
+
+      <h3>Key terms explained</h3>
+      <dl class="breakdown">
+        <div class="breakdown__row"><dt>Arbitrage</dt><dd>Charging the battery when electricity is cheap (off-peak or from solar) and discharging during expensive peak hours — a home battery's main source of savings.</dd></div>
+        <div class="breakdown__row"><dt>Peak / off-peak spread</dt><dd>The difference between your highest and lowest time-of-use electricity rates. A wider spread makes arbitrage more valuable.</dd></div>
+        <div class="breakdown__row"><dt>Round-trip efficiency</dt><dd>The share of stored energy you get back after charging and discharging losses — typically around 90% for lithium batteries.</dd></div>
+        <div class="breakdown__row"><dt>Depth of cycling</dt><dd>How much of the battery's capacity you use each day. More frequent deep cycling increases savings but accelerates wear.</dd></div>
+        <div class="breakdown__row"><dt>Backup value</dt><dd>The dollar value you assign to keeping power on during outages — real, but harder to quantify than arbitrage savings.</dd></div>
+      </dl>
+    </section>
+
+    <section class="container prose">
       <h2>Frequently asked questions</h2>
       <details><summary>Is a home battery worth it?</summary><p>It depends on your rate spread. A $0.20+/kWh difference between peak and off-peak rates, combined with the 30% ITC, can produce payback in 5–8 years. Flat-rate utility customers see less financial benefit.</p></details>
       <details><summary>How much does a Tesla Powerwall 3 cost?</summary><p>The unit costs $9,500–$12,000 plus $2,500–$4,500 installation. After the 30% ITC (when paired with solar), net cost is typically $8,400–$11,550.</p></details>
