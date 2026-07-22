@@ -53,7 +53,10 @@
     var transferTax = i.homePrice * sd.transfer;
     var recording = sd.recording;
 
-    var prepaidInterest = loanAmount * 0.0045 * 15;
+    // Prepaid interest = ~15 days of per-diem interest at closing.
+    // No rate input on this tool, so assume a representative 6.5% APR (2026).
+    var ASSUMED_APR = 0.065;
+    var prepaidInterest = loanAmount * (ASSUMED_APR / 365) * 15;
     var escrowTaxes = (i.homePrice * 0.012 / 12) * 3;
     var escrowInsurance = 150 * 3;
 
