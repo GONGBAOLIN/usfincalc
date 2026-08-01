@@ -5,7 +5,7 @@
    Depends on core.js. No client-side storage.
 
    Scope by design: models a single fixed-rate loan on the standard amortization
-   schedule. Does NOT model income-driven plans (IBR/SAVE/PAYE), forgiveness,
+   schedule. Does NOT model income-driven plans, forgiveness,
    grace-period interest capitalization, or private-vs-federal differences.
    Those vary widely and are covered by the disclaimer, not by added rules.
 
