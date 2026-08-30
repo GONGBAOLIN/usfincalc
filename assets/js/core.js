@@ -177,21 +177,20 @@
   }
 
   /* ---- Highlight the current page's nav link by pathname ---- */
-  function initActiveLink() {
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
-    const anchors = document.querySelectorAll('.site-nav__links a[href]');
-    anchors.forEach(function (a) {
-      const href = a.getAttribute('href').replace(/\/$/, '') || '/';
-      if (href === path) {
-        a.setAttribute('aria-current', 'page');
-        // Mark the parent dropdown toggle as active too.
-        const dd = a.closest('.nav-dropdown');
-        if (dd) {
-          const t = dd.querySelector('.nav-dropdown__toggle');
-          if (t) t.setAttribute('data-active', 'true');
-        }
-      }
-    });
+  function initClusterLink() {
+    const links = document.getElementById('nav-links');
+    if (!links || links.querySelector('a[href="/clusters"]')) return;
+    const about = links.querySelector('a[href="/about"]');
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = '/clusters';
+    link.textContent = 'Clusters';
+    item.appendChild(link);
+    if (about && about.parentElement) {
+      about.parentElement.before(item);
+    } else {
+      links.appendChild(item);
+    }
   }
 
   /* ---- Copy-to-clipboard (auto-wires [data-copy] buttons) ----
@@ -372,7 +371,7 @@
     container.innerHTML = '<div class="chart__donut-wrap">' + svg + legend + '</div>';
   }
 
-  function bootNav() { initNav(); initDropdowns(); initActiveLink(); initCopyButtons(); }
+  function bootNav() { initNav(); initDropdowns(); initClusterLink(); initActiveLink(); initCopyButtons(); }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootNav);
